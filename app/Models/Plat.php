@@ -12,4 +12,12 @@ class Plat extends Model
     protected $table ='plat';
     protected $primarykey ='id';
 
+/**
+ * Cette methode permet de récuperer la photo du plat
+ * @return PhotoPlat
+ */
+public function photo()
+{
+    return $this->hasOne(PhotoPlat::class);
+}
 }

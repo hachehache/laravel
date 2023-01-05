@@ -11,5 +11,4 @@ class Categorie extends Model
 
     protected $table ='categorie';
     protected $primarykey ='id';
-    
 }

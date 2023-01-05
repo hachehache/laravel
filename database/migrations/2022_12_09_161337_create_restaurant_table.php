@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('restaurant', function (Blueprint $table) {
             $table->id();
+            $table->string('cle', 100)->unique();
+            $table->text('valeur');
             $table->timestamps();
         });
     }
