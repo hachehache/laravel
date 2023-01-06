@@ -72,6 +72,11 @@ class ReservationSeeder extends Seeder
            $reservation->prenom = $faker->firstName();
            // affectation d'un jour $faker->date('Y-m-d')
            $reservation->jour = $faker->date('Y-m-d');
+           // en ajoutant dateTimeBetween avec une date comprise entre -6 mois et
+           // + 6 mois, on evite que faker nous fournisse des reservations
+           // en date de 1978 par exemple.
+           $datetime = $faker->dateTimeBetween('-6 months', '+6 months');
+           $datetime->format('Y-m-d');
            // affectation d'une heure
            $reservation->heure = $faker->time('H:i');
            // affectation du nombre de personnes de 1 minimum a n
