@@ -1,6 +1,22 @@
 @extends('base')
-@section('page_title', 'menu')
+
+@section('page_title', 'Menu')
 
 @section('content')
-    <h1> Menu </h1>
+    <h1>Menu</h1>
+
+    @foreach ($categories as $categorie)
+        <h2>{{ $categorie->nom }}</h2>
+        <p>{{ $categorie->description }}</p>
+
+        <ul>
+            @foreach ($categorie->platsSortedByPrix as $plat)
+            <li>
+                {{ $plat->nom }}<br>
+                {{ $plat->prix }}<br>
+                {{ $plat->description }}<br>
+            </li>
+            @endforeach
+        </ul>
+    @endforeach
 @endsection

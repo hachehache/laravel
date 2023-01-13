@@ -15,12 +15,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            /** ordre a respecter */
             CategorieSeeder::class,
             PhotoPlatSeeder::class,
             PlatSeeder::class,
             ReservationSeeder::class,
-            //EtiquetteSeeder::class,
+            RestaurantSeeder::class,
         ]);
     }
 }
+
+

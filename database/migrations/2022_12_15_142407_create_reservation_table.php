@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('prenom', 100);
             $table->date('jour');
             $table->time('heure');
-            $table->integer('nombre_de_personnes');
+            $table->integer('nombre_personnes');
             $table->string('tel', 30);
             $table->string('email', 100);
             $table->timestamps();

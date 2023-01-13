@@ -11,5 +11,4 @@ class PhotoAmbiance extends Model
 
     protected $table ='photo_ambiance';
     protected $primarykey ='id';
-    
 }

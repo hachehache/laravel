@@ -1,8 +1,7 @@
-
-
 @extends('base')
-@section('page_title', 'contact')
+
+@section('page_title', 'Contact')
 
 @section('content')
-    <h1> Contact</h1>
+    <h1>Contact</h1>
 @endsection

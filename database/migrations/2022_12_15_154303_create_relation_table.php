@@ -14,20 +14,20 @@ return new class extends Migration
     public function up()
     {
         Schema::create('etiquette_plat', function (Blueprint $table) {
-    
             $table->foreignId('etiquette_id')->references('id')->on('etiquette');
             $table->foreignId('plat_id')->references('id')->on('plat');
         });
-        //modification de la table plat
-        schema::table('plat', function (Blueprint $table){
-            // creation d'une clef etrangere qui relie un plat et sa photo
+
+        // modification de la table plat
+        Schema::table('plat', function (Blueprint $table) {
+            // création d'un clé étrangère qui relie un plat et sa photo
             $table->foreignId('photo_plat_id')->references('id')->on('photo_plat');
             // création d'un index (accélérateur de recherche) pour la clé étrangère
             $table->index('photo_plat_id');
-            
-            // creation d'une clef etrangere qui relie un plat et sa categorie
-            $table->foreignId('categorie_id')->references('id')->on('categorie');  
-            // creation d'un index ( facilite la recherche rapide) pour la clef étrangere
+
+            // création d'un clé étrangère qui relie un plat et sa catégorie
+            $table->foreignId('categorie_id')->references('id')->on('categorie');
+            // création d'un index (accélérateur de recherche) pour la clé étrangère
             $table->index('categorie_id');
         });
     }
@@ -50,6 +50,6 @@ return new class extends Migration
             $table->dropForeign(['categorie_id']);
             $table->dropIndex(['categorie_id']);
             $table->dropColumn('categorie_id');
-    });
-}
+        });
+    }
 };

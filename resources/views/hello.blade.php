@@ -1,4 +1,5 @@
 @extends('base')
+
 @section('page_title', "Hello $name")
 
 @section('vite')
@@ -7,5 +8,4 @@
 @endsection
 
 @section('content')
-    <h1> Hello {{$name}}</h1>
-@endsection
+    <h1>Hello {{ $name }}</h1>

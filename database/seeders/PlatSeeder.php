@@ -40,7 +40,6 @@ class PlatSeeder extends Seeder
         $photos = PhotoPlat::all();
         // la première photo
         $photo = $photos->first();
-
         $platDatas = [
             [
                 'nom' => 'Foo',
@@ -86,7 +85,7 @@ class PlatSeeder extends Seeder
             // sauvegarde dans la BDD
             $plat->save();
         }
- 
+            // $i étant un index
         for ($i =0; $i <100; $i++){
              // création d'un nouveau plat
             $plat = new Plat();
@@ -96,7 +95,7 @@ class PlatSeeder extends Seeder
             // affectation d'une description
             $plat->description = $faker->words(10 , true);
             // affectation d'un prix
-            
+            // le prix est aléatoire, compris entre 1 et 50 avec deux chiffres après la virgule
             $plat->prix = random_int(100, 5000) /100;
             //version alternative avec faker 
             // $plat->prix = $faker ->randomFloat(2, 1, 50);
@@ -111,10 +110,10 @@ class PlatSeeder extends Seeder
             // affectation d'une catégorie
             // la categorie est choisi au hasard
             // un nbre aléatoire est tiré entre 0 et 5 et 5-1 ( c'est a dire 4 éléments)
-            $categoriesIndex=random_int(0, $categoriesCount -1);
+            $categorieIndex=random_int(0, $categoriesCount -1);
             //on utilise le nbre tire au hasard pour acceder au Nieme élément
             // de la collection des categories
-            $categorie = $categories->get($categoriesIndex);
+            $categorie = $categories->get($categorieIndex);
             $plat->categorie_id = $categorie->id;
 
 

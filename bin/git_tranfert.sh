@@ -1,11 +1,11 @@
 #!/bin/bash
 clear
 # script pour tranfert db vers github
-echo ----------------------------------------------------------
+echo =======================================================
 echo REPLICATION DE LA BASE DE DONNEE DANS MON GITHUB
-echo --------------------------------------------------------
+echo
 echo assurez-vous que github mon compte est ouvert via google
-echo --------------------------------------------------------
+echo =======================================================
 echo " Appuyer sur une touche pour continuer....."
 read a		#pause
 echo -----------     Nous sommes dans le repertoire    --------
