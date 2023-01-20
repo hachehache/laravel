@@ -4,10 +4,10 @@ namespace Database\Seeders;
 
 use Faker;
 use App\Models\Etiquette;
-use App\Models\Plat;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+//Seeder appelé par seeders/DatabaseSeeder.php
 class EtiquetteSeeder extends Seeder
 {
     /**
@@ -33,6 +33,14 @@ class EtiquetteSeeder extends Seeder
                 'nom' => 'boeuf',
                 'description' => 'etiquette boeuf',
             ],
+            [
+                'nom' => 'poulet',
+                'description' => 'etiquette poulet',
+            ],
+            [
+                'nom' => 'agneau',
+                'description' => 'etiquette agneau',
+            ],
         ];
        foreach ($etiquetteDatas as $etiquetteData) {
             // création d'un nouveau plat
@@ -41,21 +49,22 @@ class EtiquetteSeeder extends Seeder
             $etiquette->nom = $etiquetteData['nom'];
             // affectation d'une description
             $etiquette->description = $etiquetteData['description'];
-           
+           // sauvegarde dans la BDD
             $etiquette->save();
         }
         // $i étant un index
-    //    for ($i =0; $i <4; $i++){
-    //        // création d'un nouvelle etiquette
-    //       $etiquette = new etiquette();
-    //        // affectation d'un nom
-    //       $etiquette->nom = $faker->words();
-    //       // affectation d'une description
-    //       $etiquette->description = $faker->words();
+           for ($i =0; $i <4; $i++){
+          // création d'un nouvelle etiquette
+           $etiquette = new etiquette();
+            // affectation d'un nom
+            //true =je veux une chaine caracteres
+           $etiquette->nom = $faker->words(2, true);
+          // affectation d'une description
+         $etiquette->description = $faker->words(2, true);
             
-      //     $etiquette->save();
-     //   }
-
+          $etiquette->save();
+      }
 
     }
+
 }

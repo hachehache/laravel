@@ -15,8 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            //ordre a respecter (surtout etiquette avt les plats) 
+            //car existe des dependances
             CategorieSeeder::class,
             PhotoPlatSeeder::class,
+            EtiquetteSeeder::class,
             PlatSeeder::class,
             ReservationSeeder::class,
             RestaurantSeeder::class,
