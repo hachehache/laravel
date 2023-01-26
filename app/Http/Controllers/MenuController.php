@@ -15,19 +15,19 @@ class MenuController extends Controller
     // renvoi la liste des categories
     $categories = Categorie::all();
     
-  //dd($categorie);
-  // dump
+    //dd($categorie);
+    // dump
 
     // equivaut à select * from categorie order by asc
     //    $categories = DB::table('categorie')
-     //   ->orderby('id','asc')
+    //   ->orderby('id','asc')
     //    ->get()
     //    ;
 
- //dump
- // dd($categories);
-return view('menu', [
+    //dump
+    // dd($categories);
+    return view('menu', [
     'categories' => $categories,
-]);
+    ]);
     }
 }
