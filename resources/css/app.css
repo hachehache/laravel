@@ -1,3 +1,9 @@
+
+/* a retirer pour garder la feuille de style */
+/* @tailwind base;*/
+@tailwind components;
+@tailwind utilities;
+
 /* commentaire */
 body {
     background-color: pink;

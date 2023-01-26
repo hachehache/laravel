@@ -1,0 +1,169 @@
+
+@import url(@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/*-- Formulaire de Contact --*/
+/* IMPORTATION FONT ROBOTO - FONTS GOOGLE - */
+
+
+
+form{
+	/* COULEUR ARRIERE PLAN DU FORMULAIRE */
+	background-color: white;
+	/* ESPACEMENT A L'INTERIEUR DU FORMULAIRE */
+	padding: 30px;
+	/* COIN DU FORMULAIRE ARRONDI  */
+	border-radius: 10px;
+}
+
+
+/*   FONT POUR H1 NOUS CONTACTER */
+form h1{
+	font-size: 20px;
+}
+
+/*  LIGNE SEPARATION*/
+form .separation{
+	width: 100%;
+	/* EPAISSEUR DE LA LIGNE DE SEPARATION */
+	height: 1px;
+	background-color: #747cdf;
+}
+
+form .corps-formulaire{
+	/* ALIGNEMENT DES CHAMPS SI ON EST SUR UN PC */
+	display: flex;
+	/* PASSAGE DU CHAMP MESSAGE VERS LE BAS SI ON EST SUR UN SMARPHONE - RESPONSIVE */
+	flex-wrap: wrap;
+	/* ESPACEMENT ENTRE LE DERNIER CHAMP ET LE BOUTON "ENVOYER LE MESSAGE" */ 
+	margin-botton: 50px;
+}
+
+/* MISE EN FORM DE LA CLASS GROUPE  */
+form .corps-formulaire .groupe{
+	/*  ESPACEMENT ENTRE CHAQUE CHAMPS NOM, PRENOM, TELEPHONE, EMAIL .... */
+	margin-top: 20px;
+	/* POUR POSITIONNER DANS DIV GROUPE */
+	position: relative;
+	/* ALIGNEMENT DES CHAMPS */
+	display:flex;
+	/* EMPILE LES CHAMPS SUR UNE COLONNE */
+	flex-direction: column;
+}
+
+
+/*  IM%PORTANT, SPECIFIE LE CHEMIN DES INPUT */ 
+form .corps-formulaire .gauche .groupe input{
+	margin-top: 5px;
+	/* QUANTITE MARGE EN HAUT ET BAS D'UN CHAMP  ET SUR LES COTES DU CHAMP*/
+	/* DANS LE SENS DES AIGUILLES D'UNE MONTRE */
+	/* 1ere VALEUR: POUR LE HAUT INTERIEUR DU CHAMP  */
+	/* 2ieme VALEUR: POUR LE COTE INTERIEUR DROIT DU CHAMP  */
+	/* 3ieme VALEUR: POUR LE BAS INTERIEUR DU CHAMP  */
+	/* 4ieme VALEUR: POUR LE COTE DROIT INTERIEUR DU CHAMP QUI CONTIENDRA AUSSI UNE ICONE, DONC ESPACE PLUS GRAND  */
+	padding: 10px 5px 10px 30px;
+	/* BORDURE DU CHAMP */
+	border: 1px solid;
+	/* RETRAIT COULEUR ROUGE AUTOUR DES CHAMPS, LORS CLIC SOURIS SUR CHAMP NOM, PRENOM, .... */
+	outline-color: 	#747cdf;
+	/* ARRONDIR BORDURE DES INPUT */
+	border-radius: 5px;
+}
+
+/* ------- GROUPE GAUCHE  -  POUR CHAMP NOM, PRENOM ,TEL , EMAIL --------------*/
+	form .corps-formulaire .gauche .groupe i{
+	/* POUR POSITIONNER DANS DIV GROUPE */
+	position: absolute;
+	/* POUR POSITIONNER LES ICONES USER, PHONE, EMAIL .. SUR LE BORD GAUCHE A L'INTERIEUR DU CHAMP */
+	left: 10px;
+	/* DESCENTE DE 25PX A PARTIR DU HAUT INTERIEUR DU CHAMP NOM, PHONE, EMAIL */
+	top: 35px;
+	/* MARGE DE 9PX HAUT-BAS ET DE 8PX DOITE-GAUCHE DE L'ICONE */
+	padding: 9px, 8px;
+	/*  COULEUR DES ICONES */
+	color: #747cdf;
+	}
+	
+	
+	
+	form .corps-formulaire .droite{
+		margin-left: 40px;	
+	}
+	
+	
+	form .corps-formulaire .droite .groupe{
+		/* HAUTEUR DU CHAMP MESSAGE POUR METTRE A MEME HAUTEUR QUE LES CHAMPS DE DROITE */		
+		height: 93%;
+	}
+	
+	
+	
+	form .corps-formulaire .droite .groupe textarea{
+		/* MARGE ENTRE LA BORDURE HAUTE DU CHAMP ET MESSAGE */
+		margin-top: 5px;
+		/* QUANTITE MARGE EN HAUT/BAS DOITE/GAUCHE A L'INTERIEUR DU CHAMP MESSAGE */
+		padding: 10px;
+		/* FOND DU CHAMP MESSAGE EN GRIS TRES CLAIR  */
+		background-color: #f8f8f8;
+		/* BORDURE DU CHAMP MESSAGE */
+		border: 2px solid #747cdf;
+		/* ARRONDIR BORDURE DU CHAMP MESSAGE */
+		border-radius: 5px;
+	/* POUR INTERDIRE L'UTILISATEUR DE REDIMENSIONNER LE CHAMP MESSAGE AVEC LE BOUTON DANS L'ANGLE DU CHAMP EN BAS/DROIT */
+		resize: none;
+		/* POUR ALIGNER LA HAUTEUR DU CHAMP (MESSAGE) DROITE AVEC LA HAUTEUR DES CHAMPS DE GAUCHE ( NOM, PRENOM,...) */
+		height: 110%;
+		/* RETRAIT COULEUR ROUGE AUTOUR DU CHAMP MESSAGE .... */
+		outline: none;	
+	}
+	
+	
+	
+/* ------- GROUPE DROIT  -  POUR CHAMP MESSAGE --------------*/
+	form .corps-formulaire .droite .groupe i{
+		/* ESPACE ENTRE PARTIE GAUCHE ET DROITE */
+		margin-lef: 40px;
+	}
+	
+	
+		
+	form .pied-formulaire button{
+		
+		margin-top: 30px;
+		font-size: 15px;
+		/* COULEUR D'ARRIERE PLAN DU BOUTON ENVOYER */
+		/*background-color: #f8f8f8;*/
+		/*						background-color: black;*/
+		/* COULEUR DU MOT ENVOYER */
+		color: white;
+		/*  MARGE */
+		padding: 10px 20px;
+		/* ARRONDIR BORDURE DU BOUTON ENVOYE */
+		border-radius: 5px;
+		/* AFFICHE UNE MAIN ET ANNONCE A L'UTILISATEUR QUE LE BOUTON EST CLICABLE */ 
+		cursor: pointer;
+		/* RETRAIT COULEUR ROUGE AUTOUR DU BOUTON ENVOYER */
+		outline: none;
+		border: none;
+		/*  TEMPS DE LEFFET POUR LE BOUTON ENVOYER QUI EST EN  PIED DE PAGE*/
+		transition:	transform 0.5s;
+	}
+	
+	
+	
+	form .pied-formulaire button:hover{
+		/* EFFET POUR AGRANDIR LE BOUTON ENVOYER LORS DU PASSAGE SOURIS  */
+		/* SI VALEUR < 1 , ON DIMINUE LE BOUTON */
+		transform: scale(1.05);
+	}
+	
+	
+	/* RESPONSIVE AVEC UN MEDIA QUERIES CAR DANS . corps-formulaire .droite ON AVAIT margin-left:40px POUR AVOIR UNE GROSSE MARGE ENTRE PARTIE Droite/gauche */
+	/* SUR UN MOBILE L'EFFET RESTE ET PAS JOLIE, ON AJOUTE @media screen QUI CORRESPOND A FORMAT TABLETTE MOBILE  */
+	/* ON TESTE SI TAILLE ECRAN < ou = à 920px ALORS ON APPLIQUE CETTE PROPRIETE*/
+	@media screen and (max-width:920px){
+		form .corps-formulaire .droite{
+			/* ON RETIRE LA MARGE */
+			margin-left: 0px;
+		}
+	
+		

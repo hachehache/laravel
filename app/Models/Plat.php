@@ -27,7 +27,7 @@ class Plat extends Model
     // @return PhotoPlat
     public function photo()
     {
-    return $this->hasOne(PhotoPlat::class);
+    return $this->belongsToMany(PhotoPlat::class);
     }
     // Cette fonction permet recup de la collection d'etiquettes
     // pour signaler relation entre plat et etiquette

@@ -19,7 +19,7 @@ class PhotoPlat extends Model
         // belongsto (= appartient à) veut dire que pour avoir la photo avec le numero xx,
         // il faut aller voir la table plat
         // a noter que Plat avec P majuscule est une classe
-        return $this->belongsTo(Plat::class);
+        return $this->hasOne(Plat::class);
     }
 
 }
