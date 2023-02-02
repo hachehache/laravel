@@ -38,8 +38,10 @@ h1{
 /* toute image trop grande ne depassear pas la taille de l'écran. */
     /* Une petite image restera petite */
 img {
-
-    max-width: 100%;
+/*menu--photo-plat*/
+width: 100px;
+margin-top: 15px;
+margin-left:35%;
 }
 
 img.medium-size {

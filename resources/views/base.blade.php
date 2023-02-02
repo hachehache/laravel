@@ -29,7 +29,7 @@
             <li><a href="{{ route('home') }}">Accueil</a></li>
             <li><a href="{{ route('contact') }}">Contact</a></li>
             <li><a href="{{ route('mentions-legales') }}">Mentions légales</a></li>
-            <li>Copyright Foo Bar 2022</li>
+            <li>Copyright O Cnamo 2023</li>
         </ul>
     </footer>
 </body>
