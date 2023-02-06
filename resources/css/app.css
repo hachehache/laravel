@@ -1,12 +1,190 @@
-
 /* a retirer pour garder la feuille de style */
 /* @tailwind base;*/
 @tailwind components;
 @tailwind utilities;
 
+/* LOGO d'ENTETE  */
+#logo-fixe img
+{
+    float: left;
+    display: block;
+    margin-top: 2px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+
+/* BANDEAU HAUT */
+ header 
+{
+    /* hauteur du bandeau header */
+    min-height:70px;
+    /*overflow-y:auto; */
+    background-color: rgb(17, 65, 17);
+    /* bandeau autour du header */
+    border: 5px solid #CCC;
+}
+
+/***********************************************/
+/*  Formulaire - ADMIN-  Réservation- Création*/
+/***********************************************/
+
+/*   FONT POUR H1  */
+form .h1{
+	font-size: 20px;
+    /* hauteur du titre h1 */
+    margin: 20px;
+    
+}
+
+/* Nom, Prénom,Jour,Heure,...*/
+label{
+    font-weight: bold;
+}
+
+
+/* garder le point pour dévalider cette partie 
+et permettre d'avoir le footer sur toute sa largeur */
+.form{
+	/* COULEUR ARRIERE PLAN DU FORMULAIRE */
+	background-color: blue;
+	/* ESPACEMENT A L'INTERIEUR DU FORMULAIRE */
+	padding: 15px;
+	/* COIN DU FORMULAIRE ARRONDI  */
+	border-radius: 5px;
+    border: 5px solid;
+    margin-top: 10px;
+    margin-left: 100px;
+
+    width: 30%;
+   
+}
+
+
+/* champs INPUT */
+div.container{
+    /*background-color: #747cdf;*/
+}
+
+        /*LIGNE SEPARATION*/
+form .separation{
+	width: 100%;
+	/* EPAISSEUR DE LA LIGNE DE SEPARATION */
+	height: 1px;
+	background-color: #747cdf;
+}
+
+.body{
+	margin:0px;
+	padding: 0px;
+	
+}
+ 
+.form .corps-formulaire
+{
+/* ALIGNEMENT DES CHAMPS SI ON EST SUR UN PC */
+/*display: flex; */
+/* PASSAGE DU CHAMP MESSAGE VERS LE BAS SI ON EST SUR UN SMARPHONE - RESPONSIVE */
+flex-wrap: wrap;
+/* ESPACEMENT ENTRE LE DERNIER CHAMP ET LE BOUTON "ENVOYER LE MESSAGE" */ 
+
+}
+
+
+/* OK MISE EN FORM DE LA CLASS GROUPE  */
+form .corps-formulaire .groupe{
+	/*  ESPACEMENT ENTRE CHAQUE CHAMPS NOM, PRENOM, TELEPHONE, EMAIL .... */
+	margin-top: 10px;
+	/* POUR POSITIONNER DANS DIV GROUPE */
+	position: relative;
+	/* ALIGNEMENT DES CHAMPS */
+	display:flex;
+	/* EMPILE LES CHAMPS SUR UNE COLONNE */
+	flex-direction: column;
+}
+
+
+
+/*  IM%PORTANT, SPECIFIE LE CHEMIN DES INPUT */ 
+form .corps-formulaire .gauche .groupe input{
+	margin-top: 10px;
+	/* QUANTITE MARGE EN HAUT ET BAS D'UN CHAMP  ET SUR LES COTES DU CHAMP*/
+	/* DANS LE SENS DES AIGUILLES D'UNE MONTRE */
+	/* 1ere VALEUR: POUR LE HAUT INTERIEUR DU CHAMP  */
+	/* 2ieme VALEUR: POUR LE COTE INTERIEUR DROIT DU CHAMP  */
+	/* 3ieme VALEUR: POUR LE BAS INTERIEUR DU CHAMP  */
+	/* 4ieme VALEUR: POUR LE COTE DROIT INTERIEUR DU CHAMP QUI CONTIENDRA AUSSI UNE ICONE, DONC ESPACE PLUS GRAND  */
+	padding: 10px 5px 10px 30px;
+	/* BORDURE DU CHAMP */
+	border: 1px solid;
+	/* RETRAIT COULEUR ROUGE AUTOUR DES CHAMPS, LORS CLIC SOURIS SUR CHAMP NOM, PRENOM, .... */
+	outline-color: 	#747cdf;
+	/* ARRONDIR BORDURE DES INPUT */
+	border-radius: 3px;
+
+}
+
+
+/* ------- GROUPE GAUCHE  -  POUR CHAMP NOM, PRENOM ,TEL , EMAIL --------------*/
+form .corps-formulaire .gauche .groupe i{
+	/* POUR POSITIONNER DANS DIV GROUPE */
+	position: absolute;
+	/* POUR POSITIONNER LES ICONES USER, PHONE, EMAIL .. SUR LE BORD GAUCHE A L'INTERIEUR DU CHAMP */
+	left: 450px;
+	/* DESCENTE DE 25PX A PARTIR DU HAUT INTERIEUR DU CHAMP NOM, PHONE, EMAIL */
+	top: 215px;
+	/* MARGE DE 9PX HAUT-BAS ET DE 8PX DOITE-GAUCHE DE L'ICONE */
+	padding: 9px, 8px;
+	/*  COULEUR DES ICONES */
+	color: #747cdf;
+    
+	}
+	
+    
+/* ------- GROUPE DROIT  -  POUR CHAMP MESSAGE --------------*/
+	form .corps-formulaire .groupe i{
+		/* ESPACE ENTRE PARTIE GAUCHE ET DROITE */
+		margin-left: 40px;
+	}
+	
+	
+	form .pied-formulaire button{
+		margin-top: 30px;
+		font-size: 15px;
+		/* COULEUR D'ARRIERE PLAN DU BOUTON ENVOYER */
+		/*background-color: #f8f8f8;*/
+		background-color: black;
+		/* COULEUR DU MOT ENVOYER */
+		color: white;
+		/*  MARGE */
+		padding: 10px 20px;
+		/* ARRONDIR BORDURE DU BOUTON ENVOYE */
+		border-radius: 5px;
+		/* AFFICHE UNE MAIN ET ANNONCE A L'UTILISATEUR QUE LE BOUTON EST CLICABLE */ 
+		cursor: pointer;
+		/* RETRAIT COULEUR ROUGE AUTOUR DU BOUTON ENVOYER */
+		outline: none;
+		border: none;
+		/*  TEMPS DE LEFFET POUR LE BOUTON ENVOYER QUI EST EN  PIED DE PAGE*/
+    }
+
+    
+	form .pied-formulaire button:hover{
+		/* EFFET POUR AGRANDIR LE BOUTON ENVOYER LORS DU PASSAGE SOURIS  */
+		/* SI VALEUR < 1 , ON DIMINUE LE BOUTON */
+		transform: scale(1.05);
+	}
+
+
+		.form .corps-formulaire {
+			/* ON RETIRE LA MARGE pour Nom Prenom */
+			margin-left: 480px;
+            margin-right: 480px;
+		}
+
+
 /* commentaire */
 body {
-    background-color: pink;
+    color: black;
 }
 
 /* pour retirer les points dans .menu, .contact, .reservation,...
@@ -21,21 +199,42 @@ header nav ul {
     padding: 0;
     /* margin modifie la marge Exterieure*/
     margin: 0;
+   
+    /* INTERIEUR DU BANDEAU */
 } 
 header nav ul a {
-    background-color: antiquewhite;
-    border: 1px solid grey;
+    /*background-color: red;*/
+    /*encadrement de Accueil, menu, ... */
+    /*border: 1px solid grey;*/
     /* le 2ieme parametre gère la largeur 2rem*/
-    padding: 1rem 2rem;
+    /*padding: 1rem 2rem;*/
     /* text supprime le soulignement*/
+  
     text-decoration: 0;
+    font: bolder;
+    color: rgb(217, 47, 47);
+    font-family: 'kenia' ,'cursive';
 }
 
-h1{
-    font-size: 5rem;
+ /* Entete accueil par rapport au header*/
+ div.entete
+ {      /* Titre: O CNAMO  */
+     /* test dans le corps de la page */
+     /*font-family: Georgia; */
+     font-family: 'kenia' ,'cursive';
+     font:bolder;
+     margin-top: 10px;
+     margin-left: 100px;
+     }
+     
+
+
+.h1
+{
+    font-size: 2rem;
 } 
 
-/* toute image trop grande ne depassear pas la taille de l'écran. */
+/* toute image trop grande ne depassera pas la taille de l'écran. */
     /* Une petite image restera petite */
 img {
 /*menu--photo-plat*/
@@ -47,3 +246,67 @@ margin-left:35%;
 img.medium-size {
     width: 500px;
 }
+
+.menu--photo-plat {
+    width: 100px;
+}
+
+/*la virgule pour l'une ou l'autre des 2 classses */
+.form--radio--buttons--scrollable,
+.form--checkboxes--scrollable {
+    border: 2px black;
+    max-height: 350px;
+    /*overflow= menu deroulant sur la droite si le nombre de photos dépasse la boite */
+    overflow: auto;
+    width: 900px;
+    margin-left: 480px;
+    margin-right: 500px;
+    /* ARRONDIR BORDURE DES INPUT */
+	border-radius: 15px;
+}
+
+.form--radio-button-image {
+    height: 100px;
+}
+
+
+/*
+
+/* Footer en fonction de la taille de la page */
+footer 
+{
+	/*position:absolute;*/
+	width: 99%;
+    /* emplacement du footer par rapport au corps de la page */
+    /* a retirer pour côté responsive*/
+	/*top: 500%;*/
+	list-style-type: none;
+    /* bandeau autour du header */
+    border: 5px solid #CCC;
+    color: black;
+}
+
+
+ /* bandeau footer */
+container-footer 
+ {
+    /* hauteur du texte dans le footer */
+    padding: 15px;
+    height: 90px;  
+    background-color: rgb(17, 65, 17);
+    /* bandeau autour du header */
+    border: 5px solid #CCC;	
+ }
+
+ .footer-font{
+    font-size: 18px;
+   /* font-weight: bold;*/
+    font-family: Georgia;
+
+ }
+
+ /* changement des couleurs de lien dans le footer */
+ /* choix de garder la visibilité des liens dans le footer, sinon
+ ceci disparaisse pour les liens "Ajouter, Supprimer, Modifier"
+ des pages de gestion des résa, étiquettes, catégories
+.a{--font-weight: bold;color:black;text-decoration: none --} */

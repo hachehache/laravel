@@ -24,9 +24,9 @@ class CategorieSeeder extends Seeder
             // création d'une nouvelle catégorie
             $categorie = new Categorie();
             // affectation d'un nom
-            $categorie->nom = $categorieData;
+            $categorie->nom = $categorieData['nom'];
             // affectation d'une description
-            $categorie->description = ucfirst($faker->words(8, true));
+            $categorie->description = $categorieData['description'];
             //$categorie->description = $faker->words(8, true);
             // sauvegarde dans la BDD
             $categorie->save();

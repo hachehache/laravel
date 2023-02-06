@@ -19,42 +19,40 @@ qui signalera que les modifs ont bien été enregitrées-->
     </div>
 @endif   
     <!-- ne pas utiliser la methode GET car faille secu, le password s'affichera en dur -->
-    <form action="{{route('admin.categorie.create')}}" method="POST">
+    <form action="{{route('admin.categorie.store')}}" method="POST">
         
     <!--csrf permet de securiser, empeche piratage -->
     @csrf
-    
-        <!--div class="form-group"-->
+ 
+    {{-------------- CREATION D'UNE CATEGORIE ----------------}}
+    {{------- NOM -----------}}
         <div>
-  <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
-            <!--  pour avoir le libellé Nom, devant le champs catégorie -->
-           <label for="nom">Nom </label>
-            <input class=@error('nom') form--input--error @enderror type="text" name="nom">
-            
+            <!--old permet de recuperer les valeurs presente dans la base -->
+            <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
+           <label for="nom">Nom: </label>
+            <input class="@error('nom') form--input--error @enderror" type="text" name="nom" id="" value="{{ old('nom', $categorie->nom) }}">
             @error('nom')
-            <div>
+            <div class="form--error-message">
             {{ $message }}
             </div>
             @enderror
         </div>
-         
+    {{------- DESCRIPTION -----------}}
         <div>
             <!--  pour avoir le libellé Description, devant le champs description -->
-            <label for="description">Description</label>
-            <!--textarea type="text" name="description" ></textarea -->
-            <input class=@error('description') form--input--error @enderror type="text" name="description">
+            <label for="description">Description: </label>
+            <input class="@error('description') form--input--error @enderror" type="text" name="description" value="{{ old('description', $categorie->description) }}">
             @error('description')
-            <div>
+            <div class="form--error-message">
             {{ $message }}
         </div>
             @enderror
         </div>
-    
-        <!--div class="form-group"-->  
-            <!-- input type="submit" value="valider" -->
+    {{------- VALIDATION -----------}}
         </div>
+        <div>
             <button type="submit">Valider</button>
-           
+        </div>   
         </form>
     @endsection
      

@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+
+use stdClass;
 use App\Models\Etiquette;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -28,31 +30,59 @@ class EtiquetteController extends Controller
     //cette methode affiche un formulaire de création Etiquette
     public function create()
     {
-        // valeur par défaut
+        //valeur par default afficher avant modif par le restaurateur
+        // ne pas appeler de save
+        $etiquette = new stdClass;
+
+        $etiquette->nom =  '';
+        $etiquette->description=  '';
+    
         // transmission des valeurs par défaut à la vue
         return view('admin.etiquette.create', [
-            //....
+            'etiquette' => $etiquette,
         ]);
     }
 
 //cette methode enregistre les données d'une nouvelle etiquette dans la base de données 
-public function store()
+public function store(Request $request)
 {
+ /*verif avant d'enregistrer les info utilisateurs */
+ $validated = $request->validate([
+    'nom' => 'required|min:2|max:100',
+    'description' => 'required|min:2|max:100',
+]);
+  /* Création d'une étiquette */
+    /* liaison dans la definition des champs avec edit.blade.php*/
+    $etiquette = new Etiquette();
 
+    $etiquette->nom = $request->get('nom');
+    $etiquette->description = $request->get('description');
 
+    $etiquette->save();
+    /* pour ajouter message flash de confirmation à garder dans la function request*/
+    $request->session()->flash('confirmation', 'La création a bien été enregistré');
+
+    /* on redirige l'utilisateur vers  la page liste */
+    return redirect()->route('admin.etiquette.index');
 }
-// affiche un formulaire de modification
+
+    // affiche un formulaire de modification
     // $id est le paramètre de l'etiquette
     public function edit(int $id)
     {   
         // recup de l'etiquette
         $etiquette = Etiquette::find($id);
+    // affichage d'une erreur 404 si l'etiquetten est introuvable
+    // !$etiquette veut dire :si pas d'etiquetten alors ... 
+    //(voir booleen vrai ou faux)
+    // on peut aussi message un message parlant au lieu de abort(404)
+    if (!$etiquette) {
+        abort(404);
+    }
 
         // transmission de l'etiquette à la vue
-
         return view('admin.etiquette.edit', [
             'etiquette'=> $etiquette,
-            //....
         ]);
     }
 
@@ -73,6 +103,12 @@ public function store()
     /* Recuperation de l'etiquette'*/
     /* liaison dans la definition des champs avec edit.blade.php*/
     $etiquette = Etiquette::find($id);
+    
+    // affichage d'une erreur 404 si la réservation est introuvable
+    if (!$etiquette) {
+        abort(404);
+    }
+
     /* sur l'etiquette' on recupère */
     $etiquette->nom = $request->get('nom');
     $etiquette->description = $request->get('description');
@@ -80,19 +116,20 @@ public function store()
     /* pour ajouter message flash de confirmation à garder dans la function request*/
     $request->session()->flash('confirmation', 'Vos modifications ont bien été enregistrées');
 
-    /* on redirige l'utilisateur vers  la page etiquette */
+    /* on redirige l'utilisateur vers la page etiquette */
     return redirect()->route('admin.etiquette.edit', ['id' => $etiquette->id]);
-
-    /* pour ajouter message flash*/
-
-
-    /* recuperer une valeur
-    /*si le champ baz n'existe pas, montre-moi le champ foo*/
-    /*dd($request->has('baz','foo')); */
-    /*montre-moi le champ nom*/
-   /*dd($request->has('nom'));
-    dd($request->has());
-    dd($request->get());*/
-    dd($request->all());
     }
+
+    public function delete(Request $request, int $id)
+    {
+    $etiquette = Etiquette::find($id);
+
+    if (!$etiquette) {
+    abort (404);
+}
+    $etiquette->delete();
+    $request->session()->flash('confirmation' , 'La suppression a bien été enregistrée.');
+
+    return redirect()->route('admin.etiquette.index');
+}
 }
