@@ -75,7 +75,7 @@ class PhotoPlatController extends Controller
             
 
         ]);
-     dd($request->all());
+     
     }
 
 //cette methode enregistre les données d'une nouvelle image dans la base de données 

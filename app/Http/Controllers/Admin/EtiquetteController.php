@@ -36,12 +36,15 @@ class EtiquetteController extends Controller
 
         $etiquette->nom =  '';
         $etiquette->description=  '';
-    
+
+
+       // dd($request->all());
+
         // transmission des valeurs par défaut à la vue
         return view('admin.etiquette.create', [
             'etiquette' => $etiquette,
         ]);
-        dd($request->all());
+        
     }
 
 //cette methode enregistre les données d'une nouvelle etiquette dans la base de données 
@@ -54,7 +57,6 @@ public function store(Request $request)
 ]);
   /* Création d'une étiquette */
     /* liaison dans la definition des champs avec edit.blade.php*/
-    /*$etiquette = new Etiquette(); */
     $etiquette = new Etiquette();
 
     $etiquette->nom = $request->get('nom');

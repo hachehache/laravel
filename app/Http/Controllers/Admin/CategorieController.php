@@ -37,11 +37,13 @@ class CategorieController extends Controller
         $categorie->nom =  '';
         $categorie->description = '';
 
+        // a mettre ici et pas avant le return et a commenter apres le debug
+        //dd($request->all());
+
         // transmission des valeurs par défaut à la vue
         return view('admin.categorie.create', [
             'categorie' => $categorie, 
         ]);
-        dd($request->all());
     }
 //cette methode enregistre les données d'une nouvelle categorie dans la base de données 
 public function store(Request $request)
