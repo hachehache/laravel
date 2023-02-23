@@ -4,6 +4,13 @@
 
 @section('content')
     <h1>Menu</h1>
+    <div>
+      <!-- pour ajouter nouvelle categorie -->
+      <a href="{{ route('admin.categorie.create')}}" style="color: green;">Ajouter</a>
+  </div>
+  <br>
+
+
 
     @foreach ($categories as $categorie)
         <h2>{{ $categorie->nom }}</h2>
@@ -11,15 +18,12 @@
 
         <ul>
             @foreach ($categorie->platsSortedByPrix as $plat)
-            <li>($plat->photo)
-                {{-- dump($plat->photo)--}}
-                <!-- asset va fournir http:\\localhost:8000   -->
+            <li>
                 <img class="menu--photo-plat" src="{{ asset($plat->photo->chemin) }}" alt="">
-                {{--$plat->photo->chemin--}}
-                {{ $plat->nom }}  {{ $plat->prix }} eur<br>
+                {{ $plat->nom }} {{ $plat->prix }} eur<br>
                 {{ $plat->description }}<br>
                 @foreach ($plat->etiquettes as $etiquette)
-                #{{$etiquette->nom}}
+                    #{{ $etiquette->nom }}
                 @endforeach
             </li>
             @endforeach

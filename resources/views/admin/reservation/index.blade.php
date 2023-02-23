@@ -5,8 +5,6 @@
 @section('content')
 
 
-<body>
-    <form>
             <h1>Admin - Réservation - Liste</h1>
     <!-- BALISE DE SEPARATION -->
     <div class="separation"></div>
@@ -23,24 +21,29 @@ qui signalera que les modifs ont bien été enregitrées-->
 <div>
     <br>
     <!-- pour ajouter nouveau client lors reservation -->
-    <a href={{ route('admin.reservation.create')}}>Ajouter</a>   
+    <a href="{{ route('admin.reservation.create')}}" style="color: green;">Ajouter</a>   
 </div>
 <br>
-    <table>
-        <tr>
-              <!--  th*7  on aura 7 balises -->
-              <th>nom</th>
-              <th>prénom</th>
-              <th>jour</th>
-              <th>heure</th>
-              <th>couverts</th>
-              <th>tél</th>
-              <th>email</th>
-              <th>date d'appel</th>
-              
+
+<table>
+    <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+        <thead bgcolor="silver">
+            
               <!-- pour modifier une reservation -->
-              <th>actions</th>
+        <tr>{{--Conserver le tr>  pour que modif/suppr ne soit pas sur la même 1er ligne--}}
+              <!--  th*7  on aura 7 balises -->
+              <th colspan='1'>nom</th>
+              <th colspan='1'>prénom</th>
+              <th colspan='1'>jour</th>
+              <th colspan='1'>heure</th>
+              <th colspan='1'>couverts</th>
+              <th colspan='1'>tél</th>
+              <th colspan='1'>email</th>
+              <th colspan='1'>date d'appel</th>
+              
+              <th colspan='1'>actions</th>
         </tr>
+    </thead>
     <!--  on est dans le back coté Admin -->
     {{--dump ($reservations)--}}
     @foreach ($reservations as $reservation)
@@ -57,7 +60,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         <td>{{ $reservation->created_at }}</td>
         <td>
             
-            <a href="{{route('admin.reservation.edit' , ['id' => $reservation->id]) }} ">modifier</a>
+            <a href="{{route('admin.reservation.edit' , ['id' => $reservation->id]) }}" style="color: green;">modifier</a>
     
                     {{--------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup --}}
@@ -79,8 +82,8 @@ qui signalera que les modifs ont bien été enregitrées-->
             @csrf
             @method('DELETE')
             <a href="{{ route('admin.reservation.delete' , ['id' => $reservation->id]) }}"
-                onclick="event.preventDefault(); if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                { this.closest('form').submit();}">supprimer</a>"
+                onclick="event.preventDefault() ; if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
+                { this.closest('form').submit();}"  style="color: red;">supprimer</a>"
         </form>
     </td>
 </tr>

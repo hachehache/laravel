@@ -4,83 +4,77 @@
 
 @section('content')
 
-<body>
-   <form>
             <h1>Admin - Réservation - Creation</h1>
     <!-- BALISE DE SEPARATION -->
     <div class="separation"></div>
    
-    <div class="corps-formulaire">
-        <div class="gauche">
+   <!-- <div class="corps-formulaire"></div> -->
+      <!--   <div class="gauche"></div>  -->
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
 qui signalera que les modifs ont bien été enregitrées-->
 @if (Session::has('confirmation'))
-<div>
-{{Session::get('confirmation')}}
-</div>
+    <div>
+        {{Session::get('confirmation')}}
+    </div>
 @endif
 
 @if ($errors->any())
     <div>
     Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans le formulaire.
     </div>
-@endif   
+@endif
+
     <!-- ne pas utiliser la methode GET car faille secu, le password s'affichera en dur -->
-    <form action="{{route('admin.reservation.store')}}" method="POST">
+    <form action="{{route('admin.reservation.store')}}" method="post">
         
     <!--csrf permet de securiser, empeche piratage -->
     @csrf
-    
+ <!-- @@method('PUT')ne pas mettre dans le create sinon erreur -->
+
 
     {{-------------- CREATION D'UNE RESERVATION ----------------}}
+    <fieldset>
     {{------- NOM -----------}}
-    
-    <div>
-						<div class="groupe" align="center">
+
+    <div class="reservation-creation">
            <label for="nom">Nom: </label>
-           <div class="container">
-            <input class="@error('nom') form--input--error @enderror" type="text" name="nom" id="" value="{{ old('nom', $reservation->nom) }}">
+            <input class="@error('nom') form--input--error @enderror" type="text" name="nom" size="30" id="" value="{{ old('nom', $reservation->nom) }}">
             @error('nom')
             <div class="form--error-message">
                 {{ $message }}
             </div>
             @enderror
-        </div>
     </div>
+    
+<br>
     {{------- PRENOM -----------}}
-                        <div class="groupe" align="center">
+    <div class="reservation-creation">
             <label for="prenom">Prénom: </label>
-            <div class="container">
-            <input class="@error('prenom') form--input--error @enderror" type="text" name="prenom" id="" value="{{ old('prenom', $reservation->prenom) }}">
-                        @error('prenom')
-                <div class="form--error-message">
-                        {{ $message }}
-                </div>
-                    @enderror
+            <input class="@error('prenom') form--input--error @enderror" type="text" name="prenom" size="30" id="" value="{{ old('prenom', $reservation->prenom) }}">
+            @error('prenom')
+            <div class="form--error-message">
+                    {{ $message }}
             </div>
-        </div>
+            @enderror
+    </div>
+        
+<br>
+
     {{------- JOUR -----------}}
-            <div class="groupe" align="center">
+    <div class="reservation-creation">
             <label for="jour">Jour: </label>
-            <div class="container">
             <input class="@error('jour') form--input--error @enderror" type="date" name="jour" id="" value="{{ old('jour', $reservation->jour) }}">
-            </div>  
-                    @error('jour')
-                    <div class="form--error-message">
+            @error('jour')
+            <div class="form--error-message">
                 La date doit être le jour même ou un jour ultérieur.
             </div>
-                        {{ $message }}
-                    </div>
-                    @enderror
-            </div>
-    </div>
-</div>
+            @enderror
+    </div>    
+<br>
     {{------- HEURE -----------}} 
-            <div class="groupe" align="center">
+    <div class="reservation-creation">
             <label for="heure">Heure: </label>
-            <div class="container">
-            <br>
             <select name="heure" id="">
                 @foreach ($creneaux_horaires as $creneau_horaire)
                     <option value="{{ $creneau_horaire }}" @if (old('heure', $reservation->heure) == $creneau_horaire) selected @endif>{{ $creneau_horaire }}</option>
@@ -91,64 +85,58 @@ qui signalera que les modifs ont bien été enregitrées-->
                     {{ $message }}
                 </div>
             @enderror
-        </div>
     </div>
+    
+<br>
     {{------- NOMBRE DE PERSONNES -----------}}
-            <div class="groupe" align="center">
-        <div>
+<br> 
+    <div class="reservation-creation">
             <label for="nombre_personnes">Nombre de personnes: </label>
-            <div class="container">
-            <br>
             <input class="@error('nombre_personnes') form--input--error @enderror" type="number" name="nombre_personnes" id="" value="{{ old('nombre_personnes', $reservation->nombre_personnes) }}">
             @error('nombre_personnes')
             <div class="form--error-message">
                 {{ $message }}
             </div>
             @enderror
-        </div>
     </div>
-      
+    <br>
     {{------- TELEPHONE -----------}}
-            <div class="groupe" align="center">
-        <div>
+         
+    <div class="reservation-creation">
             <label for="tel">Tel: </label>
-            <div class="container">
-            <br>
-            <input class="@error('tel') form--input--error @enderror" type="tel" name="tel" id="" value="{{ old('tel', $reservation->tel) }}" placeholder="06 12 34 56 78">
+              <!-- placeholder: aide pour indiquer le format n° phone -->
+            <input class="@error('tel') form--input--error @enderror" type="tel" name="tel"  size="20" id="" value="{{ old('tel', $reservation->tel) }}" placeholder="06 12 34 56 78">
             @error('tel')
             <div class="form--error-message">
                 {{ $message }}
             </div>
             @enderror
-        </div>
-    <div>
+    </div>
+
+        <br>
+
     {{------- MAIL -----------}}
-            <div class="groupe" align="center">
-        <div>
+    <div class="reservation-creation">
             <label for="mail">Mail: </label>
-            <div class="container">
-            <br>
-            <input class="@error('Mail') form--input--error @enderror" type="email" name="mail" id="" value="{{ old('email', $reservation->email) }}">
-            @error('mail')
+            <input class="@error('email') form--input--error @enderror" type="email" name="email" size="30" id="" value="{{ old('email', $reservation->email) }}">
+            @error('email')
             <div class="form--error-message">
                 {{ $message }}
             </div>
             @enderror
            
-        </div>
-    </div>
-</div>
+        
+
     {{------- VALIDATION -----------}}
-        </div>
-    </div>
-</div>
+</fieldset>
+
+    
         	<!-- CENTRAGE DU BOUTON -->
-							<div class="pied-formulaire" align="center">
+							<div class="reservation-creation">
                                 <!-- BOUTON D'ENVOI -->
                     <button type="submit">Valider</button>
-                            </div>  
+    </div>  
                             <br>
         </form>
-    </body>
     @endsection
      

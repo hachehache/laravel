@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use stdClass;
-
 use App\Models\Categorie;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin;
@@ -17,10 +16,13 @@ class CategorieController extends Controller
     {
         // récupération de la liste des catégories
        $categories = Categorie::all();
+       // récuperer la liste des photo
+
 
         // transmission des catégories à la vue *//
         return view('admin.categorie.index', [
-            'categories' => $categories,]);
+            'categories' => $categories,
+          ]);
         }
 /******************************************************************************/
     /**
@@ -28,10 +30,8 @@ class CategorieController extends Controller
      *
      * @return Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //valeur par default afficher avant modif par le restaurateur
-        // ne pas appeler de save
         $categorie = new stdClass;
 
         $categorie->nom =  '';
@@ -41,6 +41,7 @@ class CategorieController extends Controller
         return view('admin.categorie.create', [
             'categorie' => $categorie, 
         ]);
+        dd($request->all());
     }
 //cette methode enregistre les données d'une nouvelle categorie dans la base de données 
 public function store(Request $request)
@@ -50,6 +51,7 @@ public function store(Request $request)
     //request()->validate([//
         'nom' => 'required|min:2|max:100',
         'description' => 'required|min:2|max:200',
+        
     ]);
     /* Création d'une catégorie*/
     /* liaison dans la definition des champs avec edit.blade.php*/
@@ -113,7 +115,6 @@ public function edit(int $id)
     /* sur la catégorie on recupère */
     $categorie->nom = $request->get('nom');
     $categorie->description = $request->get('description');
-
     $categorie->save();
     
     /* pour ajouter message flash de confirmation à garder dans la function request*/
@@ -122,11 +123,8 @@ public function edit(int $id)
 
  /* on redirige l'utilisateur vers  la page categorie*/
    
- return redirect()->route('admin.categorie.index', ['id' => $categorie->id]);
+ return redirect()->route('admin.categorie.edit', ['id' => $categorie->id]);
  
-
-
- /* pour ajouter message flash*/
     }
 
     public function delete(Request $request, int $id)
@@ -140,6 +138,5 @@ public function edit(int $id)
     $request->session()->flash('confirmation' , 'La suppression a bien été enregistrée.');
 
     return redirect()->route('admin.categorie.index');
-
     }
 }

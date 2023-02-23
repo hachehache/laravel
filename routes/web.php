@@ -7,11 +7,18 @@ use App\Http\Controllers\Admin\EtiquetteController as AdminEtiquetteController;
 use App\Http\Controllers\Admin\CategorieController as AdminCategorieController;
 use App\Http\Controllers\Admin\PlatController as AdminPlatController;
 
+use App\Http\Controllers\Admin\PhotoPlatController as AdminPhotoPlatController;
+
+
 //use App\Http\Controllers\EtiquetteController;//
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HelloController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ActusController;
+use App\Http\Controllers\ContactController;
+
+
 //use App\Http\Controllers\ReservationController;//
 //use App\Http\Controllers\CopyrightController;//
 use Illuminate\Support\Facades\Route;
@@ -29,11 +36,19 @@ use Illuminate\Support\Facades\Route;
 /** ajout pour test modif categorie */
 Route::resource('admin.categorie' , 'CategorieController');
 
+// routes du front office
+
+// page d'accueil
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/hello/{name}', [HelloController::class, 'index'])->name('hello');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
+Route::get('/actus', [ActusController::class, 'index'])->name('actus');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
 
 Route::get('/reservation', function () {
     return view('reservation');
@@ -42,6 +57,16 @@ Route::get('/reservation', function () {
 Route::get('/categorie', function () {
     return view('categorie');
 })->name('categorie');
+
+Route::get('/etiquette', function () {
+    return view('etiquette');
+})->name('etiquette');
+
+Route::get('/categorie', function () {
+    return view('categorie');
+})->name('categorie');
+
+// Ajouter Route PLAT au dessus ?? //
 
 Route::get('/mentions-legales', function () {
     return view('mentions-legales');
@@ -52,20 +77,9 @@ Route::get('/mentions-legales', function () {
 //CRUD des plats
 //@todo liste des plats ==> OK Fait
 
-Route::get('/admin/plat', [AdminPlatController::class, 'index'])->middleware('auth')->name('admin.plat.index');
-Route::get('/admin/plat/create', [AdminPlatController::class, 'create'])->middleware('auth')->name('admin.plat.create');
-Route::post('/admin/plat', [AdminPlatController::class, 'store'])->middleware('auth')->name('admin.plat.store');
-// get - est là pour afficher le formulaire
-Route::get('/admin/plat/{id}/edit', [AdminPlatController::class, 'edit'])->middleware('auth')->name('admin.plat.edit');
-// post - remet le formulaire
-// pour {id}update le update n'est pas nécessaire pour Laravel
-Route::post('/admin/plat/{id}', [AdminPlatController::class, 'update'])->middleware('auth')->name('admin.plat.update');
-Route::delete('/admin/plat/{id}', [AdminPlatController::class, 'delete'])->middleware('auth')->name('admin.plat.delete');
 
 //@todo modif des plats
 //@todo suppression des plats
-
-//CRUD reservation
 
 //  ******** AVERIFIER SI BON ???????
 /*Route::get('/categorie', [CategorieController::class, 'index'])->name('categorie');
@@ -74,7 +88,7 @@ Route::get('/reservation', [ReservationController::class, 'index'])->name('reser
 Route::get('/mentions-legales', [MentionsLegalesController::class, 'index'])->name('mentions-legales');
 Route::get('/copyright', [CopyrightController::class, 'index'])->name('copyright');*/
 
-// ADMIN: pour une nouvelle reservation
+// CRUD reservation - ADMIN: pour une nouvelle reservation
 // --------------------------------
 // ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page reservation
 Route::get('/admin/reservation', [AdminReservationController::class, 'index'])->middleware('auth')->name('admin.reservation.index');
@@ -85,7 +99,8 @@ Route::post('/admin/reservation', [AdminReservationController::class, 'store'])-
 Route::get('/admin/reservation/{id}/edit', [AdminReservationController::class, 'edit'])->middleware('auth')->name('admin.reservation.edit');
 // post - remet le formulaire
 // pour {id}update le update n'est pas nécessaire pour Laravel
-Route::post('/admin/reservation/{id}', [AdminReservationController::class, 'update'])->middleware('auth')->name('admin.reservation.update');
+//Route::post('/admin/reservation/{id}', [AdminReservationController::class, 'update'])->middleware('auth')->name('admin.reservation.update');//
+Route::put('/admin/reservation/{id}', [AdminReservationController::class, 'update'])->middleware('auth')->name('admin.reservation.update');
 Route::delete('/admin/reservation/{id}', [AdminReservationController::class, 'delete'])->middleware('auth')->name('admin.reservation.delete');
 
 
@@ -115,6 +130,46 @@ Route::get('/admin/etiquette/{id}/edit', [AdminEtiquetteController::class, 'edit
 Route::post('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'update'])->middleware('auth')->name('admin.etiquette.update');
 Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'delete'])->middleware('auth')->name('admin.etiquette.delete');
 
+// ADMIN: pour une nouvelle Entrée
+// --------------------------------
+// ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page Entrée
+Route::get('/admin/entree', [AdminEntreeController::class, 'index'])->middleware('auth')->name('admin.entree.index');
+Route::get('/admin/entree/create', [AdminEntreeController::class, 'create'])->middleware('auth')->name('admin.entree.create');
+Route::post('/admin/entree', [AdminEntreeController::class, 'store'])->middleware('auth')->name('admin.entree.store');
+// get - est là pour afficher le formulaire
+Route::get('/admin/entree/{id}/edit', [AdminEntreeController::class, 'edit'])->middleware('auth')->name('admin.entree.edit');
+// post - remet le formulaire
+// pour {id}update le update n'est pas nécessaire pour Laravel
+Route::post('/admin/entree}', [AdminEntreeController::class, 'update'])->middleware('auth')->name('admin.entree.update');
+Route::delete('/admin/entree/{id}', [AdminEntreeController::class, 'delete'])->middleware('auth')->name('admin.entree.delete');
+
+// ADMIN: pour un nouveau plat
+// --------------------------------
+// ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page plat
+Route::get('/admin/plat', [AdminPlatController::class, 'index'])->middleware('auth')->name('admin.plat.index');
+Route::get('/admin/plat/create', [AdminPlatController::class, 'create'])->middleware('auth')->name('admin.plat.create');
+Route::post('/admin/plat', [AdminPlatController::class, 'store'])->middleware('auth')->name('admin.plat.store');
+// get - est là pour afficher le formulaire
+Route::get('/admin/plat/{id}/edit', [AdminPlatController::class, 'edit'])->middleware('auth')->name('admin.plat.edit');
+// post - remet le formulaire
+// pour {id}update le update n'est pas nécessaire pour Laravel
+Route::post('/admin/plat/{id}', [AdminPlatController::class, 'update'])->middleware('auth')->name('admin.plat.update');
+Route::delete('/admin/plat/{id}', [AdminPlatController::class, 'delete'])->middleware('auth')->name('admin.plat.delete');
+
+// ADMIN: pour une nouvelle PhotoPlat
+// -------------------------------
+// ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page photoplat
+Route::get('/admin/photoplat', [AdminPhotoPlatController::class, 'index'])->middleware('auth')->name('admin.photoplat.index');
+Route::get('/admin/photoplat/create', [AdminPhotoPlatController::class, 'create'])->middleware('auth')->name('admin.photoplat.create');
+Route::post('/admin/photoplat', [AdminPhotoPlatController::class, 'store'])->middleware('auth')->name('admin.photoplat.store');
+// get - est là pour afficher le formulaire
+Route::get('/admin/photoplat/{id}/edit', [AdminPhotoPlatController::class, 'edit'])->middleware('auth')->name('admin.photoplat.edit');
+// post - remet le formulaire
+// pour {id}update le update n'est pas nécessaire pour Laravel
+Route::post('/admin/photoplat/{id}', [AdminPhotoPlatController::class, 'update'])->middleware('auth')->name('admin.photoplat.update');
+Route::delete('/admin/photoplat/{id}', [AdminPhotoPlatController::class, 'delete'])->middleware('auth')->name('admin.photoplat.delete');
+
+//====================================================================================================================================/
 
 // route de Breeze
 // recup depuis web2.php pour Breeze 

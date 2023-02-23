@@ -24,14 +24,14 @@ class ReservationController extends Controller
             'reservations' => $reservations,
         ]);
     }
-
     //cette methode affiche un formulaire de création de réservation
-    public function create()
+    //public function create()//
+     public function create()
     {
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
         $reservation = new stdClass;
-
+        
         $reservation->nom =  '';
         $reservation->prenom =  '';
         $reservation->jour = '';
@@ -40,14 +40,16 @@ class ReservationController extends Controller
         $reservation->tel = '';
         $reservation->email = '';
 
-        //Recupertion des créneaux horaires de réservation
+        //Recuperation des créneaux horaires de réservation
         $creneaux_horaires = $this->getCreneauxHoraires();
-
+       
         // transmission des valeurs par défaut à la vue
         return view('admin.reservation.create', [
             'reservation' => $reservation,
             'creneaux_horaires' =>  $creneaux_horaires,
+         
         ]);
+  
     }
 
     //cette methode enregistre les données d'une nouvelle reservation dans la base de données 
@@ -62,7 +64,8 @@ class ReservationController extends Controller
         //'nom' => 'required|min:2|max:100',
         'nom' => 'required|min:2|max:100',
         'prenom' => 'required|min:2|max:100',
-        'jour' => 'required|date|date_format: d-m-y|after_or_equal:today',
+        //'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',//
+        'jour' => 'required|date|after_or_equal:today',
         'heure' => 'required|date_format:H:i',
         /*gte: + grand ou =1 , lte: +petit ou = à 20 */
         'nombre_personnes'=> 'required|numeric|gte:1|lte:20',
@@ -83,7 +86,7 @@ class ReservationController extends Controller
     $reservation->email = $request->get('email');
     $reservation->save();
     /* pour ajouter message flash de confirmation à garder dans la function request*/
-    $request->session()->flash('confirmation', 'La création a bien été enregistré');
+    $request->session()->flash('confirmation', 'La création a bien été enregistré.');
 
     /* on redirige l'utilisateur vers  la page liste */
     return redirect()->route('admin.reservation.index');
@@ -173,7 +176,8 @@ class ReservationController extends Controller
         voir migration creat*reservation_table pour le max de caracteres*/
         'nom' => 'required|min:2|max:100',
         'prenom' => 'required|min:2|max:100',
-        'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
+        //'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',//
+        'jour' => 'required|date|after_or_equal:today',
         'heure' => 'required|date_format:H:i',
         /*gte: + grand ou =1 , lte: +petit ou = à 20 */
         'nombre_personnes'=> 'required|numeric|gte:1|lte:20',

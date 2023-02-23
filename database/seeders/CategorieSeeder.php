@@ -23,10 +23,14 @@ class CategorieSeeder extends Seeder
         foreach ($categorieDatas as $categorieData) {
             // création d'une nouvelle catégorie
             $categorie = new Categorie();
+
             // affectation d'un nom
-            $categorie->nom = $categorieData['nom'];
+            //$categorie->nom = $categorieData['nom'];//
+            $categorie->nom = $categorieData;
+
             // affectation d'une description
-            $categorie->description = $categorieData['description'];
+            //$categorie->description = $categorieData['description'];//
+            $categorie->description = ucfirst($faker->words(8, true));
             //$categorie->description = $faker->words(8, true);
             // sauvegarde dans la BDD
             $categorie->save();

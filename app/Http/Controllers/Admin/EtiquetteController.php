@@ -28,7 +28,7 @@ class EtiquetteController extends Controller
 
     
     //cette methode affiche un formulaire de création Etiquette
-    public function create()
+    public function create(Request $request)
     {
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
@@ -41,6 +41,7 @@ class EtiquetteController extends Controller
         return view('admin.etiquette.create', [
             'etiquette' => $etiquette,
         ]);
+        dd($request->all());
     }
 
 //cette methode enregistre les données d'une nouvelle etiquette dans la base de données 
@@ -53,15 +54,17 @@ public function store(Request $request)
 ]);
   /* Création d'une étiquette */
     /* liaison dans la definition des champs avec edit.blade.php*/
+    /*$etiquette = new Etiquette(); */
     $etiquette = new Etiquette();
 
     $etiquette->nom = $request->get('nom');
     $etiquette->description = $request->get('description');
 
     $etiquette->save();
+   
     /* pour ajouter message flash de confirmation à garder dans la function request*/
     $request->session()->flash('confirmation', 'La création a bien été enregistré');
-
+    
     /* on redirige l'utilisateur vers  la page liste */
     return redirect()->route('admin.etiquette.index');
 }
@@ -131,5 +134,5 @@ public function store(Request $request)
     $request->session()->flash('confirmation' , 'La suppression a bien été enregistrée.');
 
     return redirect()->route('admin.etiquette.index');
-}
+    }
 }

@@ -21,7 +21,7 @@
     {{$horaire }}<br>
     <br>
     <h3>Notre formulaire de contact :</h3>
-    <br>
+    
     <!---------- FORMULAIRE ---------------------->
 
     <!--  Formulaire de Contact en HTML avec passage du formulaire en CSS -->
@@ -96,7 +96,7 @@
                                 <div class="groupe">
                                 <label>Message</label>
                                 <!-- CE N'EST PAS UN INPUT MAIS UN TEXAREA -->
-                                <textarea placeholder="Saisissez ici..."></textarea>
+                                <textarea placeholder="Saisissez ici ..."></textarea>
                             </div>				
                         </div>	
                     </div>

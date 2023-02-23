@@ -18,6 +18,10 @@ class PhotoPlatSeeder extends Seeder
         $photoDatas = [
             "img/plats/anh-nguyen-kcA-c3f_3FE-unsplash.jpg",
             "img/plats/martin-widenka-tkfRSPt-jdk-unsplash.jpg",
+            "img/plats/pexels-cottonbro-studio-5900504.jpg",
+            "img/plats/pexels-thirdman-7956645.jpg",
+            "img/plats/pexels-rajesh-tp-1624487.jpg",
+            "img/plats/pexels-shameel-mukkath-14731644.jpg",
         ];
 
         foreach ($photoDatas as $photoData) {

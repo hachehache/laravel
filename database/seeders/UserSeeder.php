@@ -24,6 +24,12 @@ class UserSeeder extends Seeder
                 'email' => 'admin@example.com',
                 'password' => 'laravellaravel',
             ],
+
+            [
+                'name' => 'toto',
+                'email' => 'lambda.ah@laposte.net',
+                'password' => 'toto',
+            ],
         ];   
 
         foreach ($userDatas as $userData) {

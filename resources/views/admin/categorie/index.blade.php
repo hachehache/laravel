@@ -1,9 +1,13 @@
 @extends('base')
 
+
 @section('page_title', 'Admin - Catégorie - Liste')
 
 @section('content')
-<h1>Admin - Catégorie - Liste</h1>
+
+            <h1>Admin - Catégorie - Liste</h1>
+<!-- BALISE DE SEPARATION -->
+<div class="separation"></div>
 
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
@@ -13,20 +17,24 @@ qui signalera que les modifs ont bien été enregitrées-->
 {{Session::get('confirmation')}}
 </div>
 @endif
+<br>
 
 <div>
     <!-- pour ajouter nouvelle categorie -->
-    <a href={{ route('admin.categorie.create')}}>Ajouter</a>
-    
+    <a href="{{ route('admin.categorie.create')}}" style="color: green;">Ajouter</a>
 </div>
+<br>
     <table>
-        <tr>
-              <!--  th*7  on aura 7 balises -->
-              <th>nom</th>
-              <th>description</th>
-              <!-- pour modifier une categorie -->
-              <th>actions</th>
-        </tr>
+        <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+            <thead bgcolor="silver">
+                <tr>
+                     <!--  th*7  on aura 7 balises -->
+                    <th colspan='1'>nom</th>
+                    <th colspan='1'>description</th>
+                    <!-- pour modifier une categorie -->
+                    <th colspan='1'>actions</th>
+                </tr>
+            </thead>
     <!--  on est dans le back coté Admin -->
     {{--dump ($categories)--}}
     @foreach ($categories as $categorie)
@@ -36,28 +44,32 @@ qui signalera que les modifs ont bien été enregitrées-->
         <td>{{ $categorie->description }}</td>
         
         <td>
-            <a href="{{route('admin.categorie.edit' , ['id' => $categorie->id]) }} ">modifier</a>
+            <a href="{{route('admin.categorie.edit' , ['id' => $categorie->id]) }}" style="color: green;">modifier</a>
           
                     {{--------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup --}}
                     {{--------------------------------------}}
 
             <!-- formulaire de suppression avec un button -->
-            <form action="{{ route('admin.categorie.delete' , ['id' => $categorie->id]) }}" method="post" 
+            <!--
+            <form action="{{-- route('admin.categorie.delete' , ['id' => $categorie->id]) --}}" method="post" 
                 onsubmit="return window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?');">
-                @csrf
-            @method('DELETE')
+                @@csrf
+            @@method('DELETE')
             <button type="submit">supprimer</button>
             </form>
+        -->
           
             {{-- formulaire de suppression avec un lien --}}
+            <br> {{--Conserver le <br>  pour que modif/suppr ne soit pas sur la même 1er ligne--}}
             <form action="{{ route('admin.categorie.delete' , ['id' => $categorie->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
                 <a href="{{ route('admin.categorie.delete' , ['id' => $categorie->id]) }}"
                     onclick="event.preventDefault(); if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                    { this.closest('form').submit();}">supprimer</a>"
-            </form>
+                    { this.closest('form').submit();}" style="color: red;">supprimer</a>"
+        </div>    
+        </form>
         </td>
     </tr>
     @endforeach

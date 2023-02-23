@@ -2,27 +2,485 @@
 /* @tailwind base;*/
 @tailwind components;
 @tailwind utilities;
-
-/* LOGO d'ENTETE  */
-#logo-fixe img
-{
-    float: left;
-    display: block;
-    margin-top: 2px;
-    margin-left: 20px;
-    border-radius: 10px;
-}
-
-/* BANDEAU HAUT */
+entete {
+	margin-left: 400px;
+	 }
+ /* couleur des titres <h2> */
+ h2  {
+ color: orange;
+ /* titre <h2> sur une seule ligne */
+ width: 100%;
+ }
+ 
+ /* corps de la page*/
+ body 
+ {
+	 background-color: grey;
+	 margin: 0%;
+ }
+ 
+ #logo-fixe img
+ {
+	 float: left;
+	 display: block;
+	 margin-top: 15px;
+	 margin-left: 20px;
+	 border-radius: 10px;
+ }
+ 
+ 
+ header nav ul 
+ {
+	 /*display aligne accueil,menu,contact,reservation*/
+	 display: flex;
+	 /*Justify laisse un espace entre accueil,menu,contact,reservation*/
+	 justify-content:space-evenly;
+	 /* pour retirer les points dans .menu, .contact, .reservation,...
+	 sur la 1ere page*/
+	 list-style-type: none;
+	 /* padding modifie la marge interieure*/
+	 padding: 10;
+	 /* margin modifie la marge Exterieure de menu, cours, tarifs, etc ..*/
+	 margin: 45px;
+ } 
+ 
+ /* champs accueil, cours, tarifs, etc... */
+ header nav ul a 
+ {
+	 background-color: white;
+	 border: 3px solid grey;
+	 /* 1rem= hauteur et 2rem=largeur, pour
+	 encadrement de Accueil,Cours,Taris, etc ... */
+	 padding: 1rem 2rem;
+	 /*supprime le soulignement sous Accueil,Cours,Tarifs,Contact et Mentions*/
+	 text-decoration: 0;
+	 /* arrondi autour de Accueil, Cours, Tarifs, etc ... */
+	 border-radius: 10px;
+	 color: black;
+	 font-style: normal;
+ }
+ 
  header 
-{
-    /* hauteur du bandeau header */
-    min-height:70px;
-    /*overflow-y:auto; */
-    background-color: rgb(17, 65, 17);
-    /* bandeau autour du header */
-    border: 5px solid #CCC;
+ {
+	 /* hauteur du bandeau header */
+	 min-height:100px;
+	 overflow-y:auto;
+	 background-color: orange;
+	 /* bandeau autour du header */
+	 border:5px solid #CCC;
+ }
+ 
+  /* Entete accueil par rapport au header*/
+ .entete_accueil
+ {
+	 /* test dans le corps de la page */
+	 font-family: Georgia;
+	 font-size:100%;
+	 font:bolder;
+	 margin-top:30px;
+	 margin-left: 400px;
+	 }
+	 
+ .bas_accueil
+ {
+	 /*font-family: Georgia;*/
+	 font-size:100%;
+	 font:bolder;
+	 margin-top:50px;
+	 margin-left: 400px;
+ }
+ 
+ 
+ #plat-menu-creation-total{
+	 
+	 margin-top: 0px;
+	 margin-left: 40px;
+ }
+ 
+ #conteneur_accueil 
+ img
+ {
+	 /* position des photos par rapport au header */ 
+	 margin-top: 80px;
+	 /*bord des photo arrondi*/
+	 border-radius: 10px;
+width: 600px;
+	 /*margin:auto;*/
+	 /* espace entre 2 images*/
+	 /*margin: 1px;*/
+	 /*left: 10%;*/
+	 margin-left : 45px;
+	 font-family: Georgia;
+ }
+ 
+ .horaires 
+ {
+	 display: inline-block;
+	 /*background: rgba(0, 0, 0, 0.8);*/
+	 /*z-index: 1;*/
+	 /*position: absolute;*/
+	 /*text-align: center;*/
+	 font-family: Georgia;
+	 font-size:200%;
+	 margin-top:40px;
+	 margin-left: 200px;
+	 /* right: 20px;*/
+	 /*color: white;*/
+	 /* width: 50%;*/
+ }
+ 
+ #conteneur_cours
+ img
+ {
+	 /* position des photos par rapport au header */ 
+	 margin-top: 60px;
+	 /*bord des photo arrondi*/
+	 border-radius: 10px;
+	 /* alignement des photos sur la ligne */
+	 max-width: 22%;
+	 /* espaCe entre les photos */
+	 margin-left : 45px;
+ }
+ 
+ #conteneur_cours_expert
+ img
+ {
+	 /* position des photos par rapport au header */ 
+	 margin-top: 80px;
+	 /*bord des photo arrondi*/
+	 border-radius: 10px;
+	 /* alignement des photos sur la ligne */
+	 max-width: 22%;
+	 /* espave entre les photos */
+	 margin-left: 300px;
+ }
+ 
+  /* Bas Cours par rapport au header*/
+  .bas_cours
+  {
+	 /* test dans le corps de la page */
+	 font-family: Georgia;
+	 font-size:100%;
+	 font:bolder;
+	 margin-top:100px;
+	 margin-left: 400px;
+ }
+ 
+ .tarifs
+ {
+ display: inline-block;
+	 /*background: rgba(0, 0, 0, 0.8);*/
+	 /*z-index: 1;*/
+	 /*position: absolute;*/
+	 /*text-align: center;*/
+	 font-family: Georgia;
+	 font-size:200%;
+	 margin-top:40px;
+	 margin-left: 200px;
+		 
+ }
+ 
+ #conteneur_tarifs
+ img
+ {
+	 /* position des photos par rapport au header */ 
+	 margin-top: 30px;
+	 /*bord des photo arrondi*/
+	 border-radius: 10px;
+	 /* alignement des photos sur la ligne */
+	 max-width: 22%;
+	 /* espace de la photo avec la marge*/
+	 margin-left : 200px;
+ }
+ 
+  /* Bas Tarifs par rapport au header*/
+  .bas_tarifs
+  {
+	 /* test dans le corps de la page */
+	 font-family: Georgia;
+	 font-size:100%;
+	 font:bolder;
+	 margin-top:100px;
+	 margin-left: 400px;
+ }
+	 
+ .contact
+ {
+	 display: inline-block;
+	 font-family: Georgia;
+	 font-size:200%;
+	 margin-top:40px;
+	 margin-left: 100px;
+ }
+ 
+ .maps
+ {
+	 margin-top:40px;
+	 margin-left: 200px;
+ }
+ 
+ 
+ .formulaire
+ {
+	 border-radius:10px;
+	 background-color:#f2f2f2;
+	 /* taille des champs dans le formulaire */
+	 padding:50px;
+	 /*largeur du formulaire*/
+	 max-width: 500px;
+	 margin: auto;
+	 top: 400px;
+	 margin-left: 200px;
+ }
+ /*
+ body {font-family: Arial, Helvetica, sans-serif;
+	 padding: 0px;}
+ */
+ input[type=text], textarea, input[type=email] 
+ {
+	 width: 100%;
+	 /*hauteur des champs du formulaire*/
+	 padding: 20px;
+	 border: 1px solid #ccc;
+	 border-radius: 4px;
+	 box-sizing: border-box;
+	 /* hauteur entre libelle et champs*/
+	 margin-top: 6px;
+	 margin-bottom: 15px;
+	 margin-right: 0px;
+	 margin-left: 0px;
+	 resize: vertical;
+ }
+ 
+ label
+ {
+	 margin-right: 0px;
+	 margin-left: 0px;
+	 width: 100%;
+ }
+ 
+ input[type=submit] 
+ {
+	 background-color: grey;
+	 color: white;
+	 padding: 12px 20px;
+	 border: none;
+	 border-radius: 4px;
+	 cursor: pointer;
+ }
+ 
+ /*hover permet changement couleur au passage souris */
+ input[type=submit]:hover 
+ {
+	 background-color: black;
+	
+ }
+ 
+ /* Mentions par rapport au header*/
+ .mentionslegales
+ {
+	 font-family: Georgia;
+	 font-size:100%;
+	 margin-top:40px;
+	 margin-left: 30px;
+ }
+ 
+ /* Footer en fonction de la taille de la page */
+ footer 
+ {
+	 position:absolute;
+	 width: 100%;
+	 /* emplacement du footer par rapport au corps de la page */
+	 /* a retirer pour côté responsive*/
+	 /*top: 350%;*/
+	 list-style-type: none;
+	 /* bandeau autour du header */
+	 border:5px solid #CCC;
+	 color: black;
+ }
+ 
+  /* bandeau footer en orange */
+  .site-footer
+  {
+	 background-color: orange;
+	 /* hauteur du texte dans le footer */
+	 padding: 15px;
+  }
+ 
+  /* hauteur bandeau footer orange */
+  .site-footer, .page-wrap:after 
+  {
+	 height: 90px;  
+  }
+ /* ================= LES FORMULAIRES ADMIN ========================================== */
+ 
+
+/***********************************************/
+/*   Formulaire création plat  - ADMIN-  CATEGORIE*/
+/***********************************************/
+/*		TRI PAR ORDRES DES CATEGORIES */
+
+
+  /*ligne de séparation entre la liste des Etiquettes et les boutons validation et Reset*/
+div.separation-menu-categorie,
+div.separation-menu-etiquette
+      {
+		/* EPAISSEUR DE LA LIGNE DE SEPARATION */
+	height: 2px;
+	background-color: black;
+			width: 100%;}
+			
+/***********************************************/
+
+/***********************************************/
+/*  Formulaire création plat - ADMIN-  ETIQUETTE*/
+/***********************************************/
+/*		TRI PAR ORDRES DES ETIQUETTES */
+
+/*  CREATION PHOTOPLAT: tableau catégorie*/
+/*-- #nom fieldset{ width:...px; height:..px;} --*/
+fieldset.photoplat-menu-categorie{ 
+	width:20%;
+	height: 300px;
+	color: black;
+	margin-left: 40%;
+	margin-top: -10;
+	/* marge dans la boite*/
+	padding: 15px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
 }
+
+
+
+
+/* ===============CREATION et MODIF -PLAT ====================*/
+/*  format du tableau dans modif PLAT*/
+fieldset.plat-modif-nom{
+	width:30%;
+	margin-left: 2%;
+	margin-top: 0px;
+	padding: 10px;
+}
+
+
+fieldset.plat-creation-nom{
+	width:30%;
+	margin-left: 2%;
+	margin-top: 0px;
+	padding: 10px;
+}
+
+/* CREATION PLAT: format tableau etiquette*/
+fieldset.plat-menu-etiquette{
+	width:20%;
+	margin-left: 30%; 
+	margin-top: 20px;
+	padding: 25px;
+	
+}
+
+/* CREATION PLAT: format tableau categorie*/
+fieldset.plat-menu-categorie{
+	width:20%;
+	margin-left: 55%;
+	margin-top: -280px;
+	padding: 25px;
+}
+
+form.plat-menu-creation{
+	margin-left: 5%;
+	margin-top: 30px;
+	height: 0px;
+}
+ /* tableau de photos dans création plat */
+fieldset.plat-menu-photo{
+	width: 20%;
+	margin-left: 5%;
+	margin-top: -280px;
+   height: 1500px;
+	padding: 5px;
+}
+
+/* Bouton validation creation plat */
+.button-plat-creation{
+	margin-left: 40%;
+	margin-top: 500px;
+}
+
+/*menu rideau   */
+.vertical-menu{
+width:200px;
+height:150px;
+overflow-y:auto;
+}
+.vertical-menu a{
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu a:hover{
+	background-color: #ccc;
+}
+
+.vertical-menu a.active{
+	background-color:  #4caf50;
+	color: white;
+}
+
+
+  /*ligne de séparation entre la liste des Etiquettes et les boutons validation et Reset*/
+
+/***********************************************/
+/***********************************************/
+/*   Formulaire création plat - ADMIN-  LISTE PHOTO*/
+/***********************************************/
+
+.div.separation-liste-photoplat
+{
+	/* EPAISSEUR DE LA LIGNE DE SEPARATION */
+height: 1px;
+background-color: black;
+		width: 100%;
+	}
+
+.legend.menu-etiquette{
+		border: 5px solid darkblue;
+		min-height: 150px;
+		height: 300 px;
+		width: 400px;
+	  }
+
+.div.liste-photoplat-plat{
+/* width */
+	width: 1000px;
+	
+	margin-left: -1200px;
+  /* Track */
+	background: #f1f1f1; 
+  /* Handle */
+	background: #888; 
+  /* Handle on hover */
+	background: #555; 
+}
+
+
+.div.liste-categorie{
+/* width */
+	width: 10px;
+
+  /* Track */
+	background: #f1f1f1; 
+  /* Handle */
+	background: #888; 
+  /* Handle on hover */
+	background: #555; 
+}
+/* ========================================================================  */
+
 
 /***********************************************/
 /*  Formulaire - ADMIN-  Réservation- Création*/
@@ -38,6 +496,9 @@ form .h1{
 
 /* Nom, Prénom,Jour,Heure,...*/
 label{
+	display: block;
+	width: 150px;
+	float: left;
     font-weight: bold;
 }
 
@@ -181,132 +642,146 @@ form .corps-formulaire .gauche .groupe i{
             margin-right: 480px;
 		}
 
+/*==================================================*/
+/*   ETIQUETTE CREATION / MODIFICATION - Largeur des input */
 
-/* commentaire */
-body {
-    color: black;
+.etiquette-creation input{
+width: 200px;
+/* hauteur d'un champs */
+height:5px;
+margin-left: 20px;
 }
 
-/* pour retirer les points dans .menu, .contact, .reservation,...
-sur la 1ere page*/
-header nav ul {
-    /*display aligne accueil,menu,contact,reservation*/
-    display: flex;
-    /*Justify laisse un espace entre accueil,menu,contact,reservation*/
-    justify-content:space-evenly;
-    list-style-type: none;
-    /* padding modifie la marge interieure*/
-    padding: 0;
-    /* margin modifie la marge Exterieure*/
-    margin: 0;
-   
-    /* INTERIEUR DU BANDEAU */
-} 
-header nav ul a {
-    /*background-color: red;*/
-    /*encadrement de Accueil, menu, ... */
-    /*border: 1px solid grey;*/
-    /* le 2ieme parametre gère la largeur 2rem*/
-    /*padding: 1rem 2rem;*/
-    /* text supprime le soulignement*/
-  
-    text-decoration: 0;
-    font: bolder;
-    color: rgb(217, 47, 47);
-    font-family: 'kenia' ,'cursive';
+.etiquette-creation button{
+/* centrage du bouton */
+margin-left: 240px;	
 }
 
- /* Entete accueil par rapport au header*/
- div.entete
- {      /* Titre: O CNAMO  */
-     /* test dans le corps de la page */
-     /*font-family: Georgia; */
-     font-family: 'kenia' ,'cursive';
-     font:bolder;
-     margin-top: 10px;
-     margin-left: 100px;
-     }
-     
-
-
-.h1
-{
-    font-size: 2rem;
-} 
-
-/* toute image trop grande ne depassera pas la taille de l'écran. */
-    /* Une petite image restera petite */
-img {
-/*menu--photo-plat*/
-width: 100px;
-margin-top: 15px;
-margin-left:35%;
+/*----------------------------------------------------*/
+.etiquette-modif input{
+width: 200px;
+/* hauteur d'un champs */
+height:5px;
+margin-left: 20px;
 }
 
-img.medium-size {
-    width: 500px;
+.etiquette-modif button{
+/* centrage du bouton */
+margin-left: 240px;	
+}
+/*==================================================*/
+/*==================================================*/
+/*   RESERVATION CREATION / MODIFICATION - Largeur des input */
+
+.reservation-creation input{
+width: 200px;
+/* hauteur d'un champs */
+height:20px;
+margin-left: 0px;
 }
 
-.menu--photo-plat {
-    width: 100px;
+.reservation-creation button{
+/* centrage du bouton */
+margin-left: 220px;	
 }
 
-/*la virgule pour l'une ou l'autre des 2 classses */
-.form--radio--buttons--scrollable,
-.form--checkboxes--scrollable {
-    border: 2px black;
-    max-height: 350px;
-    /*overflow= menu deroulant sur la droite si le nombre de photos dépasse la boite */
-    overflow: auto;
-    width: 900px;
-    margin-left: 480px;
-    margin-right: 500px;
-    /* ARRONDIR BORDURE DES INPUT */
-	border-radius: 15px;
+/*----------------------------------------------------*/
+.reservation-modif input{
+width: 200px;
+/* hauteur d'un champs */
+height: 20px;
+margin-left: 0px;
 }
 
-.form--radio-button-image {
-    height: 100px;
+.reservation-modif button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+/*==================================================*/
+/*==================================================*/
+/*   CATEGORIE CREATION / MODIFICATION - Largeur des input */
+
+.categorie-creation input{
+width: 200px;
+/* hauteur d'un champs */
+height:20px;
+margin-left: 0px;
 }
 
-
-/*
-
-/* Footer en fonction de la taille de la page */
-footer 
-{
-	/*position:absolute;*/
-	width: 99%;
-    /* emplacement du footer par rapport au corps de la page */
-    /* a retirer pour côté responsive*/
-	/*top: 500%;*/
-	list-style-type: none;
-    /* bandeau autour du header */
-    border: 5px solid #CCC;
-    color: black;
+.categorie-creation button{
+/* centrage du bouton */
+margin-left: 220px;	
 }
 
+/*----------------------------------------------------*/
+.categorie-modif input{
+width: 200px;
+/* hauteur d'un champs */
+height: 20px;
+margin-left: 0px;
+}
 
- /* bandeau footer */
-container-footer 
- {
-    /* hauteur du texte dans le footer */
-    padding: 15px;
-    height: 90px;  
-    background-color: rgb(17, 65, 17);
-    /* bandeau autour du header */
-    border: 5px solid #CCC;	
- }
+.categorie-modif button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+/*==================================================*/
+/*==================================================*/
+/*   PLAT CREATION / MODIFICATION - Largeur des input */
 
- .footer-font{
-    font-size: 18px;
-   /* font-weight: bold;*/
-    font-family: Georgia;
+.plat-creation input{
+width: 200px;
+/* hauteur d'un champs */
+height:10px;
+margin-left: 50px;
 
- }
+}
 
- /* changement des couleurs de lien dans le footer */
- /* choix de garder la visibilité des liens dans le footer, sinon
- ceci disparaisse pour les liens "Ajouter, Supprimer, Modifier"
- des pages de gestion des résa, étiquettes, catégories
-.a{--font-weight: bold;color:black;text-decoration: none --} */
+.plat-creation button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+
+/*----------------------------------------------------*/
+.plat-modif input{
+width: 200px;
+/* hauteur d'un champs */
+height: 20px;
+margin-left: 0px;
+}
+
+.plat-modif button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+/*==================================================*/
+
+/*==================================================*/
+/*   PHOTOPLAT CREATION / MODIFICATION - Largeur des input */
+
+.photoplat-creation input{
+width: 600px;
+/* hauteur d'un champs */
+height:20px;
+margin-left: 60px;
+
+}
+
+.photoplat-creation button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+
+/*----------------------------------------------------*/
+.photoplat-modif input{
+width: 800px;
+/* hauteur d'un champs */
+height: 20px;
+margin-left: 0px;
+}
+
+.photoplat-modif button{
+/* centrage du bouton */
+margin-left: 520px;	
+}
+/*==================================================*/

@@ -3,7 +3,11 @@
 @section('page_title', 'Admin - Catégorie - Modification')
 
 @section('content')
+
+
 <h1>Admin - Catégorie - Modification</h1>
+<!-- BALISE DE SEPARATION -->
+<div class="separation"></div>
 
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
@@ -29,29 +33,36 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
 <!-- PUT maj complète et PATCH maj partielle -->
 <!-- NE PAS METTRE METHODE PUT, sinon erreur à la validation de la modif etiquette -->
 <!-- @ method('PUT') -->
-    <div>
-        {{--<label for="nom">Nom: </label> --}}
-            <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
-        <input class="@error('nom') form--input--error @enderror" type="nom" name="nom" id="" value="{{ old('nom', $categorie->nom) }}" readonly>
-        @error('nom')
-        <div class="form--error-message">
-        {{ $message }}
+<fieldset>
+    <br>
+        <div class="categorie-modif">
+                <label for="nom">Nom: </label>
+                    <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
+                <input class="@error('nom') form--input--error @enderror" type="nom" name="nom" id="" value="{{ old('nom', $categorie->nom) }}" readonly>
+                @error('nom')
+                <div class="form--error-message">
+                {{ $message }}
+                </div>
+                @enderror
         </div>
-        @enderror
-    </div>
-    <div>
-        <!--  pour avoir le libellé Description, devant le champs description -->
-        <label for="description">Description</label>
-        <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $categorie->description) }}">
-        @error('description')
-        <div class="form--error-message">
-        {{ $message }}
+
+        <div class="categorie-modif">
+                <!--  pour avoir le libellé Description, devant le champs description -->
+                <label for="description">Description</label>
+                <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $categorie->description) }}">
+                @error('description')
+                <div class="form--error-message">
+                {{ $message }}
+                </div>
+                @enderror  
         </div>
-        @enderror
-    </div>
-    <button type="submit">Valider</button>
 
-       
-
+</fieldset>
+<br>
+        <div class="categorie-modif"> 
+            <button type="submit">Valider</button>
+        </div>
+<br>
     </form>
+
 @endsection

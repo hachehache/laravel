@@ -1,112 +1,184 @@
 @extends('base')
 
-@section('page_title', 'Admin - Création')
+@section('page_title', 'Admin - Plat - Création')
 
 @section('content')
-<h1>Admin - Plat - Creation</h1>
-
-<form action="{{ route('admin.plat.store') }}" method="post">
-    @csrf
-        <div>
-        <input  type="checkbox" name="epingle" id="plat_epingle">
-        <label for="plat_epingle">épinglé</label>
-        </div>
-
-        <div>
-        <label for="nom">Nom:</label>
-         <input type="text" name="nom" id="" placeholder="nom du plat" value="">
-        </div>
-        <label for="prix">Prix:</label>
-        <input  type="numeric" name="prix" id="" placeholder="prix du plat" value="">
-         </div>
-
-        <div>
-        <label for="description">Description:</label>
-        <textarea name="description" id="30" rows="10" placeholder="description du plat"></textarea>
-        </div>
-            
-        
-
-            {{-- CHOISIR PHOTO a partir d'un menu déroulant--}}
-            <div class="form--checkboxes--scrollable">
-                <div>
-                 <!--   <input type="checkbox" name="photo_plat_id[]" id="photo_plat_id_" value=""> -->
-                    <!--label for="etiquette_id_">('admin.etiquette.edit' , ['id' => $etiquette->id])</label> -->
-                </div>
-        
-                 <div>
-                    <button type="submit">Valider</button>
-                </div> 
-
-           Choisir l'image du plat:
-            <input type="file" name="nom_img" id="" accept="img/plats/png, img/plats/jpeg" src=img/plats>
-            <input type="submit" value="" name="submit"> 
-        
-
-        {{--la liste des catégories via menu déroulant --}}
-        {{--select * "multiple" permet davoir plusieurs choixdans le menu--}}
-        <select name="categorie_id" id="">
-            {{--si on met value="" permet d'afficher "Catégorie du plat"
-            dans le menu au repos--}}
-            <option value="">Catégorie du plat</option>
-           {{-- <option value="1">Entrée</option> --}}
-            {{-- <option value="2">Plat</option>--}}
-           {{--  <option value="3">Dessert</option> --}}
-
-            @foreach ($categories as $categorie )
-                <option value="{{ $categorie->id }}">{{ $categorie->nom }}</option>  
-            @endforeach
-        </select>
-        </div>
-
-       {{--<div class="form--radio-buttons--scrollable">''}}
-            {{--Utilisation bouton radio --}}
-            {{-- "photo_plat_id_1" est ABSOLUMENT necessaire 
-            pour éviter d'avoir 2 photos pour un plat--}}
-
-            {{-- on veut afficher toutes les photos plats--}}
-            @foreach ($photoPlats as $photoPlat)
-            {{-- photoPlat->id --}}
-        <div>
-            {{---------------------------------------------------------}}
-            {{-- Ceci est remplacé par des variables et un foreach   --}}
-            {{-- le 1 ou 2 est remplacé par la variable             -- }}
-            {{---------------------------------------------------------}}
-            {{-- <input type="radio" name="photo_plat_id_1" id="" value="1">
-            {{-- <label for="photo_plat_id_1">
-            {{-- <span>photo 1</span>
-            {{-- </label> --}}
-                        {{-----------------------}}
-            {{-- <div>
-            {{--<input type="radio" name="photo_plat_id_2" id="" value="2">
-            {{--<label for="photo_plat_id_2">
-            {{--<span>photo 2</span>
-            {{--</label>
-            </div> --}}
-            {{---------------------------------------------------------}}
-            <input type="radio" name="photo_plat_id" id="photo_plat_id_{{ $photoPlat->id }}"
-             value="{{ $photoPlat->id }}" >
-            <label for="photo_plat_id_{{ $photoPlat->id }}">
-                <img src="{{ asset($photoPlat->chemin) }}" alt="photo {{ $photoPlat->id}}">
-            <span>photo {{ $photoPlat->id }}</span>
-            </label>
-        </div>
-            @endforeach
-
+    <h1>Admin - Plat - Création</h1>
+    <!-- BALISE DE SEPARATION -->
+<!--<div class="separation"></div> -->
+<br>
+<!-- si on trouve confirmation, on passe dans cette partie
+lors d'une modification d'une reservation, on aura un message au dessus,
+qui signalera que les modifs ont bien été enregitrées-->
+@if (Session::has('confirmation'))
+    <div>
+        {{Session::get('confirmation')}}
     </div>
-        <div class="form--checkboxes--scrollable">
-            <div>
-                <input type="checkbox" name="etiquette_id[]" id="etiquette_id_" value="1">
-                <label for="etiquette_id_1">végétarien</label>
-            </div>
+@endif
 
-            <div>
-                <input type="checkbox" name="etiquette_id[]" id="etiquette_id_2" value="2">
-                <label for="etiquette_id_2">poisson</label>
+@if ($errors->any())
+    <div>
+    Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans le formulaire.
+    </div>
+@endif   
+<div class="plat-menu-creation-total">
+    <!-- ne pas utiliser la methode GET car faille secu, le password s'affichera en dur -->
+    <form action="{{ route('admin.plat.store') }}" method="post">
+ <!--csrf permet de securiser, empeche piratage -->
+        @csrf
+        {{-------------- CREATION D'UN PLAT ----------------}}
+        
+{{------- NOM -----------}}
+    
+        <fieldset class="plat-creation-nom">
+        <div class="plat-creation">
+            <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="" >
+            <label for="epingle">épinglé</label>
+            @error('epingle')
+            <div class="form--error-message">
+                {{ $message }}
             </div>
+            @enderror
+        </div>
+         <!--old permet de recuperer les valeurs presente dans la base -->
+            <!-- Label pour avoir le libellé Nom, devant le champs etiquette -->
+            <!-- size est la largeur du champ -->
 
-         <div>
-            <button type="submit">Valider</button>
-        </div>  
-        </form>
-    @endsection
+        <div class="plat-creation">
+            <label for="nom">Nom: </label>
+            <input class="@error('nom') form--input--error @enderror" type="text" name="nom" size="30" id="" placeholder="nom du plat" value="">
+            @error('nom')
+            <div class="form--error-message">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+    
+       <div class="plat-creation">
+            <label for="prix">Prix: </label>
+            <input class="@error('nom') form--input--error @enderror" type="text" name="prix" size="30" id="" placeholder="prix du plat" value="">
+            @error('prix')
+            <div class="form--error-message">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+
+        <div class="plat-creation">
+            <label for="description">Description: </label>
+            <input class="@error('description') form--input--error @enderror" type="text" name="description" size="30" id="" cols="30" rows="10" placeholder="description du plat" value=""></textarea>
+            @error('description')
+            <div class="form--error-message">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+    </fieldset>
+
+       
+     <fieldset class="plat-menu-etiquette">
+                <!-- AFFICHAGE DE LA LISTE DES ETIQUETTES -->
+               <legend class="plat-menu-etiquette"><p><strong>Liste des Etiquettes</strong></p></legend>
+        <!--<div class="form--checkboxes--scrollable"> -->
+            @foreach ($etiquettes as $etiquette)
+            <div>
+                <label for="etiquette_id{{ $etiquette->id }}"> {{ $etiquette->nom }} </label>
+                <input class="@error('etiquette_id') form--input--error @enderror" type="checkbox" name="etiquette_id" size="30" id="etiquette_id{{ $etiquette->id }}" value="{{ $etiquette->id }}">
+                @error('etiquette_id')
+                <div class="form--error-message">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+            @endforeach           
+    </fieldset>
+       
+
+
+
+    <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
+    <fieldset class="plat-menu-categorie">
+        <div class="liste-categorie">
+                <!-- AFFICHAGE DE LA LISTE DES CATEGORIES -->
+                <legend class="plat-menu-categorie"><p><strong>Liste des Catégories</strong></p></legend>
+               @foreach ($categories as $categorie) 
+               <div>
+                <label for="categorie_id{{ $categorie->id }}"> {{ $categorie->nom }} </label>
+                   <!--  name=unique car une photo ne peut-être que dans une seule catégorie -->
+                <input class="@error('categorie_id') form--input--error @enderror" type="checkbox" name="unique" size="30" id="categorie_id{{ $categorie->id }}" value="{{ $categorie->id }}">
+                @error('categorie_id')
+                <div class="form--error-message">
+                    {{ $message }}
+                </div>
+                @enderror
+             </div>
+             @endforeach
+        </div>
+    </fieldset>
+
+
+<!------------------------------------AJOUT ----------photo_plat_id----------->
+
+    <fieldset class="plat-menu-photo">
+        <div class="liste-photoplat-plat">
+            <legend class="plat-menu-photo"><p><strong>Liste des Photos</strong></p></legend>
+            @foreach ($photoPlats as $photoPlat)
+            <div>
+                <label for="photo_plat_id{{ $photoPlat->id }}"> </label>
+            <input class="@error('photo_plat_id') form--input--error @enderror" type="checkbox" name="photo_plat_id" id="photo_plat_id{{ $photoPlat->id }}" value="{{ $photoPlat->id }}">
+            <img class="vertical-menu" src="{{ asset($photoPlat->chemin) }}" alt="photo {{ $photoPlat->id }}">
+            <span>photo {{ $photoPlat->id }}</span>   
+            </div>
+            @endforeach
+        </div>
+    </fieldset>
+
+
+
+<!---------------------------------------------------------------->
+<!--<body> -->
+   <!-- <h1> Menu Rdeau</h1>-->
+    <!--<div class="vertical-menu">-->
+       
+  <!--      <input type="checkbox name="photo_plat_id" id="photo_plat_id_{{-- $photoPlat->id --}}" value="{{ $photoPlat->id }}">-->
+  <!--     <label for="photo_plat_id_{{-- $photoPlat->id --}}"> </label>-->
+   <!--     <img class="form--radio-button-image" src="{{-- asset($photoPlat->chemin) --}}" alt="photo {{ $photoPlat->id }}">-->
+  <!--          <span>photo {{-- $photoPlat->id --}}</span>-->
+ <!--   </div> -->
+
+
+<!---------------------------------------------------------------->
+<!--<body> -->
+ <!--   <h1> Menu Rdeau</h1>-->
+  <!--  <div class="vertical-menu">-->
+  <!--      <a href="" class="active"> HOM </a>-->
+  <!--      <a href=""> link 1 </a>-->
+  <!--      <a href=""> link 2 </a>-->
+  <!--      <a href=""> link 3 </a>-->
+ <!--      <a href=""> link 4 </a>-->
+ <!--       <a href=""> link 5 </a>-->
+  <!--      <a href=""> link 6 </a>-->
+ <!--       <a href=""> link 7 </a>-->
+ <!--   </div>-->
+
+<!--</body> -->
+     <!---------------------------------------------------------------->
+        <!--  <div class="form--radio-buttons--scrollable">-->
+   <!--         @@foreach ($photoPlats as $photoPlat)-->
+   <!--         <div>-->
+   <!--             <input type="radio" name="photo_plat_id" id="photo_plat_id_{{-- $photoPlat->id --}}" value="{{-- $photoPlat->id --}}">-->
+    <!--            <label for="photo_plat_id_{{-- $photoPlat->id --}}">-->
+     <!--               <img class="form--radio-button-image" src="{{-- asset($photoPlat->chemin) --}}" alt="photo {{-- $photoPlat->id --}}">-->
+      <!--              <span>photo {{-- $photoPlat->id --}}</span>-->
+     <!--           </label>-->
+      <!--      </div>-->
+      <!--      @@endforeach-->
+      <!--  </div> -->
+        <br>
+            <button class="button-plat-creation" type="submit">Valider</button>
+        </div>
+    </div>
+        <br>
+</form>
+@endsection
