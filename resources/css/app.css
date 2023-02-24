@@ -483,7 +483,7 @@ background-color: black;
 
 
 /***********************************************/
-/*  Formulaire - ADMIN-  Réservation- Création*/
+/*  Formulaire - côté CLIENT  Réservation- Création*/
 /***********************************************/
 
 /*   FONT POUR H1  */
@@ -641,6 +641,11 @@ form .corps-formulaire .gauche .groupe i{
 			margin-left: 480px;
             margin-right: 480px;
 		}
+
+		horaire_ouverture{
+			margin-left: 10px;
+		}
+
 
 /*==================================================*/
 /*   ETIQUETTE CREATION / MODIFICATION - Largeur des input */

@@ -14,79 +14,67 @@
 	<div class="formulaire">
         <h2>formulaire de reservation</h2>
                 <form action="#" method="post">
-
                     
                     <!-- DIV AVEC CLASS GROUPE CONTIENT LES CHAMPS :  NOM, PRENOM, EMAIL, TELEPHONE, MESSAGE -->
                     <!-- LA CLASS SERA UTILE DANS LE FICHIER CSS POUR DEFINIR LA MISE EN FORM -->
                         <!-- CHAMP NOM -->
                         <div class="formulaire">
-                        <label> Votre Nom</label>
-                        <input type="text">
-                        <!-- ICONE USER NOM -->
-                    
+                            <label> Votre Nom</label>
+                            <input type="text">                    
                         </div>
                         
                         <div class="formulaire">
-                        <label for="date">Date</label>
-                        <input type='date'>
-                     
+                            <label for="date">Date</label>
+                            <input type='date'>
                         </div>
                         
                         <div class="formulaire">
-                        <label for="time">Heure</label>
-                        <input type='time'>
-                    
+                            <label for="time">Heure</label>
+                            <input type='time'>
                         </div>
 
                         <div class="formulaire">
-                        <label for="number">Nbre de Personnes</label>
-                         <input type="number">
-                
+                            <label for="number">Nbre de Personnes</label>
+                            <input type="number">
                         </div>
                         
                         <!-- CHAMP EMAIL -->
                         <div class="formulaire">
-                        <label> Votre Adresse Email</label>
-                        <input type="text">
-                            <!-- ICONE EMAIL -->
-                  
+                            <label> Votre Adresse Email</label>
+                            <input type="text">
                         </div>
                         
                         <!-- CHAMP TELEPHONE -->
                         <div class="formulaire">
-                        <label> Votre N° Téléphone</label>
-                        <input type="text">
-                            <!-- ICONE TELEPHONE -->
-                     
+                            <label> Votre N° Téléphone</label>
+                            <input type="text">
                         </div>
-                    </div>
-                        
-                        <!-- CHAMP MESSAGE -->
-                        <div class="formulaire">
+
                         <!-- CHAMP MESSAGE -->
                             <div class="formulaire">
-                            <label>Message</label>
-                            <!-- CE N'EST PAS UN INPUT MAIS UN TEXAREA -->
-                            <textarea placeholder="Saisissez ici..."></textarea>
-                        </div>				
-                    </div>	
-                </div>
+                                <label>Message</label>
+                                <textarea placeholder="Saisissez ici..."></textarea>
+                            </div>				
+                        	
+</div>
 
                                 <!-- CENTRAGE DU BOUTON -->
                             <div class="pied-formulaire" align="center">
                             <!-- BOUTON D'ENVOI -->
-                            <button>Envoyer le message</button>
+                                <button>Envoyer le message</button>
                             </div>            
-    </form>
+                </form>
 
     <br> 
-    <h3>Nos horaires d'ouverture :</h3>
+                <div class="horaire_ouverture">
+                    <h3>Nos horaires d'ouverture :</h3>
    
-   <p> Tous les jours de: 7h-14h / 20h-00h</p> 
-   <p> Petit-déjeuner dès 7h30</p> 
+                    <p> Tous les jours de: 7h-14h / 20h-00h</p> 
+                    <p> Petit-déjeuner dès 7h30</p> 
+                </div>
     <br>
 
-
+    </form>
 </header>      
     </body>
 

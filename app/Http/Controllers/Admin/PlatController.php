@@ -23,30 +23,27 @@ class PlatController extends Controller
         // renvoi la liste des etiquettes
         // récuperer la liste des etiquettes
         $plats = plat::all();
-        $photoPlats = PhotoPlat::all();
-        $categories = Categorie::all();
-        $etiquettes = Etiquette::all();
+       
         //récuperer la liste des etiquettes
         //transmission des etiquettes à la vue
         //on est dans la partie Back, on affiche donc toutes les etiquettes
 
-        
+        //dd($request->all());
         return view('admin.plat.index', [
             'plats' => $plats,
-            'etiquettes' => $etiquettes,
-            'categories' => $categories,
-            'photoPlats' => $photoPlats,
+         //   'etiquettes' => $etiquettes,//
+          //  'categories' => $categories,//
+          //  'photoPlats' => $photoPlats,//
         ]);
-      //dd($request->all());
+  
     }
 
    
 
     public function create()
     {
-        $categories = Categorie::all();
-        $etiquettes = Etiquette::all();
-        $photoPlats = PhotoPlat::all();
+        
+        $plats = Plat::all();
 
         $plat = new stdClass;
 
@@ -54,15 +51,15 @@ class PlatController extends Controller
         $plat->prix=  '';
         $plat->description=  '';
         $plat->epingle=  '';
-        //$plat->photo_plat=  'chemin';//
+        $plat->photo_plat_id=  '';
         $plat->categorie_id=  '';
-        $plat->etiquette_id='';
+     //   $plat->etiquette_id='';//
 
            // transmission des valeurs par défaut à la vue
         return view('admin.plat.create',[
-        'categories' => $categories,
-        'etiquettes' => $etiquettes,
-        'photoPlats' => $photoPlats,
+      //  'categories' => $categories,
+      //  'etiquettes' => $etiquettes,
+        'plats' => $plats,
         ]);
     }
 
@@ -74,10 +71,11 @@ class PlatController extends Controller
            'nom' => 'required|min:2|max:100',
            'prix'=>'',
            'description' => 'required|min:2|max:100',
-           'epingle' => '',
+           'epingle' => 'required|boolean', // 0=pas épingle, 1=épingle
+           'photo_plat_id'=>'',
            'categorie_id'=>'',
-           'etiquette_id'=>'',
-          // 'photo_plat'=>'',
+          // 'etiquette_id'=>'',//
+        
 
        ]);
          /* Création d'un plat */
@@ -88,10 +86,11 @@ class PlatController extends Controller
            $plat->nom = $request->get('nom');
            $plat->prix = $request->get('prix');
            $plat->description = $request->get('description');
-           $plat->epingle = $request->get('epingle');
-          // $Plat->photo_plat = $request-get('photoplat');
-           $plat->categorie = $request->get('categorie_id'); //
-           $plat->etiquette = $request->get('etiquette_id');//
+           $plat->epingle = $request->toBoolean($this->epingle);//0 ou 1
+          // $plat->epingle = $request->get('booleen'); //0 ou 1  //
+           $Plat->photo_plat_id = $request-get('photo_plat_id');
+           $plat->categorie_id = $request->get('categorie_id');
+          // $plat->etiquette = $request->get('etiquette_id');//
            
 
            $plat->save();
@@ -127,11 +126,8 @@ class PlatController extends Controller
     // objet de type $request qu'on pourrait appeler $toto
     public function update(Request $request, int $id)
     {
-
-/*  le 20 fev -ajout des tables ::ALL dans l'update pour les avoir en appel lors d'une modification d'un plat */
-		$categories = Categorie::all();
-        $etiquettes = Etiquette::all();
-        $photoPlats = PhotoPlat::all();
+		
+        $plats = Plat::all();
 
 
         /*verif avant d'enregistrer les info utilisateurs */
@@ -139,17 +135,19 @@ class PlatController extends Controller
         /* nombre mini et max de caracteres, 
         voir migration creat*etiquette_table pour le max de caracteres*/
         'nom' => 'required|min:2|max:100',
+        'prix'=>'',
         'description' => 'required|min:2|max:100',
-	
+        'epingle' => 'required|boolean', // 0 pas épingle, 1=épingle
+        'photo_plat_id'=>'',
+        'categorie_id'=>'',
+       // 'etiquette_id'=>'',//
+       
 		
     ]);
 
     /* Recuperation de plat'*/
     /* liaison dans la definition des champs avec edit.blade.php*/
     $plat = Plat::find($id);
-    $categorie = Categorie::find($id);
-    $etiquette = Etiquette::find($id);
-    $photoPlat = PhotoPlat::find($id);
 
     // affichage d'une erreur 404 si la réservation est introuvable
     if (!$plat) {
@@ -160,10 +158,9 @@ class PlatController extends Controller
     $plat->nom = $request->get('nom');
     $plat->prix = $request->get('prix');
     $plat->description = $request->get('description');
-    $plat->epingle = $request->get('epingle');
-   // $photoPlat->photo_Plat = $request->get('photo_plat');
-   $plat->$etiquette = $request->get('etiquette_id');// le 20 fev retrait $etiquette->id, remplacer par $etiquette
-   $plat->$categorie = $request->get('categorie_id');
+    $plat->epingle = $request->get('booleen'); //0 ou 1
+    $plat->photo_Plat_id = $request->get('photo_plat_id');
+    $plat->categorie_id = $request->get('categorie_id');
  
     
 

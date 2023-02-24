@@ -36,13 +36,10 @@ class Etiquette extends Model
 // @return Plat
 
 public function platsSortedByPrix()
-{
-   return $this->hasMany(Plat::class)
-   ->orderBy('prix', 'asc')
-   // possible d'ajouter aussi un ordre de prix
-   ;
-}
-
-
-
+   {
+      return $this->hasMany(Plat::class)
+      ->orderBy('prix', 'asc')
+      // possible d'ajouter aussi un ordre de prix
+      ;
+   }
 }

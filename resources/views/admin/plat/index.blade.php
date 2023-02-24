@@ -33,9 +33,8 @@ qui signalera que les modifs ont bien été enregitrées-->
                     <th colspan='1'>description</th>
                     <th colspan='1'>epingle</th>
                     <th colspan='1'>photo_plat_id</th>
-                  <!--  <th colspan='1'>chemin photo</th> -->
                     <th colspan='1'>categorie_id</th>
-                    <th colspan='1'>etiquette_id</th>
+                   <!-- <th colspan='1'>etiquette_id</th> -->
 
                     <!-- pour modifier une plat -->
                     <th colspan='1'>actions</th>
@@ -51,9 +50,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         <td>{{ $plat->description }}</td>
         <td>{{ $plat->epingle }}</td>
         <td>{{ $plat->photo_plat_id }}</td>
-      <!--  <td>{{-- $plat->photo_Plat_id->chemin--}}</td>-->
         <td>{{ $plat->categorie_id }} </td>
-        <td>{{ $plat->etiquette_id }}</td>
         <td>
             <a href="{{route('admin.plat.edit' , ['id' => $plat->id]) }}" style="color: green;">modifier</a>
     

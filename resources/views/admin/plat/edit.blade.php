@@ -49,32 +49,44 @@ qui signalera que les modifs ont bien été enregitrées-->
                 <br>
 
                 <div class="plat-modif">
-                    <!--  pour avoir le epingle en possible modif -->
-                 
+                    <!-- Modification du prix -->
+                    <label for="prix">Prix:</label>
+                    <input class="@error('prix') form--input--error @enderror" type="" name="prix" id="" value="{{ old('prix', $plat->prix) }}">
+                    @error('prix')
+                        <div class="form--error-message">
+                            {{ $message }}
+                        </div>
+                     @enderror 
+                </div>
+
+                <div class="plat-modif"><div>
+                    <!--  pour avoir le libellé Description, devant le champs description -->
+                    <label for="description">Description:</label>
+                    <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $plat->description) }}">
+                    @error('description')
+                        <div class="form--error-message">
+                            {{ $message }}
+                        </div>
+                     @enderror 
+                </div>
+
+                <div class="plat-modif">
+                      <!--  pour avoir le epingle en possible modif -->
                         <input type="checkbox" name="epingle" id="plat_epingle" value="" >
                         <label for="plat_epingle">épinglé</label>
                 </div>
 
-                <div class="plat-modif"><div>
-                <!--  pour avoir le libellé Description, devant le champs description -->
-                <label for="description">Description:</label>
-                <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $plat->description) }}">
-                @error('description')
-                    <div class="form--error-message">
-                        {{ $message }}
-                    </div>
-                 @enderror 
-            </div>
-            <div class="plat-modif">
-                <!-- Modification du prix -->
-                <label for="prix">Prix:</label>
-                <input class="@error('prix') form--input--error @enderror" type="" name="prix" id="" value="{{ old('prix', $plat->prix) }}">
-                @error('prix')
-                    <div class="form--error-message">
-                        {{ $message }}
-                    </div>
-                 @enderror 
-
+                 <!--  on affiche photo ID du PLAT -->
+                 <div class="plat-modif">
+                    <label for="photo_plat_id">photo_plat_id: </label>
+                    <input class="@error('photo_plat_id') form--input--error @enderror" type="" name="unique" size="30" id="" value="{{ old('photo_plat_id', $plat->photo_plat_id) }}">
+                    @error('photo_plat_id')
+                        <div class="form--error-message">
+                            {{ $message }}
+                        </div>
+                     @enderror 
+                </div>
+   
 
             <!--  on affiche N° categorie du PLAT -->
                  <div class="plat-modif">
@@ -86,20 +98,6 @@ qui signalera que les modifs ont bien été enregitrées-->
                      </div>
                   @enderror 
              </div>
-
-
-            <!--  on affiche N° Etiquette du PLAT -->
-            <div class="plat-modif">  
-                <label for="etiquette_id">Etiquette: </label>
-                <input class="@error('etiquette_id') form--input--error @enderror" type="" name="" size="30" id="" value="{{ old('etiquette_id->$plat_id') }}">
-                @error('etiquette_id')
-                    <div class="form--error-message">
-                        {{ $message }}
-                    </div>
-                 @enderror 
-            </div>
-
-<!--  affichage de la liste des categories -->
 
 <!-- ------------------------------------- -->
             </div>
