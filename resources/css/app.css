@@ -864,6 +864,14 @@ margin-left: 0px;
 /* centrage du bouton */
 margin-left: 520px;	
 }
+
+
+/* PHOTOPLAT - AFFICHAGE MENU COTE USER - TAILLE PHOTO REDUITE*/
+/* lors du listage plat, prix, etiquette, categorie, ..., et photo du plat */
+
+.menu--photo-plat {
+    width: 100px;
+}
 /*==================================================*/
 
 /*============DEBUT: FOOTER ======================================*/

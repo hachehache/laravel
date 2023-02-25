@@ -122,11 +122,12 @@ public function edit(int $id)
     /* pour ajouter message flash de confirmation à garder dans la function request*/
     /*******devalider *** */
    $request->session()->flash('confirmation', 'Vos modifications ont bien été enregistrées');
-
- /* on redirige l'utilisateur vers  la page categorie*/
    
- return redirect()->route('admin.categorie.edit', ['id' => $categorie->id]);
- 
+/*****??????????????????????????????????????????????????????????? */
+ /* on redirige l'utilisateur vers  la page categorie*/ 
+   /* Le 25 Fev 2023- sav- avant modif pour obtenir liste plat */
+ /*return redirect()->route('admin.categorie.edit', ['id' => $categorie->id]);*/
+ return redirect()->route('admin.categorie.index', ['id' => $categorie->id]);
     }
 
     public function delete(Request $request, int $id)

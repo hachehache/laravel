@@ -58,6 +58,13 @@ Route::get('/mentions-legales', function () {
 Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
+
+// ajout le 25 Fev pour afficher liste des categorie et obtenir liste des plats //
+Route::get('/categorie', function () {
+    return view('categorie');
+})->name('categorie');
+
+
 //===================FIN - PAGE ACCUEIL==============================================/
 // Ajouter Route PLAT au dessus ?? //
 

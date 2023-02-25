@@ -10,6 +10,10 @@ use App\Models\PhotoPlat;
 use App\Models\Plat;
 use Illuminate\Http\Request;
 
+//  Le 25 FEv 2023 ajout pour obtenir liste plats photos //
+use App\Http\Controllers\Admin;
+
+
 class PlatController extends Controller
 
 
@@ -42,7 +46,12 @@ class PlatController extends Controller
 
     public function create()
     {
-        
+        // le 25 Fev Ajout pour affichage photo plat ???? //
+        $categories = Categorie::all();
+        $etiquettes = Etiquette::all();
+        $photoPlats = PhotoPlat::all();
+//--------------------------------
+
         $plats = Plat::all();
 
         $plat = new stdClass;
