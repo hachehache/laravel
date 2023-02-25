@@ -33,8 +33,8 @@ qui signalera que les modifs ont bien été enregitrées-->
         <!-- @@method('PUT') -->
         <fieldset>
         <br>
-            <div class="etiquette-modif">
-                <label for="description">Nom:</label>
+            <div class="etiquette-modif" align="center">
+                <label for="description">Nom:</label><br />
             <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
                 <input class="@error('nom') form--input--error @enderror" type="text" name="nom" id="" value="{{ old('nom', $etiquette->nom) }}" readonly>
                 @error('nom')
@@ -44,9 +44,9 @@ qui signalera que les modifs ont bien été enregitrées-->
                 @enderror
             </div>
                 <br>
-            <div class="etiquette-modif">
+            <div class="etiquette-modif" align="center">
                 <!--  pour avoir le libellé Description, devant le champs description -->
-                <label for="description">Description:</label>
+                <label for="description">Description:</label><br />
                 <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $etiquette->description) }}">
                 @error('description')
                     <div class="form--error-message">
@@ -56,7 +56,7 @@ qui signalera que les modifs ont bien été enregitrées-->
             </div>
 
         </fieldset>
-            <div class="etiquette-modif">
+            <div class="etiquette-modif" align="center">
         <br>
                 <button type="submit">Valider</button>
             </div>

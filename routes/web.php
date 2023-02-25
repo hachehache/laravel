@@ -18,10 +18,14 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ActusController;
 use App\Http\Controllers\ContactController;
 
-
 //use App\Http\Controllers\ReservationController;//
 //use App\Http\Controllers\CopyrightController;//
 use Illuminate\Support\Facades\Route;
+
+//  REQUETES : définition
+// GET : RECUPERE LES DONNEES
+// POST : CREE UNE RESSOURCE
+// PUT : RENVOIE UNE RESSOURCE
 
 /*
 |--------------------------------------------------------------------------
@@ -33,44 +37,35 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/** ajout pour test modif categorie */
-Route::resource('admin.categorie' , 'CategorieController');
+/**  A SUPPRIMER ajout pour test modif categorie */
+//Route::resource('admin.categorie' , 'CategorieController');
 
 // routes du front office
 
-// page d'accueil
+// =================== DEBUT - PAGE ACCUEIL ============================================/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
 Route::get('/actus', [ActusController::class, 'index'])->name('actus');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+// en page d'accueil les Mentions Legales- voir a placer dans le Footer //
+Route::get('/mentions-legales', function () {
+    return view('mentions-legales');
+})->name('mentions-legales');
 
-Route::get('/menu', function () {
-    return view('menu');
-})->name('menu');
-
+// Affiche Vue RESERVATION AU CLIENT (formulaire de reservation)
 Route::get('/reservation', function () {
     return view('reservation');
 })->name('reservation');
-
-Route::get('/categorie', function () {
-    return view('categorie');
-})->name('categorie');
-
-Route::get('/etiquette', function () {
-    return view('etiquette');
-})->name('etiquette');
-
-Route::get('/categorie', function () {
-    return view('categorie');
-})->name('categorie');
-
+//===================FIN - PAGE ACCUEIL==============================================/
 // Ajouter Route PLAT au dessus ?? //
 
 Route::get('/mentions-legales', function () {
     return view('mentions-legales');
 })->name('mentions-legales');
+
+
 
 // routes de back office
 
@@ -130,18 +125,22 @@ Route::get('/admin/etiquette/{id}/edit', [AdminEtiquetteController::class, 'edit
 Route::post('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'update'])->middleware('auth')->name('admin.etiquette.update');
 Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'delete'])->middleware('auth')->name('admin.etiquette.delete');
 
+
+//////// A SUPPRIMER CONTROLLER ENTREE N'EXISTE PAS
 // ADMIN: pour une nouvelle Entrée
 // --------------------------------
 // ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page Entrée
-Route::get('/admin/entree', [AdminEntreeController::class, 'index'])->middleware('auth')->name('admin.entree.index');
-Route::get('/admin/entree/create', [AdminEntreeController::class, 'create'])->middleware('auth')->name('admin.entree.create');
-Route::post('/admin/entree', [AdminEntreeController::class, 'store'])->middleware('auth')->name('admin.entree.store');
+//Route::get('/admin/entree', [AdminEntreeController::class, 'index'])->middleware('auth')->name('admin.entree.index');
+//Route::get('/admin/entree/create', [AdminEntreeController::class, 'create'])->middleware('auth')->name('admin.entree.create');
+//Route::post('/admin/entree', [AdminEntreeController::class, 'store'])->middleware('auth')->name('admin.entree.store');
 // get - est là pour afficher le formulaire
-Route::get('/admin/entree/{id}/edit', [AdminEntreeController::class, 'edit'])->middleware('auth')->name('admin.entree.edit');
+//Route::get('/admin/entree/{id}/edit', [AdminEntreeController::class, 'edit'])->middleware('auth')->name('admin.entree.edit');
 // post - remet le formulaire
 // pour {id}update le update n'est pas nécessaire pour Laravel
-Route::post('/admin/entree}', [AdminEntreeController::class, 'update'])->middleware('auth')->name('admin.entree.update');
-Route::delete('/admin/entree/{id}', [AdminEntreeController::class, 'delete'])->middleware('auth')->name('admin.entree.delete');
+//Route::post('/admin/entree}', [AdminEntreeController::class, 'update'])->middleware('auth')->name('admin.entree.update');
+//Route::delete('/admin/entree/{id}', [AdminEntreeController::class, 'delete'])->middleware('auth')->name('admin.entree.delete');
+///////////////////////////////////////////////
+
 
 // ADMIN: pour un nouveau plat
 // --------------------------------

@@ -3,79 +3,107 @@
 @section('page_title', 'Contact')
 
 @section('content')
-    <h1>Contact</h1>
-    <h3>Adresse du Restaurant :</h3>
-    {{-- -- affichage de l'adresse et tel --}}
-    {{ $adresse }}<br>
+
+    
+            <!--========================================================================= --> 
+<body>
+                                <h1>Page de Contact</h1>
+
+            <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+                <tr><td>
+                    <p class="alignRight">
+                            <h3>Adresse du Restaurant :</h3>
+                                {{-- -- affichage de l'adresse et tel --}}
+                                {{ $adresse }}
+                            
+                            <h3>Téléphone :</h3>
+                                {{$tel }}
+                    </p>   
+                </td><tr>
+            </table>  
+            <br>
+    
+            <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+                <tr><td>
+                    <p class="alignLeft">
+                        {{-- pour affichage de la carte                     --}}
+                        {{-- !!$map : oblige a afficher le code             --}}
+                        {{--     et non le nom de la carte,                 --}} 
+                        {{-- c'est un system de secu passif                 --}} 
+                        {{-- tous les caractères dangereux sont echappés    --}}
+                        <h3>Plan de notre Restaurant:</h3>
+                    </p>   
+            </td><tr>
+        </table>  
+
+        <br>
+
+            <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+                <tr><td>
+                    <p class="alignLeft">
+                        {{!! $map !!}}
+                    </p>   
+                </td><tr>
+            </table>  
+      
     <br>
-    <h3>Téléphone :</h3>
-    {{$tel }}<br>
+
+    
+        <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+                <tr><td>
+                        <p class="alignLeft">
+                            <h3>Nos horaires d'ouverture :</h3>
+                            {{$horaire }}
+                        </p>   
+                </td><tr>
+        </table>  
+
     <br>
-    {{-- pour affichage de la carte --}}
-    {{-- !!$map : oblige a afficher le code et non le nom de la carte, c'est un system de secu passif --}} 
-    {{-- tous les caractères dangereux sont echappés      --}}
-    <h3>Plan de notre Restaurant :</h3>
-    {{!! $map !!}}<br>
-    <br> 
-    <h3>Nos horaires d'ouverture :</h3>
-    {{$horaire }}<br>
-    <br>
-    <h2>Vous prévoyez de féter un événement: </h2>
-        
-    <p> Un anniversaire, une Bar Mitza, une naissance ... </p>
-    <p> Prenez Contact avec nous.</p>
+
+        <table  width="60%" border="5" cellspacing="1" cellpadding="1" align="center">
+                <tr><td>
+                    <p class="alignLeft">
+                        <h2>Vous prévoyez de féter un événement: </h2>
+                            
+                        <p> Un anniversaire, une Bar Mitza, une naissance ... </p>
+                        <p> Prenez Contact avec nous.</p>
+                    </p>   
+                </td><tr>
+        </table>  
+ 
     <!---------- FORMULAIRE ---------------------->
 
     <!--  Formulaire de Contact en HTML avec passage du formulaire en CSS -->
 
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title> Formulaire CONTACT EN HTML ET CSS- côté user</title>
-                            <!-- BIBLIOTHEQUE D'ICONES - FONTAWESOME CDN SOUS GOOGLE - -->
-                                <!-- font-awesome/6.2.1/css/all.min.css -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- BALISE DE STYLE AVEC SON CHEMIN -->
-        <!-- <link rel="stylesheet" href="C:/Users/user/OneDrive/Documents/projets/Git-Test/asset/css/style-contact.css"> -->
-        
-        <link rel="stylesheet" href="asset/css/style-contact-restau.css">
-        
-        
-    </head>
-    <body>
         <form>
         
                         <!-- TITRE -->
                 <h1>Nous Contacter</h1>
-                    <!-- BALISE DE SEPARATION -->
-                       <div class="separation"></div>
-                            <!-- BALISE DE SEPARATION -->
-                            <div class="corps-formulaire"></div>
-                                <div class="gauche"></div>
+
                  <!-- *************************************-->       
-                        
+                 <table width="40%" border="3" cellspacing="1" cellpadding="1" align="center">
+                    <tr><td>       
                         <!-- DIV AVEC CLASS GROUPE CONTIENT LES CHAMPS :  NOM, PRENOM, EMAIL, TELEPHONE, MESSAGE -->
                         <!-- LA CLASS SERA UTILE DANS LE FICHIER CSS POUR DEFINIR LA MISE EN FORM -->
                         <!-- CHAMP NOM -->
+                        <div class="contener_contact">
                             <div class="groupe">
                                 <div class="champ">
-                                <label> Votre Nom</label>
-                                <input type="text">
+                                <label> Votre Nom :</label><br />
+                                <input classe="input_contact" type="text">
                                 </div>
                             </div>  
                             
                             <!-- CHAMP EMAIL -->
                             <div class="groupe">
-                                <label> Votre Adresse Email</label>
+                                <div class="champ">
+                                <label> Votre Adresse Email :</label><br />
                                 <input type="text">
                             </div>
                             
                             <!-- CHAMP TELEPHONE -->
                             <div class="groupe">
-                                <label> Votre N° Téléphone</label>
+                                <label> Votre N° Téléphone :</label><br />
                                 <input type="text">
                             </div>
                             
@@ -83,7 +111,7 @@
                             <div class="droite">
                             <!-- CHAMP MESSAGE -->
                                 <div class="groupe">
-                                <label>Message</label>
+                                <label>Message :</label>
                                 <!-- CE N'EST PAS UN INPUT MAIS UN TEXAREA -->
                                 <textarea placeholder="Saisissez ici ..."></textarea>
                                 </div>				
@@ -94,10 +122,13 @@
                                 <!-- BOUTON D'ENVOI -->
                                 <button>Envoyer le message</button>
                             </div>
-                            
+                        </div>
+                        </td><tr>
+                        </table>     
+                             
         </form>
-        </body>    
-    </html>
+    
+        
     <br>
-    <!--------------------------------->
+</body>    
 @endsection

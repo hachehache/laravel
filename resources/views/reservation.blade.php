@@ -3,7 +3,7 @@
 @section('page_title', 'Réservation')
 
 @section('content')
-<h2>Formulaire de Réservation</h2>
+<h2>Page des Réservations</h2>
 
 
 <body>

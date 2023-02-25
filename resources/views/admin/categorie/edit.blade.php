@@ -35,8 +35,8 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
 <!-- @ method('PUT') -->
 <fieldset>
     <br>
-        <div class="categorie-modif">
-                <label for="nom">Nom: </label>
+        <div class="categorie-modif" align="center">
+                <label for="nom">Nom: </label><br />
                     <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
                 <input class="@error('nom') form--input--error @enderror" type="nom" name="nom" id="" value="{{ old('nom', $categorie->nom) }}" readonly>
                 @error('nom')
@@ -45,10 +45,10 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
                 </div>
                 @enderror
         </div>
-
-        <div class="categorie-modif">
+<br>
+        <div class="categorie-modif" align="center">
                 <!--  pour avoir le libellé Description, devant le champs description -->
-                <label for="description">Description</label>
+                <label for="description">Description</label><br />
                 <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $categorie->description) }}">
                 @error('description')
                 <div class="form--error-message">
@@ -59,7 +59,7 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
 
 </fieldset>
 <br>
-        <div class="categorie-modif"> 
+        <div class="categorie-modif" align="center"> 
             <button type="submit">Valider</button>
         </div>
 <br>

@@ -2,14 +2,336 @@
 /* @tailwind base;*/
 @tailwind components;
 @tailwind utilities;
+
+
+/* code RVB du CAMEROUN */
+/*
+		Red: #CE1126
+		Yellow: #FCD116
+		Green: #007A5E
+*/
+
+ /******************DEBUT: HEADER / ENTETE*********************/
+ .logo
+ {
+	 float: left;
+	 display: block;
+	 margin-top: 10px;
+	 margin-left: 10px;
+
+	 font-size: 25px;
+	 font-weight: bold;
+	 font-style: italic;
+ }
+ 
+ .deconnexion{
+	 
+	 /* retrait des points sur les liens ACCUEIL, .., Connexion  */
+	 list-style-type: none;
+	 margin-left: 20px;
+	 font-weight: bold;
+  }
+  
+  header 
+  {
+	  /* hauteur du bandeau header */
+	  min-height:80px;
+	  overflow-y:auto;
+	  background-color: #FCD116;
+  }
+ 
+ header nav ul
+  {
+	  /*display aligne accueil,menu,contact,reservation*/
+	  display: flex;
+	  /*Justify laisse un espace entre accueil,menu,contact,reservation*/
+	  justify-content:space-evenly;
+	  /* pour retirer les points dans .menu, .contact, .reservation,...
+	  sur la 1ere page*/
+	  list-style-type: none;
+	  /* padding modifie la marge interieure*/
+	  padding: 5px;
+	  /* margin modifie la marge Exterieure de menu, cours, tarifs, etc ..*/
+	  margin: 25px;
+  } 
+  
+  /* champs accueil, cours, tarifs, etc... */
+  header nav ul a 
+  {
+	  background-color: white;
+	  border: 3px solid grey;
+	  /* 1rem= hauteur et 2rem=largeur, pour
+	  encadrement de Accueil,Cours,Taris, etc ... */
+	  padding: 1rem 1rem;
+	  /*supprime le soulignement sous Accueil,Cours,Tarifs,Contact et Mentions*/
+	  text-decoration: 0;
+	  /* arrondi autour de Accueil, Cours, Tarifs, etc ... */
+	  border-radius: 10px;
+	  color: black;
+	  font-style: normal;
+	  font-weight: bold;
+  }
+  
+   /******************FIN: HEADER /ENTETE *********************/
+
+/* TEST IMAGE ET TEXT A COTE */
+.wraper_asupprimer{
+	width: 500px;
+	margin: 0 auto;
+	background-color: red;
+	min-height: 100%;
+	position: relative;
+}
+.fig1{
+	position:relative;
+}
+
+.fig2{
+	position:relative;
+	left:55%;
+}
+
+/***************DEBUT: PAGE ACCUEIL- PHOTOS ******************/
+
+/* LES TITRES PARAGRAPHES PHOTOS */
+h2{
+	text-align: center;
+    line-height: 40px;
+  }
+
+img.alignLeft{
+	float:left;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 60px 0px 0px;
+}
+
+img.alignRight{
+	float: right;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 10px;
+}
+
+  /* PARAGRAPHE PHOTOS GAUCHES*/
+p.alignLeft{
+
+	color: red;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+	/* border: 2px solid blue; */
+	/*margin: 45px;*/
+	padding: 15px;
+}
+/*PARAGRAPHE PHOTOS DROITS */
+p.alignRight{
+	color: black;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+	/* border: 2px solid blue; */
+	padding: 15px;
+}
+
+/*PARAGRAPHE ENTRE PHOTOS SALLE PETIT DEJEUNER */
+p.center{
+	color: black;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+	/* border: 2px solid blue; */
+	padding: 15px;
+}
+.clear{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: both;
+}
+
+.clear_left{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: left;
+}
+
+.clear_right{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: right;
+}
+
+.paragraphe_accueil_central{
+	margin-top: 60px;
+}
+/*********** FIN: PAGE ACCUEIL- PHOTOS*******************/
+
+
+/***************DEBUT: PAGE DES ACTUS- PHOTOS ******************/
+/* LES TITRES PARAGRAPHES PHOTOS - ACTUS */
+h1{text-align: center;
+    line-height: 50px;
+	text-decoration: underline;
+}
+h2{
+	text-align: center;
+    line-height: 40px;
+  }
+
+img.alignLeft_actus{
+	float:left;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 0px;
+}
+
+/*PARAGRAPHE DROITS A COTE PHOTOS  */
+p.alignRight_actus{
+	color: black;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+	/* border: 2px solid blue; */
+	padding: 15px;
+}
+.clear{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: both;
+}
+
+.clear_left{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: left;
+}
+
+.clear_right{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: right;
+}
+
+.paragraphe_accueil_central{
+	margin-top: 60px;
+}
+/*********** FIN: PAGE DES ACTUS- PHOTOS*******************/
+
+
+
+/***************DEBUT: PAGE DE CONTACT  ******************/
+/* PAGE CONTACT ( ADRESSE RESTAU/MAP/FORMULAIRE */
+h1{text-align: center;
+    line-height: 50px;
+	text-decoration: underline;
+}
+h2{
+	text-align: center;
+    line-height: 40px;
+  }
+
+h3{
+	text-align: center;
+    line-height: 50px;
+  }
+
+  
+img.alignLeft_contact{
+	float:left;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 0px;
+}
+
+/*PARAGRAPHE DROITS A COTE PHOTOS  */
+p.alignRight{
+	color: black;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+
+	padding: 25px;
+}
+
+.alignLeft_contact{
+	color: black;
+	/* 1er: haut 2ieme:*/
+/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0 0 0 0;
+	/* border: 2px solid blue; */
+	padding: 15px;
+}
+
+.clear{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: both;
+}
+
+.clear_left{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: left;
+}
+
+.clear_right{
+	/* Clear: nettoie le float Left et Right */
+/* evite decalage image / photo */
+	clear: right;
+}
+
+p.alignRight_contact{
+	float:right;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 0px;
+
+}
+
+p.alignLeft_contact{
+	float:right;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 0px;
+
+}
+.paragraphe_contact_central{
+	margin-top: 60px;
+}
+
+		/*============ DEBUT: FORMULAIRE CONTACT ======*/
+		/***********************************************/
+		/*  FORMULAIRE CONTACT- côté CLIENT */
+		/***********************************************/
+.groupe input{
+	width: 410px;
+	height:15px; 
+	padding:15px;
+	}
+	
+	.contener_contact{
+	padding: 40px;
+	}
+	
+	.groupe_contact{
+		text-align:center;
+	}
+	.champ_contact{
+		
+	}
+	
+	.groupe label{
+		font-weight: bold;
+		font-size: 20px;
+	}
+		/*============FIN: FORMULAIRE CONTACT ==========*/
+
+/*********** FIN: PAGE DE CONTACT ************************/
+
 entete {
 	margin-left: 400px;
 	 }
  /* couleur des titres <h2> */
  h2  {
- color: orange;
+ color: black;
  /* titre <h2> sur une seule ligne */
  width: 100%;
+ /* souligne titre H2 */
+ text-decoration: underline;
  }
  
  /* corps de la page*/
@@ -17,59 +339,10 @@ entete {
  {
 	 background-color: grey;
 	 margin: 0%;
+	
  }
- 
- #logo-fixe img
- {
-	 float: left;
-	 display: block;
-	 margin-top: 15px;
-	 margin-left: 20px;
-	 border-radius: 10px;
- }
- 
- 
- header nav ul 
- {
-	 /*display aligne accueil,menu,contact,reservation*/
-	 display: flex;
-	 /*Justify laisse un espace entre accueil,menu,contact,reservation*/
-	 justify-content:space-evenly;
-	 /* pour retirer les points dans .menu, .contact, .reservation,...
-	 sur la 1ere page*/
-	 list-style-type: none;
-	 /* padding modifie la marge interieure*/
-	 padding: 10;
-	 /* margin modifie la marge Exterieure de menu, cours, tarifs, etc ..*/
-	 margin: 45px;
- } 
- 
- /* champs accueil, cours, tarifs, etc... */
- header nav ul a 
- {
-	 background-color: white;
-	 border: 3px solid grey;
-	 /* 1rem= hauteur et 2rem=largeur, pour
-	 encadrement de Accueil,Cours,Taris, etc ... */
-	 padding: 1rem 2rem;
-	 /*supprime le soulignement sous Accueil,Cours,Tarifs,Contact et Mentions*/
-	 text-decoration: 0;
-	 /* arrondi autour de Accueil, Cours, Tarifs, etc ... */
-	 border-radius: 10px;
-	 color: black;
-	 font-style: normal;
- }
- 
- header 
- {
-	 /* hauteur du bandeau header */
-	 min-height:100px;
-	 overflow-y:auto;
-	 background-color: orange;
-	 /* bandeau autour du header */
-	 border:5px solid #CCC;
- }
- 
+
+
   /* Entete accueil par rapport au header*/
  .entete_accueil
  {
@@ -77,7 +350,7 @@ entete {
 	 font-family: Georgia;
 	 font-size:100%;
 	 font:bolder;
-	 margin-top:30px;
+	 margin-top:360px;
 	 margin-left: 400px;
 	 }
 	 
@@ -277,7 +550,7 @@ width: 600px;
  }
  
  /* Mentions par rapport au header*/
- .mentionslegales
+ mentionslegales
  {
 	 font-family: Georgia;
 	 font-size:100%;
@@ -285,33 +558,6 @@ width: 600px;
 	 margin-left: 30px;
  }
  
- /* Footer en fonction de la taille de la page */
- footer 
- {
-	 position:absolute;
-	 width: 100%;
-	 /* emplacement du footer par rapport au corps de la page */
-	 /* a retirer pour côté responsive*/
-	 /*top: 350%;*/
-	 list-style-type: none;
-	 /* bandeau autour du header */
-	 border:5px solid #CCC;
-	 color: black;
- }
- 
-  /* bandeau footer en orange */
-  .site-footer
-  {
-	 background-color: orange;
-	 /* hauteur du texte dans le footer */
-	 padding: 15px;
-  }
- 
-  /* hauteur bandeau footer orange */
-  .site-footer, .page-wrap:after 
-  {
-	 height: 90px;  
-  }
  /* ================= LES FORMULAIRES ADMIN ========================================== */
  
 
@@ -351,9 +597,6 @@ fieldset.photoplat-menu-categorie{
 	/*background-color: rgb(22, 210, 22);*/
 }
 
-
-
-
 /* ===============CREATION et MODIF -PLAT ====================*/
 /*  format du tableau dans modif PLAT*/
 fieldset.plat-modif-nom{
@@ -362,7 +605,6 @@ fieldset.plat-modif-nom{
 	margin-top: 0px;
 	padding: 10px;
 }
-
 
 fieldset.plat-creation-nom{
 	width:30%;
@@ -431,7 +673,6 @@ overflow-y:auto;
 	color: white;
 }
 
-
   /*ligne de séparation entre la liste des Etiquettes et les boutons validation et Reset*/
 
 /***********************************************/
@@ -467,7 +708,6 @@ background-color: black;
 	background: #555; 
 }
 
-
 .div.liste-categorie{
 /* width */
 	width: 10px;
@@ -482,179 +722,13 @@ background-color: black;
 /* ========================================================================  */
 
 
-/***********************************************/
-/*  Formulaire - côté CLIENT  Réservation- Création*/
-/***********************************************/
-
-/*   FONT POUR H1  */
-form .h1{
-	font-size: 20px;
-    /* hauteur du titre h1 */
-    margin: 20px;
-    
-}
-
-/* Nom, Prénom,Jour,Heure,...*/
-label{
-	display: block;
-	width: 150px;
-	float: left;
-    font-weight: bold;
-}
-
-
-/* garder le point pour dévalider cette partie 
-et permettre d'avoir le footer sur toute sa largeur */
-.form{
-	/* COULEUR ARRIERE PLAN DU FORMULAIRE */
-	background-color: blue;
-	/* ESPACEMENT A L'INTERIEUR DU FORMULAIRE */
-	padding: 15px;
-	/* COIN DU FORMULAIRE ARRONDI  */
-	border-radius: 5px;
-    border: 5px solid;
-    margin-top: 10px;
-    margin-left: 100px;
-
-    width: 30%;
-   
-}
-
-
-/* champs INPUT */
-div.container{
-    /*background-color: #747cdf;*/
-}
-
-        /*LIGNE SEPARATION*/
-form .separation{
-	width: 100%;
-	/* EPAISSEUR DE LA LIGNE DE SEPARATION */
-	height: 1px;
-	background-color: #747cdf;
-}
-
-.body{
-	margin:0px;
-	padding: 0px;
-	
-}
- 
-.form .corps-formulaire
-{
-/* ALIGNEMENT DES CHAMPS SI ON EST SUR UN PC */
-/*display: flex; */
-/* PASSAGE DU CHAMP MESSAGE VERS LE BAS SI ON EST SUR UN SMARPHONE - RESPONSIVE */
-flex-wrap: wrap;
-/* ESPACEMENT ENTRE LE DERNIER CHAMP ET LE BOUTON "ENVOYER LE MESSAGE" */ 
-
-}
-
-
-/* OK MISE EN FORM DE LA CLASS GROUPE  */
-form .corps-formulaire .groupe{
-	/*  ESPACEMENT ENTRE CHAQUE CHAMPS NOM, PRENOM, TELEPHONE, EMAIL .... */
-	margin-top: 10px;
-	/* POUR POSITIONNER DANS DIV GROUPE */
-	position: relative;
-	/* ALIGNEMENT DES CHAMPS */
-	display:flex;
-	/* EMPILE LES CHAMPS SUR UNE COLONNE */
-	flex-direction: column;
-}
-
-
-
-/*  IM%PORTANT, SPECIFIE LE CHEMIN DES INPUT */ 
-form .corps-formulaire .gauche .groupe input{
-	margin-top: 10px;
-	/* QUANTITE MARGE EN HAUT ET BAS D'UN CHAMP  ET SUR LES COTES DU CHAMP*/
-	/* DANS LE SENS DES AIGUILLES D'UNE MONTRE */
-	/* 1ere VALEUR: POUR LE HAUT INTERIEUR DU CHAMP  */
-	/* 2ieme VALEUR: POUR LE COTE INTERIEUR DROIT DU CHAMP  */
-	/* 3ieme VALEUR: POUR LE BAS INTERIEUR DU CHAMP  */
-	/* 4ieme VALEUR: POUR LE COTE DROIT INTERIEUR DU CHAMP QUI CONTIENDRA AUSSI UNE ICONE, DONC ESPACE PLUS GRAND  */
-	padding: 10px 5px 10px 30px;
-	/* BORDURE DU CHAMP */
-	border: 1px solid;
-	/* RETRAIT COULEUR ROUGE AUTOUR DES CHAMPS, LORS CLIC SOURIS SUR CHAMP NOM, PRENOM, .... */
-	outline-color: 	#747cdf;
-	/* ARRONDIR BORDURE DES INPUT */
-	border-radius: 3px;
-
-}
-
-
-/* ------- GROUPE GAUCHE  -  POUR CHAMP NOM, PRENOM ,TEL , EMAIL --------------*/
-form .corps-formulaire .gauche .groupe i{
-	/* POUR POSITIONNER DANS DIV GROUPE */
-	position: absolute;
-	/* POUR POSITIONNER LES ICONES USER, PHONE, EMAIL .. SUR LE BORD GAUCHE A L'INTERIEUR DU CHAMP */
-	left: 450px;
-	/* DESCENTE DE 25PX A PARTIR DU HAUT INTERIEUR DU CHAMP NOM, PHONE, EMAIL */
-	top: 215px;
-	/* MARGE DE 9PX HAUT-BAS ET DE 8PX DOITE-GAUCHE DE L'ICONE */
-	padding: 9px, 8px;
-	/*  COULEUR DES ICONES */
-	color: #747cdf;
-    
-	}
-	
-    
-/* ------- GROUPE DROIT  -  POUR CHAMP MESSAGE --------------*/
-	form .corps-formulaire .groupe i{
-		/* ESPACE ENTRE PARTIE GAUCHE ET DROITE */
-		margin-left: 40px;
-	}
-	
-	
-	form .pied-formulaire button{
-		margin-top: 30px;
-		font-size: 15px;
-		/* COULEUR D'ARRIERE PLAN DU BOUTON ENVOYER */
-		/*background-color: #f8f8f8;*/
-		background-color: black;
-		/* COULEUR DU MOT ENVOYER */
-		color: white;
-		/*  MARGE */
-		padding: 10px 20px;
-		/* ARRONDIR BORDURE DU BOUTON ENVOYE */
-		border-radius: 5px;
-		/* AFFICHE UNE MAIN ET ANNONCE A L'UTILISATEUR QUE LE BOUTON EST CLICABLE */ 
-		cursor: pointer;
-		/* RETRAIT COULEUR ROUGE AUTOUR DU BOUTON ENVOYER */
-		outline: none;
-		border: none;
-		/*  TEMPS DE LEFFET POUR LE BOUTON ENVOYER QUI EST EN  PIED DE PAGE*/
-    }
-
-    
-	form .pied-formulaire button:hover{
-		/* EFFET POUR AGRANDIR LE BOUTON ENVOYER LORS DU PASSAGE SOURIS  */
-		/* SI VALEUR < 1 , ON DIMINUE LE BOUTON */
-		transform: scale(1.05);
-	}
-
-
-		.form .corps-formulaire {
-			/* ON RETIRE LA MARGE pour Nom Prenom */
-			margin-left: 480px;
-            margin-right: 480px;
-		}
-
-		horaire_ouverture{
-			margin-left: 10px;
-		}
-
-
 /*==================================================*/
 /*   ETIQUETTE CREATION / MODIFICATION - Largeur des input */
-
 .etiquette-creation input{
 width: 200px;
 /* hauteur d'un champs */
 height:5px;
-margin-left: 20px;
+margin-right: 50px;
 }
 
 .etiquette-creation button{
@@ -664,15 +738,14 @@ margin-left: 240px;
 
 /*----------------------------------------------------*/
 .etiquette-modif input{
-width: 200px;
-/* hauteur d'un champs */
-height:5px;
-margin-left: 20px;
+	width: 220px;
+	/* hauteur d'un champs */
+	height: 20px;
 }
 
-.etiquette-modif button{
-/* centrage du bouton */
-margin-left: 240px;	
+.etiquette-modif label{
+	font-weight: bold;
+	height: 20px;
 }
 /*==================================================*/
 /*==================================================*/
@@ -705,9 +778,8 @@ margin-left: 220px;
 /*==================================================*/
 /*==================================================*/
 /*   CATEGORIE CREATION / MODIFICATION - Largeur des input */
-
 .categorie-creation input{
-width: 200px;
+width: 300px;
 /* hauteur d'un champs */
 height:20px;
 margin-left: 0px;
@@ -719,16 +791,20 @@ margin-left: 220px;
 }
 
 /*----------------------------------------------------*/
+
+.categorie-modif label{
+	font-weight: bold;
+	height: 20px;
+}
 .categorie-modif input{
-width: 200px;
+width: 220px;
 /* hauteur d'un champs */
 height: 20px;
-margin-left: 0px;
 }
 
 .categorie-modif button{
-/* centrage du bouton */
-margin-left: 220px;	
+
+
 }
 /*==================================================*/
 /*==================================================*/
@@ -739,7 +815,6 @@ width: 200px;
 /* hauteur d'un champs */
 height:10px;
 margin-left: 50px;
-
 }
 
 .plat-creation button{
@@ -790,3 +865,35 @@ margin-left: 0px;
 margin-left: 520px;	
 }
 /*==================================================*/
+
+/*============DEBUT: FOOTER ======================================*/
+ 
+ .contenu_foot{
+	/* retrait des points sur les liens ACCUEIL, .., Connexion  */
+	list-style-type: none;
+ }
+ 
+  /* hauteur bandeau footer orange */
+  .site_footer, .page-wrap:after 
+  {
+	background-color:  #FCD116;
+	/* hauteur du texte dans le footer */
+	padding: 25px;
+	 height: 160px;  
+	 font-size: 20px;
+	 /* distance entre fin de page et début du footer */
+	 margin-top: 50px;
+  }
+
+  div.logo_footer
+  {
+	  float: right;
+	  display: block;
+	  margin-top: -150px;
+	  margin-right: 20px;
+	  font-size: 25px;
+	  font-weight: bold;
+	  font-style: italic;
+  }
+ 
+  /*============= FIN: FOOTER=====================================*/

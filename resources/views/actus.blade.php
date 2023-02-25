@@ -3,182 +3,97 @@
 @section('page_title', 'Actus')
 
 @section('content')
-    <h1>Page d'actualités</h1>
-
-    
-
+    <h1>Page des actualités</h1>
     
 <div class="actus">
-    <ul>
-    <h2> Notre Page d'Actualités</h2>
-    </ul>
-    <ul>
-        <h3>Lorem ipsum</h3>
-    <p>
-       Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-        Amet consectetur, adipisicing elit lorem ipsum dolor sit
-    </p>
-    
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
-     <p>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
-     <p>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
+   
 
-     <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
-     <p>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
-     <p>
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         Lorem ipsum dolor sit amet consectetur, adipisicing elit
-         Amet consectetur, adipisicing elit lorem ipsum dolor sit
-     </p>
-    </ul>
+    <img class="alignLeft_actus" src="img/actus/pexels-pixabay-39896.jpg" alt="" width="300px">
+                       
+    <h2> Titre 1</h2>
+                             
+           <table width="60%" border="1" cellspacing="1" cellpadding="1" align="center">
+                 <tr><td>
+                         <p class="alignRight_actus">
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                           sed do eiusmodtempor adipiscingadipiscing
+                       </p>       
+                 </td><tr>
+           </table>     
 
-    <ul>
-        <h3>Lorem ipsum</h3>
-        <p>
-           Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-            Amet consectetur, adipisicing elit lorem ipsum dolor sit
-        </p>
-        
-        <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-         
-         <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-         <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit
-             Amet consectetur, adipisicing elit lorem ipsum dolor sit
-         </p>
-        </ul>
-</div>
+
+ <!-- Clear: nettoie le float Left et Right -->
+              <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
+              <p class="clear_left"></p>
+
+           <img class="alignLeft_actus" src="img/actus/pexels-andrea-piacquadio-787961.jpg" alt="" width="300px">
+                       
+           <h2> Titre  2</h2>
+                                    
+                  <table width="60%" border="1" cellspacing="1" cellpadding="1" align="center">
+                        <tr><td>
+                                <p class="alignRight_actus">
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                              </p>       
+                        </td><tr>
+                  </table>     
+                  <p class="clear_right"></p>
+                
+                  <p class="clear_left"></p>
+           <img class="alignLeft_actus" src="img/actus/pexels-pavel-danilyuk-8438918.jpg" alt="" width="300px">
+                       
+           <h2> Titre  3</h2>
+                                    
+                  <table width="60%" border="1" cellspacing="1" cellpadding="1" align="center">
+                        <tr><td>
+                                <p class="alignRight_actus">
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                  sed do eiusmodtempor adipiscingadipiscing
+                                 
+                                 
+                              </p>       
+                        </td><tr>
+                  </table>     
+                  <p class="clear_left"></p>
+        </div>  
 
 @endsection

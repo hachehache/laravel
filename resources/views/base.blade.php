@@ -20,10 +20,13 @@
             <!--========================================================================= -->        
             <!------------------  FIN DE LA PARTIE ENTETE  ET DEBUT DU HEADER ADMIN -------->
             <!--========================================================================= --> 
+            
+<header>
     <body>
-        <header> 
-        <a href="" class="logo"><span>0'</span>CNAMO</a>
-
+   
+        <div class="logo">
+            <a href="" class="logo"><span>0'</span>CNAMO</a>
+        </div>
             
             <!--========================================================================= --> 
             <!----------- TABLEAU DE BORD ADMIN - GESTION ADMIN    ------------------------->
@@ -43,13 +46,13 @@
             </ul>  
         </nav>
         
-    <li>
-        <form action="{{ route('logout') }}" method="POST">
-            @csrf
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">déconnexion</a>
-        </form>
-    </li>
-   
+        <li class="deconnexion">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">déconnexion</a>
+                </form>
+        </li>
+  
        @else    
 
                 <!--============================= ACCUEIL UTILISATEUR ========================================= -->
@@ -68,19 +71,26 @@
             
          @endauth
         </header>
+        <!-- ==============================FIN  HEADER =========================== -->
 
         @section('content')
         @show
     
-        <footer class="site-footer">
-            <ul>
-                <li><a href="{{ route('home') }}">Accueil</a></li>
-                <li><a href="{{ route('contact') }}"> Contact </a></li>
-                <!-- Lien vers les mentions Légales dans le footer -->
-                <li><a href="{{ route('mentions-legales') }}">Mentionslegales</a></li>
-                <li><a href="{{ route('login') }}">Connexion</a></li>
-                <li>Copyright O'Cnamo 2023</li>
-            </ul>
+        <footer class="site_footer">
+            <div class="contenu_footer">
+                        <ul>
+                            <li><a href="{{ route('home') }}">Accueil</a></li>
+                            <li><a href="{{ route('contact') }}"> Contact </a></li>
+                            <!-- Lien vers les mentions Légales dans le footer -->
+                            <li><a href="{{ route('mentions-legales') }}">Mentionslegales</a></li>
+                            <li><a href="{{ route('login') }}">Connexion</a></li>
+                            <br>
+                            <li>Copyright O'Cnamo 2023</li>
+                        </ul>
+                    <div class="logo_footer">
+                        <a href="" class="logo_foote"><span>0'</span>CNAMO</a>
+                    </div>
+            </div>
 
             @guest
             <ul>

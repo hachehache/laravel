@@ -1,92 +1,212 @@
-@extends('base')
+@extends('base') 
 
 @section('page_title', 'Accueil')
 
 @section('content')
-    <!--<h1>Restaurant le Cnamo</h1> -->
-    <!--<h2>Nos spécialités Camerounaises</h2> -->
-    <!--<img src="{{-- asset('img/jay-wennington-N_Y88TWmGwA-unsplash.jpg') --}}" alt="Un de nos meilleurs plats"> -->
+    
             <!--========================================================================= --> 
 <body>
-    <header>
-    <!-- arriere plan photo Accueil -->
-    <!-- <div class="legend1">Titre</div> -->
 
-    <div class="entete_accueil">   
-              <ul> 
-                <h2>Tritoutum ipsum salutum Cesarum</h2>        
-              </ul>        
-                  <ul>
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet,
-                       consectetur adipiscing elit,
-                       sed do eiusmodtempor 
-                       incididunt ut labore et dolore magna</p>
-                       aliqua. Ut enim ad minim veniam, quis 
-                       nostrud exercitation ullamco laboris nisi 
-                       ut aliquip ex ea commodo consequat. </p>
-                       Duis aute irure dolor in reprehenderit in
-                       voluptate velit esse cillum dolore eu 
-                       fugiat nulla pariatur. Excepteur sint</p>
-                      occaecat cupidatat non proident, sunt in</p>
-                       culpa qui officia deserunt mollit anim 
-                       id est laborum.</p>
-                  </ul>
-            </div>
+      <img class="alignLeft" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="632px">
+                       
+         <h2> Titre 1</h2>
+                                  
+                <table width="40%" border="1" cellspacing="1" cellpadding="1" align="center">
+                      <tr><td>
+                              <p class="alignRight">
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                                sed do eiusmodtempor adipiscingadipiscing
+                            </p>       
+                      </td><tr>
+                </table>     
+           
 
-            <div id="conteneur_accueil">
-                <div id="photo2_accueil">
-                <img class ="image-accueil" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="table avec plats">
-                </div>
-
-                <div id="photo3_accueil">
-                <img class ="image-accueil" src="img/ambiance/pexels-antony-trivet-12899958.jpg" alt="table avec plats">
-                </div>
+              <!-- Clear: nettoie le float Left et Right -->
+              <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
+              <p class="clear"></p>
                
-                
-                <div id="photo3_accueil">
-                    <img class ="image-accueil" src="img/ambiance/pexels-antony-trivet-12974781.jpg" alt="table avec plats">
+      <img class="alignRight" src="img/ambiance/pexels-antony-trivet-12899958.jpg" alt="" width="632px">
+                  
+            <h2> Titre 2</h2> 
+                                  
+                <table width="45%" border="1" cellspacing="1" cellpadding="1" align="center">
+                      <tr><td>
+                              <p class="alignLeft">
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscin
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                            </p>
+                      </td><tr>
+                  </table>
                 </div>
+             
 
-                <div id="photo3_accueil">
-                  <img class ="image-accueil" src="img/ambiance/pexels-maria-orlova-4916562.jpg" alt="table avec plats">
-              </div>
-
-            </div>
-
-            <div class="bas_accueil">        
-                <ul> 
-                  <h2>Tritoutum ipsum salutum Cesarum</h2>        
-                </ul>           
-                <ul>
-                  <h3>Lorem ipsum</h3>
-                  <p>Lorem ipsum dolor sit amet,
-                     consectetur adipiscing elit,
-                     sed do eiusmodtempor 
-                     incididunt ut labore et dolore magna</p>
-                     aliqua. Ut enim ad minim veniam, quis 
-                     nostrud exercitation ullamco laboris nisi 
-                     ut aliquip ex ea commodo consequat. </p>
-                     Duis aute irure dolor in reprehenderit in
-                     voluptate velit esse cillum dolore eu 
-                     fugiat nulla pariatur. Excepteur sint</p>
-                    occaecat cupidatat non proident, sunt in</p>
-                     culpa qui officia deserunt mollit anim 
-                     id est laborum.</p>
-                </ul>
-            
-
-     </div>
-  <!--  <meta name="description" content="Bienvenue sur le site du restaurant O Cnamo de Lille - 
-    Restaurant aux spécialitées du Cameroun, consultez des avis clients et réservez en ligne gratuit...">
-
-    <link rel="canonical" href="https://www.Ocnamo.fr/">
-
-    <meta property="og:title" content="O Cnamo / Restaurant aux spécialitées du Cameroun / Lille "> -->
-
+              <!-- Clear: nettoie le float Left et Right -->
+              <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
+              <p class="clear"></p>
 
     
+                <img class="alignLeft" src="img/ambiance/pexels-antony-trivet-12974781.jpg" alt="" width="632px">
+                                    
+                                    <h2> Titre 3</h2>
 
-    </header>
+                <table width="40%" border="1" cellspacing="1" cellpadding="1"  align="center">
+                      <tr><td>
+                              <p class="alignRight">
+                                sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            </p>
+                      </td><tr>
+                </table>
+              </div>
+
+              
+              <!-- Clear: nettoie le float Left et Right -->
+              <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
+              <p class="clear"></p>
+
+        
+                  <img class="alignRight" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="632px">
+                
+                                      <h2> Titre 4</h2>
+                
+                <table width="45%" border="1" cellspacing="1" cellpadding="1"  align="center">
+                  <tr><td>
+                          <p class="alignLeft">
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                        </p>
+                    </td><tr>
+                  </table>
+                </div>
+    <!-----------------------------------------------------------------> 
+ 
+              <!-- Clear: nettoie le float Left et Right -->
+              <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
+              <p class="clear"></p>
+
+    <div class="paragraphe_accueil_central">   
+          
+                <h2>Tritoutum ipsum salutum Cesarum</h2>    
+                
+                <table width="95%" border="1" cellspacing="1" cellpadding="1"  align="center">
+                  <tr><td>
+                            <p class="alignLeft">
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                            sed do eiusmodtempor adipiscingadipiscing
+                          </p>
+                    </td><tr>
+                  </table>
+    </div>
+
+              <div class="clear"></div>
+
+          <div class="paragraphe_accueil_central"> 
+
+              <img class="alignLeft" src="img/ambiance/pexels-olena-bohovyk-14139354.jpg" alt="" width="325px">
+              <img class="alignRight" src="img/ambiance/pexels-maria-orlova-4916562.jpg" alt="" width="325px">
+
+                            <h2>Tritoutum ipsum salutum Cesarum</h2>    
+                                  
+                            <table width="25%" border="1" cellspacing="1" cellpadding="1"  align="center">
+                              <tr><td>
+                            <p calss="center">
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                              sed do eiusmodtempor adipiscingadipiscing
+                            </p>
+                          </td><tr>
+                        </table>
+      </div>
 </body>
 @endsection
