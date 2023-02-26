@@ -164,6 +164,142 @@ p.center{
 }
 /*********** FIN: PAGE ACCUEIL- PHOTOS*******************/
 
+/*********** DEBUT: PAGE MENU - USER avec PHOTOS*******************/
+.titre{
+	display: flex;
+	width:100%;
+	justify-content: center;
+	align-items: center;
+	/* sur la m^me colonne */
+	flex-direction: column;
+}
+
+.menu{
+	margin-top: 20px;
+}
+
+.menu .contenu{
+	/* on affiche */
+	display: inline;
+	justify-content:  center;
+	flex-wrap: wrap;
+	margin-top: 10px;
+}
+
+/* mettre espace */
+.menu .contenu .box{
+	width: 250px;
+	margin: 5px solid orange;
+	box-shadow: 2px 5px 5px green;
+}
+
+/* espace entre les photos qui sont en  colonne */
+.menu .contenu .box .imbox{
+	position: relative;
+	width: 550%;
+	height: 180px;
+}
+
+.menu .contenu .box .imbox .img{
+position: relative;
+top: 0;
+width: 200%;
+height: 300px;
+object-fit: cover;
+}
+
+.menu .contenu .box .text{
+text-align: center;
+font-weight: 900px;
+color: black;
+
+}
+
+.menu.contenu.box.text.h3{
+font-weight: 50px;
+}
+
+.expert{
+	margin-top:  -100px;
+}
+ 
+.expert .contenu{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+
+.expert .contenu .box{
+	width: 250px;
+	margin: 15px;
+}
+
+.expert .contenu .img{
+	position: relative;
+	width: 100px;
+	height: 300px;
+	top: 0;
+	left: 0;
+	object-fit: cover ;
+}
+
+
+/***********/
+
+img.alignplat{
+	position:relative;
+	
+	display: flex;
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 0px;
+	padding: 500px;
+	margin-top: -500px;
+}
+.tableau_plat{
+	margin-top: -480px;
+}
+
+.tableau_etiquette{
+	margin-left: 510px;
+}
+
+
+/* *****/
+categorie{
+
+	margin-top:0px;	
+}
+.menu--photo-plat{
+	position: relative;
+
+	/* 1-Haut|2-Droit|3-Bas|4-Gauche */
+	margin: 0px 0px 0px 10px;
+}
+
+p.description_categorie{
+	margin-top: 90px;
+	margin-left: 350px;
+}
+
+p.chemin_photo{
+	margin-top: 30px;
+	margin-left: 900px;
+}
+
+p.prix{
+
+	margin-left: 200px;
+}
+/*
+.nom_plat{
+	margin-top: -90px;
+	margin-left: -5px;
+} */
+/*********** FIN: PAGE MENU USER- avec PHOTOS*******************/
+
 
 /***************DEBUT: PAGE DES ACTUS- PHOTOS ******************/
 /* LES TITRES PARAGRAPHES PHOTOS - ACTUS */
@@ -873,6 +1009,8 @@ margin-left: 520px;
     width: 100px;
 }
 /*==================================================*/
+
+
 
 /*============DEBUT: FOOTER ======================================*/
  
