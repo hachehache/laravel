@@ -18,28 +18,11 @@ qui signalera que les modifs ont bien été enregitrées-->
 @endif
 <br>
 
-<div class="bouton_ajouter">
+<div>
     <!-- pour ajouter nouvelle photoplat -->
     <a href="{{ route('admin.photoplat.create')}}"  style="color: green;">Ajouter</a>
 </div>
- <!--   Tableau des categories -->
 
- <div class="photoplat_liste_categorie">
-                <table>
-                    <table width="30%" CELLSPACING="1" CELLPADDING="1"  border="2">   <tr>
-                        <thead bgcolor="silver">
-                            <tr>
-                    <th colspan='1'>Nom Catégorie</th>
-                            </tr>
-                        </thead>
-                    @foreach ($categories as $categorie) 
-                    <tr>
-                <td>{{ $categorie->nom}}</td>
-
-                @endforeach
-                </table>
-</div> 
- <!-------------------------------------------------->     
 
 <!---------- A FINALISER- Bouton de TRI ----->
 <br>
@@ -56,15 +39,14 @@ qui signalera que les modifs ont bien été enregitrées-->
 <!--<label for="">{{-- $categorie->nom --}}</label> -->
 
 <!------------------------------->
-<div class="photoplat_liste">
     <table>
-        <table CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+        <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
             <thead bgcolor="silver">
 
             <!--  th*7  on aura 7 balises -->
             <!-- pour modifier une photoplat -->
             <tr>      
-            <th colspan='1'>ID de $photo_plat</th>
+            <th colspan='1'>ID</th>
             <th colspan='1'>Description</th>
             <th colspan='1'>Chemin</th>
             <th colspan='1'>Categorie ID</th>
@@ -93,7 +75,6 @@ qui signalera que les modifs ont bien été enregitrées-->
       <!--  <td>{{--$photoplat->categorie_id --}}</td> -->
        <!-- <td>{{-- $categorie->nom --}}</td> -->
   <td> ?voir foreach categorie à partir index.blade de Photoplat index</td> 
-  
         <!-- {{-- $categorie->nom --}} / id: {{-- $categorie->id--}} -->
         <!--@@endforeach -->  <!----BLOCAGE --->
         
@@ -104,9 +85,9 @@ qui signalera que les modifs ont bien été enregitrées-->
       
         <!-- Ajout -->
       <!-- <td>{{-- $photoplat->$categorie_id --}}</td> -->
-      <div class="bouton_modifier">
+        
             <a href="{{ route('admin.photoplat.edit' , ['id' => $photoplat->id]) }}" style="color: green;">modifier</a>
-      </div>
+        
                     {{--------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup --}}
                     {{--------------------------------------}}
@@ -128,20 +109,14 @@ qui signalera que les modifs ont bien été enregitrées-->
             <form action="{{ route('admin.photoplat.delete' , ['id' => $photoplat->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
-                
-            <div class="bouton_supprimer">
                 <a href="{{ route('admin.photoplat.delete' , ['id' => $photoplat->id]) }}"
                     onclick="event.preventDefault(); if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                    { this.closest('form').submit();}" style="color: orange;">supprimer</a>
+                    { this.closest('form').submit();}" style="color: red;">supprimer</a>"
             </div>
-        </div>
             </form>
         </td> <!-- FIN-->
     </tr> 
     @endforeach
+   
     </table>
-</div>
-<br>
-     
-
 @endsection

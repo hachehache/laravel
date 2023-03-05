@@ -46,9 +46,9 @@ class Plat extends Model
     public function etiquettes()
     {
     
-    return $this->belongsToMany(Etiquette::class,'etiquette_plat','plat_id','etiquette_id'); 
+    //return $this->belongsToMany(Etiquette::class,'etiquette_plat','plat_id','etiquette_id'); 
     // meme resultat en suivant convention laravel
-    //return $this->belongsToMany(Etiquette::class);
+    return $this->belongsToMany(Etiquette::class);
 
     }
 } 

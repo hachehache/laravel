@@ -99,6 +99,19 @@ qui signalera que les modifs ont bien été enregitrées-->
                   @enderror 
              </div>
 
+
+                   <!--  on affiche N° etiquette du PLAT -->
+                   <div class="plat-modif">
+                    <label for="etiquette_id">Etiquette: </label>
+                    <input class="@error('etiquette_id') form--input--error @enderror" type="" name="" size="30" id="" value="{{ old('etiquette_id', $etiquette->etiquette_id) }}">
+                    @error('etiquette_id')
+                        <div class="form--error-message">
+                            {{ $message }}
+                        </div>
+                     @enderror 
+                </div>
+    
+
 <!-- ------------------------------------- -->
             </div>
         </fieldset>

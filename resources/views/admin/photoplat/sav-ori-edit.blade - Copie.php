@@ -33,31 +33,31 @@ qui signalera que les modifs ont bien été enregitrées-->
         <!-- @@method('PUT') -->
         <br>
            
-<fieldset class="photoplat-modification">
+<fieldset>
 
     <div class="photoplat-modif">
-                <label for="chemin" style="padding-right: 60px";>Chemin:</label>
+                <label for="chemin">Chemin:</label>
             <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
-                <input class="@error('nom') form--input--error @enderror" type="text" name="chemin" id="" value="{{ old('chemin', $photoplat->chemin) }}">
+                <input class="@error('nom') form--input--error @enderror" type="text" name="chemin" id="" value="{{ old('chemin', $photoplat->chemin) }}" readonly>
                 @error('nom')
                     <div class="form--error-message">
                         {{ $message }}
                     </div>
                 @enderror
-    </div>
+            </div>
                 <br>
-    <div class="photoplat-modif">
-                    <!--  pour avoir le libellé Description, devant le champs description -->
-                    <label for="description" style="padding-right: 35px";>Description:</label>
-                    <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $photoplat->description) }}">
-                    @error('description')
-                        <div class="form--error-message">
-                            {{ $message }}
-                        </div>
-                     @enderror 
-    </div>
+                <div class="photoplat-modif">
+                <!--  pour avoir le libellé Description, devant le champs description -->
+                <label for="description">Description:</label>
+                <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $photoplat->description) }}">
+                @error('description')
+                    <div class="form--error-message">
+                        {{ $message }}
+                    </div>
+                    @enderror 
+                </div>
 
-</fieldset>
+            </fieldset>
             <br>
                     <br>
             <div>

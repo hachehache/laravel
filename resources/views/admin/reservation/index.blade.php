@@ -18,13 +18,14 @@ qui signalera que les modifs ont bien été enregitrées-->
 </div>
 @endif
 
-<div>
+<div class="bouton_ajouter">
     <br>
     <!-- pour ajouter nouveau client lors reservation -->
     <a href="{{ route('admin.reservation.create')}}" style="color: green;">Ajouter</a>   
 </div>
 <br>
 
+<div class="reservation_liste">
 <table>
     <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
         <thead bgcolor="silver">
@@ -59,9 +60,9 @@ qui signalera que les modifs ont bien été enregitrées-->
         <!-- date de creation de la reservation -->
         <td>{{ $reservation->created_at }}</td>
         <td>
-            
+            <div class="bouton_modifier">
             <a href="{{route('admin.reservation.edit' , ['id' => $reservation->id]) }}" style="color: green;">modifier</a>
-    
+            </div>
                     {{--------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup --}}
                     {{--------------------------------------}}
@@ -81,13 +82,16 @@ qui signalera que les modifs ont bien été enregitrées-->
         <form action="{{ route('admin.reservation.delete' , ['id' => $reservation->id]) }}" method="post">
             @csrf
             @method('DELETE')
+            <div class="bouton_supprimer">
             <a href="{{ route('admin.reservation.delete' , ['id' => $reservation->id]) }}"
                 onclick="event.preventDefault() ; if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                { this.closest('form').submit();}"  style="color: red;">supprimer</a>"
+                { this.closest('form').submit();}"  style="color: orange;">supprimer</a>
+            </div>
         </form>
     </td>
 </tr>
 
     @endforeach
     </table>
+</div>
 @endsection

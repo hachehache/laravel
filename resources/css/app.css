@@ -93,6 +93,156 @@
 
 /***************DEBUT: PAGE ACCUEIL- PHOTOS ******************/
 
+/* "Restaurant O'Cnamo Lille" */
+.text-over0 {
+	position: absolute;
+	left: 60%;
+	top: -75px;
+	font-size:60px;
+	font:bold;
+	transform: translate(-50%,50%);
+	text-align: center;
+	color: #007A5E;
+	/*texte sur une seule ligne*/
+	white-space:nowrap;
+	background-color: #eee;
+	padding: 10px;
+}
+
+/* texte"tendance culinaire" sur image Accueil*/
+.text-over2 {
+	position: absolute;
+	left: 60%;
+	top:25%;
+	font-size:30px;
+	font-style: italic;
+	transform: translate(-50%,50%);
+	text-align: center;
+	color: red;
+	/*texte sur une seule ligne*/
+	white-space:nowrap;
+	font-weight: bolder;
+	background-color: #eee;
+	padding: 5px;
+}
+/* texte"Nos spécialités Camerounaises" sur image Accueil*/
+.text-over3 {
+	position: absolute;
+	left: 60%;
+	top: 65%;
+	font-size:25px;
+	font-style: italic;
+	transform: translate(-50%,50%);
+	text-align: center;
+	color: #007A5E;
+	/*texte sur une seule ligne*/
+	white-space:nowrap;
+	font-weight:bold;
+	background-color: #eee;
+	padding: 5px;
+}
+
+
+.banniere{
+	position: relative;
+	width:80%;
+	min-height: 0vh;
+	display:  flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*nos menus, reservation */
+.banniere .contenu{
+	max-width: 100%;
+	text-align: center;
+}
+
+						/* Entete accueil par rapport au header*/
+						entete_accueil
+						{
+						/* test dans le corps de la page */
+						font-family: Georgia;
+							font-size:100%;
+							color: white;
+							font-weight: bolder;
+							margin-top: 10px;
+							margin-left: -200px;
+							}
+							
+  .bas_accueil
+  {
+	  /*font-family: Georgia;*/
+	  font-size:100%;
+	  font:bolder;
+	  margin-top:50px;
+	  margin-left: 400px;
+  }
+
+  
+ #conteneur_accueil 
+ img
+ {
+	 /* position des photos par rapport au header */ 
+	margin-top: 80px;
+	 /*bord des photo arrondi*/
+	border-radius: 10px;
+	width: 600px;
+	 /*margin:auto;*/
+	 /* espace entre 2 images*/
+	 /*margin: 1px;*/
+	 /*left: 10%;*/
+	margin-left : 45px;
+	font-family: Georgia;
+ }
+ 
+.paragraphe_accueil_central{
+	margin-top: 60px;
+}
+ 
+/* bouton accroche banniere pour "Nos Menus" */
+.btn1{
+	font-size: 1em;
+	color: white;
+	background:orange;
+	padding: 20px;
+	display: inline-block;
+	margin-top: 700px;
+	margin-left: -1290px;
+	/* en majuscule*/
+	text-transform: uppercase;
+	/* espacement entre lettre*/
+	letter-spacing: 0.5px;
+	font-size:200%;
+}
+/* bouton accroche banniere pour "Reservation" */
+.btn2{
+	font-size: 1em;
+	color: white;
+	background: blue;
+	padding: 20px;
+	display: inline-block;
+	
+	margin-left: 10px;
+	/* en majuscule*/
+	text-transform: uppercase;
+	/* espacement entre lettre*/
+	letter-spacing: 0.5px;
+	font-size:200%;
+	
+}
+
+.btn1:hover{
+	letter-spacing: 4px;
+	transition: 0.4s;
+}
+
+.btn2:hover{
+	letter-spacing: 4px;
+	transition: 0.4s;
+}
+/********************************/
+
 /* LES TITRES PARAGRAPHES PHOTOS */
 h2{
 	text-align: center;
@@ -114,7 +264,7 @@ img.alignRight{
   /* PARAGRAPHE PHOTOS GAUCHES*/
 p.alignLeft{
 
-	color: red;
+	color: black;
 	/* 1er: haut 2ieme:*/
 /* 1-Haut|2-Droit|3-Bas|4-Gauche */
 	margin: 0 0 0 0;
@@ -248,7 +398,9 @@ font-weight: 50px;
 
 
 /***********/
-
+h1.categorie_nom{
+	margin-left: -70px;
+}
 img.alignplat{
 	position:relative;
 	
@@ -260,18 +412,15 @@ img.alignplat{
 }
 .tableau_plat{
 	margin-top: -480px;
+	
 }
 
 .tableau_etiquette{
-	margin-left: 510px;
+	margin-left: 504px;
 }
 
 
 /* *****/
-categorie{
-
-	margin-top:0px;	
-}
 .menu--photo-plat{
 	position: relative;
 
@@ -283,21 +432,6 @@ p.description_categorie{
 	margin-top: 90px;
 	margin-left: 350px;
 }
-
-p.chemin_photo{
-	margin-top: 30px;
-	margin-left: 900px;
-}
-
-p.prix{
-
-	margin-left: 200px;
-}
-/*
-.nom_plat{
-	margin-top: -90px;
-	margin-left: -5px;
-} */
 /*********** FIN: PAGE MENU USER- avec PHOTOS*******************/
 
 
@@ -345,9 +479,6 @@ p.alignRight_actus{
 	clear: right;
 }
 
-.paragraphe_accueil_central{
-	margin-top: 60px;
-}
 /*********** FIN: PAGE DES ACTUS- PHOTOS*******************/
 
 
@@ -454,7 +585,7 @@ p.alignLeft_contact{
 		font-weight: bold;
 		font-size: 20px;
 	}
-		/*============FIN: FORMULAIRE CONTACT ==========*/
+		/*============FIN: FORMULAIRE CONTACT CLIENT ==========*/
 
 /*********** FIN: PAGE DE CONTACT ************************/
 
@@ -479,47 +610,12 @@ entete {
  }
 
 
-  /* Entete accueil par rapport au header*/
- .entete_accueil
- {
-	 /* test dans le corps de la page */
-	 font-family: Georgia;
-	 font-size:100%;
-	 font:bolder;
-	 margin-top:360px;
-	 margin-left: 400px;
-	 }
-	 
- .bas_accueil
- {
-	 /*font-family: Georgia;*/
-	 font-size:100%;
-	 font:bolder;
-	 margin-top:50px;
-	 margin-left: 400px;
- }
  
  
  #plat-menu-creation-total{
 	 
 	 margin-top: 0px;
 	 margin-left: 40px;
- }
- 
- #conteneur_accueil 
- img
- {
-	 /* position des photos par rapport au header */ 
-	 margin-top: 80px;
-	 /*bord des photo arrondi*/
-	 border-radius: 10px;
-width: 600px;
-	 /*margin:auto;*/
-	 /* espace entre 2 images*/
-	 /*margin: 1px;*/
-	 /*left: 10%;*/
-	 margin-left : 45px;
-	 font-family: Georgia;
  }
  
  .horaires 
@@ -695,8 +791,23 @@ width: 600px;
  }
  
  /* ================= LES FORMULAIRES ADMIN ========================================== */
+.bouton_ajouter{
+	color: green; 
+	font-weight: bold;  
+	margin-left: 30px; 
+	font-size: 30px;
+}
+.bouton_modifier{
+	color: green; 
+	font-weight: bold;  
+	font-size: 20px;
+}
+.bouton_supprimer{
+	font-size: 20px;
+}
+/*************FORMATAGE BOUTON AJOUTER **********************************/
  
-
+/*************FIN FORMATAGE BOUTON AJOUTER**********************************/
 /***********************************************/
 /*   Formulaire création plat  - ADMIN-  CATEGORIE*/
 /***********************************************/
@@ -723,14 +834,15 @@ div.separation-menu-etiquette
 /*-- #nom fieldset{ width:...px; height:..px;} --*/
 fieldset.photoplat-menu-categorie{ 
 	width:20%;
-	height: 300px;
+	height: 150px;
 	color: black;
 	margin-left: 40%;
 	margin-top: -10;
 	/* marge dans la boite*/
-	padding: 15px;
+	padding: 25px;
 	/* couleur pour fond de tableau menu */
 	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
 }
 
 /* ===============CREATION et MODIF -PLAT ====================*/
@@ -744,9 +856,10 @@ fieldset.plat-modif-nom{
 
 fieldset.plat-creation-nom{
 	width:30%;
-	margin-left: 2%;
+	margin-left: 10%;
 	margin-top: 0px;
 	padding: 10px;
+	border: 2px black solid;
 }
 
 /* CREATION PLAT: format tableau etiquette*/
@@ -809,6 +922,13 @@ overflow-y:auto;
 	color: white;
 }
 
+/*--------------ETIQUETTE - LISTE --------------------------------------*/
+.etiquette_liste{
+	margin-left: 300px;
+	width: 40%;
+}
+/*-------------FIN ETIQUETTE - LISTE -------------------------------*/
+
   /*ligne de séparation entre la liste des Etiquettes et les boutons validation et Reset*/
 
 /***********************************************/
@@ -857,7 +977,33 @@ background-color: black;
 }
 /* ========================================================================  */
 
+/********Menu scrollable lors creation plat ******************************/	
+/******** Si la liste devient trop longue, on aura un menu scrollable automatiquement ********/
+.form--radio-buttons--scrollable,
+.form--checkboxes--scrollable {
+    border: 2px black solid;
+    max-height: 250px;
+    overflow: auto;
+    width: 400px;
+	margin-left: 127px;
+}		
 
+.form--radio-button-image {
+    height: 100px;
+}
+
+
+form--radio-buttons--scrollable{
+	margin-left: 50px;
+	margin-left: 50px;
+}
+
+.form--radio-button-image{
+	width: 150px;
+	margin-top: 20px;
+	padding: 0px;
+}
+/*************FIN MENU SCROLLABLE ********************/
 /*==================================================*/
 /*   ETIQUETTE CREATION / MODIFICATION - Largeur des input */
 .etiquette-creation input{
@@ -884,8 +1030,14 @@ margin-left: 240px;
 	height: 20px;
 }
 /*==================================================*/
+/*--------------PLAT - LISTE --------------------------------------*/
+.plat_liste{
+	margin-left: 30px;
+	width: 95%;
+}
+/*-------------FIN PLAT - LISTE -------------------------------*/
 /*==================================================*/
-/*   RESERVATION CREATION / MODIFICATION - Largeur des input */
+/*   RESERVATION ADMIN - CREATION / MODIFICATION - Largeur des input */
 
 .reservation-creation input{
 width: 200px;
@@ -911,6 +1063,13 @@ margin-left: 0px;
 /* centrage du bouton */
 margin-left: 220px;	
 }
+
+/*--------------RESERVATION - LISTE --------------------------------------*/
+.reservation_liste{
+	margin-left: 30px;
+	width: 95%;
+}
+/*-------------FIN RESERVATION ADMIN - LISTE -------------------------------*/
 /*==================================================*/
 /*==================================================*/
 /*   CATEGORIE CREATION / MODIFICATION - Largeur des input */
@@ -939,18 +1098,29 @@ height: 20px;
 }
 
 .categorie-modif button{
-
-
 }
+
+
+/*--------------CATEGORIE - LISTE --------------------------------------*/
+.categorie_liste{
+	margin-left: 300px;
+	width: 40%;
+	text-align: center;
+}
+/*-------------FIN ETIQUETTE - LISTE -------------------------------*/
 /*==================================================*/
 /*==================================================*/
 /*   PLAT CREATION / MODIFICATION - Largeur des input */
+
+.plat-creation {
+	font-weight: bold;
+}
 
 .plat-creation input{
 width: 200px;
 /* hauteur d'un champs */
 height:10px;
-margin-left: 50px;
+
 }
 
 .plat-creation button{
@@ -973,7 +1143,7 @@ margin-left: 220px;
 /*==================================================*/
 
 /*==================================================*/
-/*   PHOTOPLAT CREATION / MODIFICATION - Largeur des input */
+/*   PHOTOPLAT CREATION / MODIFICATION / LISTE - Largeur des input */
 
 .photoplat-creation input{
 width: 600px;
@@ -989,19 +1159,41 @@ margin-left: 220px;
 }
 
 /*----------------------------------------------------*/
+/*** fieldset -modification photoplat ***/
+.photoplat-modification{
+	margin-left:50px;
+	width:800px;
+	border: 2px black solid;
+}
 .photoplat-modif input{
-width: 800px;
+width: 500px;
 /* hauteur d'un champs */
 height: 20px;
-margin-left: 0px;
+margin-left: 40px;
 }
+
+.photoplat-modif{
+	font-weight: bold;
+	margin-left: 100px;
+	}
 
 .photoplat-modif button{
 /* centrage du bouton */
 margin-left: 520px;	
 }
 
+/*--------------PHOTOPLAT - LISTE --------------------------------------*/
+.photoplat_liste_categorie{
+	margin-left: 400px;
+}
 
+.photoplat_liste{
+	margin-left: 30px;
+	width: 95%;
+}
+/*-------------FIN PHOTOPLAT - LISTE -------------------------------*/
+
+/*==================================================*/
 /* PHOTOPLAT - AFFICHAGE MENU COTE USER - TAILLE PHOTO REDUITE*/
 /* lors du listage plat, prix, etiquette, categorie, ..., et photo du plat */
 

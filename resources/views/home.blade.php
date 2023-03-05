@@ -6,34 +6,25 @@
     
             <!--========================================================================= --> 
 <body>
-
-      <img class="alignLeft" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="632px">
-                       
-         <h2> Titre 1</h2>
-                                  
-                <table width="40%" border="1" cellspacing="1" cellpadding="1" align="center">
-                      <tr><td>
-                              <p class="alignRight">
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                                sed do eiusmodtempor adipiscingadipiscing
-                            </p>       
-                      </td><tr>
-                </table>     
-           
-
+<!--------------------- BANNIERES  ACCROCHE----------------------->
+       <section class="banniere"  id="banniere">
+              <!--img class="alignLeft" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="632px"-->
+              <img class="" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="1550px">
+                      <div class="contenu">
+                          <p class="text-over0">Restaurant O'Cnamo Lille</p> 
+                          <!--p class="text-over1"> Les plats cuisiners de Mama </p>-->
+                          <p class="text-over2"> La tendance culinaire de l'Afrique </p>
+                          <p class="text-over3"> Nos spécialités Camerounaises</p>   
+                          <a href="" class="btn1"> Nos Menus </a>
+                          <a href="" class="btn2"> Réservation </a>
+                      </div>
+                  </section>
+<!----------------   FIN BANNIERE ACCROCHE ---------------------->    
               <!-- Clear: nettoie le float Left et Right -->
               <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
               <p class="clear"></p>
                
-      <img class="alignRight" src="img/ambiance/pexels-antony-trivet-12899958.jpg" alt="" width="632px">
+      <img class="alignRight" src="img/ambiance/pexels-antony-trivet-12899958.jpg" alt="hotesse_accueil" width="632px">
                   
             <h2> Titre 2</h2> 
                                   
@@ -44,7 +35,7 @@
                               sed do eiusmodtempor adipiscingadipiscing
                               sed do eiusmodtempor adipiscingadipiscing
                               sed do eiusmodtempor adipiscingadipiscing
-                              sed do eiusmodtempor adipiscingadipiscin
+                              sed do eiusmodtempor adipiscingadipiscing
                               sed do eiusmodtempor adipiscingadipiscing
                               sed do eiusmodtempor adipiscingadipiscing
                               sed do eiusmodtempor adipiscingadipiscing
@@ -61,7 +52,6 @@
                   </table>
                 </div>
              
-
               <!-- Clear: nettoie le float Left et Right -->
               <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
               <p class="clear"></p>
@@ -98,12 +88,10 @@
                       </td><tr>
                 </table>
               </div>
-
-              
+  
               <!-- Clear: nettoie le float Left et Right -->
               <!-- Clear: pour avoir les images alignées sur la hauteur et texte à coté -->
               <p class="clear"></p>
-
         
                   <img class="alignRight" src="img/ambiance/pexels-chan-walrus-941869.jpg" alt="" width="632px">
                 

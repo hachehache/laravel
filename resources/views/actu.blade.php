@@ -5,6 +5,21 @@
 @section('content')
     <h1>Page des actualités</h1>
     
+    <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+      <tr><td>
+          <p class="alignRight">
+                  <h3>Jour de publication :</h3>
+                      {{ $jour_publication }}
+                  
+                  <h3>Heure de publication:</h3>
+                      {{$heure_publication }}
+
+                      <h3>Texte:</h3>
+                      {{$texte }}
+          </p>   
+      </td><tr>
+  </table>  
+  <br>
 <div class="actus">
    
 

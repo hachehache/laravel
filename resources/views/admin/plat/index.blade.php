@@ -16,15 +16,16 @@ qui signalera que les modifs ont bien été enregitrées-->
 {{Session::get('confirmation')}}
 </div>
 @endif
-<div>
+<div class="bouton_ajouter">
     <br>{{--Conserver le <br>  pour que modif/suppr ne soit pas sur la même 1er ligne--}}
     <!-- pour ajouter nouveau plat -->
     <a href="{{ route('admin.plat.create')}}" style="color: green;">Ajouter</a>  
 </div>
 <br> {{--Conserver le <br>  pour que modif/suppr ne soit pas sur la même 1er ligne--}}
 <!------------------------------->
+<div class="plat_liste">
     <table>
-        <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+        <table CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
             <thead bgcolor="silver">
                 <tr>{{--Conserver le tr>  pour que modif/suppr ne soit pas sur la même 1er ligne--}}
                      <!--  th*7  on aura 7 balises -->
@@ -34,7 +35,7 @@ qui signalera que les modifs ont bien été enregitrées-->
                     <th colspan='1'>epingle</th>
                     <th colspan='1'>photo_plat_id</th>
                     <th colspan='1'>categorie_id</th>
-                   <!-- <th colspan='1'>etiquette_id</th> -->
+                  <th colspan='1'>etiquette_id</th>
 
                     <!-- pour modifier une plat -->
                     <th colspan='1'>actions</th>
@@ -49,11 +50,15 @@ qui signalera que les modifs ont bien été enregitrées-->
         <td>{{ $plat->prix }}</td>
         <td>{{ $plat->description }}</td>
         <td>{{ $plat->epingle }}</td>
-        <td>{{ $plat->photo_plat_id }}</td>
+     
         <td>{{ $plat->categorie_id }} </td>
+        <td>{{ $plat->photo_plat_id }}</td>
+        <td>{{-- $etiquette->etiquette_id --}} </td> <!-- si on laisse, on a "variable $etiquette" non defini et n'affiche pas la liste plat -->
         <td>
+            <div class="bouton_modifier">
             <a href="{{route('admin.plat.edit' , ['id' => $plat->id]) }}" style="color: green;">modifier</a>
-    
+            </div>
+
                     {{---------------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup        --}}
                     {{-- Ici on a choisi pour le lien.           --}}
@@ -66,13 +71,16 @@ qui signalera que les modifs ont bien été enregitrées-->
         <form action="{{ route('admin.plat.delete' , ['id' => $plat->id]) }}" method="post">
             @csrf
             @method('DELETE')
+            <div class="bouton_supprimer">
             <a href="{{ route('admin.plat.delete' , ['id' => $plat->id]) }}"
                 onclick="event.preventDefault(); if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                { this.closest('form').submit();}" style="color: red;">supprimer</a>"
+                { this.closest('form').submit();}" style="color: orange;">supprimer</a>
+            </div>
          </div>
         </form>
     </td>
 </tr>
     @endforeach
     </table>
+</div>
 @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ReservationController as AdminReservationControll
 use App\Http\Controllers\Admin\EtiquetteController as AdminEtiquetteController;
 use App\Http\Controllers\Admin\CategorieController as AdminCategorieController;
 use App\Http\Controllers\Admin\PlatController as AdminPlatController;
+use App\Http\Controllers\Admin\ActuController as AdminActuController;
 
 use App\Http\Controllers\Admin\PhotoPlatController as AdminPhotoPlatController;
 
@@ -15,7 +16,7 @@ use App\Http\Controllers\Admin\PhotoPlatController as AdminPhotoPlatController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ReservationController;
-use App\Http\Controllers\ActusController;
+use App\Http\Controllers\ActuController;
 use App\Http\Controllers\ContactController;
 
 //use App\Http\Controllers\ReservationController;//
@@ -46,7 +47,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
-Route::get('/actus', [ActusController::class, 'index'])->name('actus');
+Route::get('/actu', [ActuController::class, 'index'])->name('actu');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 // en page d'accueil les Mentions Legales- voir a placer dans le Footer //
@@ -133,22 +134,6 @@ Route::post('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'update']
 Route::delete('/admin/etiquette/{id}', [AdminEtiquetteController::class, 'delete'])->middleware('auth')->name('admin.etiquette.delete');
 
 
-//////// A SUPPRIMER CONTROLLER ENTREE N'EXISTE PAS
-// ADMIN: pour une nouvelle Entrée
-// --------------------------------
-// ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page Entrée
-//Route::get('/admin/entree', [AdminEntreeController::class, 'index'])->middleware('auth')->name('admin.entree.index');
-//Route::get('/admin/entree/create', [AdminEntreeController::class, 'create'])->middleware('auth')->name('admin.entree.create');
-//Route::post('/admin/entree', [AdminEntreeController::class, 'store'])->middleware('auth')->name('admin.entree.store');
-// get - est là pour afficher le formulaire
-//Route::get('/admin/entree/{id}/edit', [AdminEntreeController::class, 'edit'])->middleware('auth')->name('admin.entree.edit');
-// post - remet le formulaire
-// pour {id}update le update n'est pas nécessaire pour Laravel
-//Route::post('/admin/entree}', [AdminEntreeController::class, 'update'])->middleware('auth')->name('admin.entree.update');
-//Route::delete('/admin/entree/{id}', [AdminEntreeController::class, 'delete'])->middleware('auth')->name('admin.entree.delete');
-///////////////////////////////////////////////
-
-
 // ADMIN: pour un nouveau plat
 // --------------------------------
 // ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page plat
@@ -174,6 +159,21 @@ Route::get('/admin/photoplat/{id}/edit', [AdminPhotoPlatController::class, 'edit
 // pour {id}update le update n'est pas nécessaire pour Laravel
 Route::post('/admin/photoplat/{id}', [AdminPhotoPlatController::class, 'update'])->middleware('auth')->name('admin.photoplat.update');
 Route::delete('/admin/photoplat/{id}', [AdminPhotoPlatController::class, 'delete'])->middleware('auth')->name('admin.photoplat.delete');
+
+
+
+// ADMIN: pour une nouvelle Actu
+// -------------------------------
+// ADMIN: middleware('auth'): acces avec mot de passe pour accéder a page Actu
+Route::get('/admin/actu', [AdminActuController::class, 'index'])->middleware('auth')->name('admin.actu.index');
+Route::get('/admin/actu/create', [AdminActuController::class, 'create'])->middleware('auth')->name('admin.actu.create');
+Route::post('/admin/actu', [AdminActuController::class, 'store'])->middleware('auth')->name('admin.actu.store');
+// get - est là pour afficher le formulaire
+Route::get('/admin/actu/{id}/edit', [AdminActuController::class, 'edit'])->middleware('auth')->name('admin.actu.edit');
+// post - remet le formulaire
+// pour {id}update le update n'est pas nécessaire pour Laravel
+Route::post('/admin/actu/{id}', [AdminActuController::class, 'update'])->middleware('auth')->name('admin.actu.update');
+Route::delete('/admin/actu/{id}', [AdminActuController::class, 'delete'])->middleware('auth')->name('admin.actu.delete');
 
 //====================================================================================================================================/
 

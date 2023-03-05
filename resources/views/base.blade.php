@@ -43,6 +43,7 @@
                     <li><a href="{{ route('admin.categorie.index') }}">Catégorie</a></li>
                     <li><a href="{{ route('admin.plat.index') }}">Plat</a></li>
                     <li><a href="{{ route('admin.photoplat.index') }}">PhotoPlat</a></li>
+                    <li><a href="{{ route('admin.actu.index') }}">Actu</a></li>
             </ul>  
         </nav>
         
@@ -61,7 +62,7 @@
                     <li><a href="{{ route('home') }}">Accueil</a></li>
                     <li><a href="{{ route('menu') }}">Menu</a></li>
                     <li><a href="{{ route('reservation') }}">Réservation</a></li>
-                    <li><a href="{{ route('actus') }}"> Actus </a></li>
+                    <li><a href="{{ route('actu') }}"> Actu </a></li>
                     <li><a href="{{ route('contact') }}"> Contact </a></li>
                     <li><a href="{{ route('mentions-legales') }}">MentionsLegales</a></li>
                 </ul>

@@ -19,13 +19,14 @@ qui signalera que les modifs ont bien été enregitrées-->
 @endif
 <br>
 
-<div>
+<div class="bouton_ajouter">
     <!-- pour ajouter nouvelle categorie -->
     <a href="{{ route('admin.categorie.create')}}" style="color: green;">Ajouter</a>
 </div>
 <br>
+<div class="categorie_liste">
     <table>
-        <table width="100%" CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+        <table CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
             <thead bgcolor="silver">
                 <tr>
                      <!--  th*7  on aura 7 balises -->
@@ -44,8 +45,9 @@ qui signalera que les modifs ont bien été enregitrées-->
         <td>{{ $categorie->description }}</td>
         
         <td>
+            <div class="bouton_modifier">
             <a href="{{route('admin.categorie.edit' , ['id' => $categorie->id]) }}" style="color: green;">modifier</a>
-          
+            </div>
                     {{--------------------------------------}}
                     {{-- a choisir bouton sup ou lien sup --}}
                     {{--------------------------------------}}
@@ -65,13 +67,16 @@ qui signalera que les modifs ont bien été enregitrées-->
             <form action="{{ route('admin.categorie.delete' , ['id' => $categorie->id]) }}" method="post">
                 @csrf
                 @method('DELETE')
+                <div class="bouton_supprimer">
                 <a href="{{ route('admin.categorie.delete' , ['id' => $categorie->id]) }}"
                     onclick="event.preventDefault(); if (window.confirm('Etes-vous sûr de vouloir supprimer cet élément ?')) 
-                    { this.closest('form').submit();}" style="color: red;">supprimer</a>"
-        </div>    
+                    { this.closest('form').submit();}" style="color: orange;">supprimer</a>
+                </div>   
+    </div>
         </form>
         </td>
     </tr>
     @endforeach
     </table>
+</div>
 @endsection

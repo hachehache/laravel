@@ -56,7 +56,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         {{------- CHEMIN -----------}}
         <div class="photoplat-creation">
             <!--  pour avoir le libellé Description, devant le champs description -->
-           <label for="file-upload" >Upload du fichier: </label><br />
+           <label for="file-upload">Upload du fichier: </label><br />
          <br>
            <input class="@error('chemin') form--input--error @enderror" type="file" name="chemin" size="" value="">
            @error('chemin')
@@ -83,20 +83,18 @@ qui signalera que les modifs ont bien été enregitrées-->
             <div>
                 <!--old permet de recuperer les valeurs presente dans la base -->
                 <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
-                <br>
        
-                  <fieldset class="photoplat-menu-categorie"> 
-                                 <!-- AFFICHAGE DE LA LISTE DES CATEGORIES -->
+                <!--  <fieldset> -->
+                <select name="categorie_id" id=""> <!-- a virer -->
+                            <!-- AFFICHAGE DE LA LISTE DES CATEGORIES -->
               <legend class="menu-categorie"><p><strong>Liste des Catégories</strong></p></legend> 
-               
-               
                          @foreach ($categories as $categorie)
                       <label for="">{{ $categorie->nom }}</label> 
                  <!--  name=unique car une photo ne peut-être que dans une seule catégorie -->
-                        <input type="radio" name="unique" value="" id=""> <br> 
+                        <input type="radio" name="unique" value="" id="" > <br> 
                            @endforeach
                  
-            </fieldset>
+              <!--   </fieldset> -->
                 
     {{------- VALIDATION -----------}}
             <br>

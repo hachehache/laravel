@@ -24,7 +24,7 @@ class PhotoPlat extends Model
     {
 
         // ajout
-       // $categories = Categorie::all();//
+     //$categories = Categorie::all();//
 
     // belongsto plutot que hasOne
     // Le cote possedant: une categorie possede des plats
