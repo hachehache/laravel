@@ -30,6 +30,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         
     
         <fieldset class="plat-creation-nom">
+            <legend class="plat-creation"><p><strong>Création d'un plat</strong></p></legend> 
         <div class="plat-creation">
            <!-- <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="" > -->
            <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="0" onclick="if (this.checked) this.value=1; else this.value=0;" name="epingle" />
@@ -77,23 +78,22 @@ qui signalera que les modifs ont bien été enregitrées-->
             </div>
             @enderror
         </div>
-    </fieldset>
+   
     <br>
     
-<!-------------------create_blade--------------AJOUT ----------photo_plat_id----------->
- 
+<!-------------------create Plat ---------Liste Photos----------->
 <div class="form--radio-buttons--scrollable">
-    <legend class=""><p><strong>Liste Photos</strong></p></legend>
+    <legend class="liste_photo_creation_plat"><p><strong>Liste Photos</strong></p></legend>
     @foreach ($photoplats as $photoplat)
     <div>
-    <input type="radio" name="photo_plat_id" id="photo_plat_id_{{ $photoplat->id }}" value="{{ $photoplat->id }}">
-    <label for="photo_plat_id_{{ $photoplat->id }}">
-        <img class="form--radio-button-image" src="{{ asset($photoplat->chemin) }}" alt="photo {{ $photoplat->id }}" width="100px">
-       
-        <span>photo {{ $photoplat->id }}</span>
-     <!--   <span>photo {{-- $photoplat->id --}}</span>-->
-    </label>
-</div>
+        <input type="radio" name="photo_plat_id" id="photo_plat_id_{{ $photoplat->id }}" value="{{ $photoplat->id }}">
+            <label for="photo_plat_id_{{ $photoplat->id }}">
+                <img class="form--radio-button-image" src="{{ asset($photoplat->chemin) }}" alt="photo {{ $photoplat->id }}" width="100px">
+            
+                <span>photo {{ $photoplat->id }}</span>
+            <!--   <span>photo {{-- $photoplat->id --}}</span>-->
+            </label>
+    </div>
     @endforeach
 </div>
 
@@ -132,13 +132,19 @@ qui signalera que les modifs ont bien été enregitrées-->
        
     @endforeach
 </div>
+</fieldset>
 <!----------------------------------------------------------------------------->
 
 
         <br>
-            <button class="button-plat-creation" type="submit">Valider</button>
+                <div class="reservation-creation" align="center">
+                                    <!-- BOUTON D'ENVOI -->
+                <button class="button-plat-creation" type="submit">Valider</button>
+                </div>
         </div>
     </div>
         <br>
+   
 </form>
+
 @endsection

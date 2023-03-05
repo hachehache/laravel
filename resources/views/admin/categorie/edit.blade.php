@@ -33,10 +33,11 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
 <!-- PUT maj complète et PATCH maj partielle -->
 <!-- NE PAS METTRE METHODE PUT, sinon erreur à la validation de la modif etiquette -->
 <!-- @ method('PUT') -->
-<fieldset>
+<fieldset class="categorie-modif">
+        <legend class="categorie-modif"><p><strong>Catégorie modification</strong></p></legend> 
     <br>
         <div class="categorie-modif" align="center">
-                <label for="nom">Nom: </label><br />
+                <label for="nom" style="padding-right: 70px">Nom: </label><br />
                     <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
                 <input class="@error('nom') form--input--error @enderror" type="nom" name="nom" id="" value="{{ old('nom', $categorie->nom) }}" readonly>
                 @error('nom')
@@ -48,7 +49,7 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
 <br>
         <div class="categorie-modif" align="center">
                 <!--  pour avoir le libellé Description, devant le champs description -->
-                <label for="description">Description</label><br />
+                <label for="description" style="padding-right: 70px">Description</label><br />
                 <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="{{ old('description', $categorie->description) }}">
                 @error('description')
                 <div class="form--error-message">

@@ -33,25 +33,10 @@ qui signalera que les modifs ont bien été enregitrées-->
    
   
         {{------- NOM -----------}}
-    
-       
-            
-    
    
+<fieldset class="photoplat-creation">
+    <legend class="photoplat-creation"><p><strong>Photoplat création</strong></p></legend> 
 
-        <div>
-
-            <!-- PAS DE DESCRIPTION DANS LA BASE-->
-             <!--  pour avoir le libellé Description, devant le champs description -->
-             <!--   <label for="description">Description: </label>
-            <input class="@@error('description') form--input--error @@error" type="text" name="description" size="30" value="{{-- old('description', $photoplat->description)--}}">-->
-             <!--   @@error('description')-->
-            <!--<div class="form--error-message">-->
-             <!--       {{-- $message --}}
-            </div> -->
-             <!--    @@enderror -->
-        </div>
-        <fieldset>
 <br>
         {{------- CHEMIN -----------}}
         <div class="photoplat-creation">
@@ -70,7 +55,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         {{------- DESCRIPTION -----------}}
         <div class="photoplat-creation">
            <!--  pour avoir le libellé Description, devant le champs description -->
-           <label for="description">Description:</label>
+           <label for="description" style="padding-right: 10px">Description:</label>
            <input class="@error('description') form--input--error @enderror" type="text" name="description" id="" value="">
            @error('description')
                <div class="form--error-message">
@@ -78,29 +63,32 @@ qui signalera que les modifs ont bien été enregitrées-->
                </div>
             @enderror 
             </div>
-
+</fieldset>
             {{----------Inserer la photo dans une categorie-------------}}
             <div>
                 <!--old permet de recuperer les valeurs presente dans la base -->
                 <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
                 <br>
        
-                  <fieldset class="photoplat-menu-categorie"> 
+<fieldset class="photoplat-creation-menu-categorie"> 
                                  <!-- AFFICHAGE DE LA LISTE DES CATEGORIES -->
               <legend class="menu-categorie"><p><strong>Liste des Catégories</strong></p></legend> 
                
-               
+              <div class="photoplat-creation-menu-categorie-liste">
                          @foreach ($categories as $categorie)
-                      <label for="">{{ $categorie->nom }}</label> 
-                 <!--  name=unique car une photo ne peut-être que dans une seule catégorie -->
-                        <input type="radio" name="unique" value="" id=""> <br> 
-                           @endforeach
+                         <br>
+                            <label for="photoplat-creation-menu-categorie-liste" style="padding-right: 0px">{{ $categorie->nom }}</label>
+                        <!--  name=unique car une photo ne peut-être que dans une seule catégorie -->
+                                <input type="radio" name="unique" value="" id=""> 
+                        <br>
+                        @endforeach
+              </div>
                  
-            </fieldset>
+</fieldset>
                 
     {{------- VALIDATION -----------}}
             <br>
-            <div class="photoplat-creation">
+            <div class="photoplat-creation" align="center">
             <button type="submit">Valider</button>
         </div>  
         <br>

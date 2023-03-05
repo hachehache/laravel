@@ -1,6 +1,7 @@
-<?php
-
-namespace App\Http\Controllers;
+<?php 
+     // CONTROLLER CLIENT //
+     // RESERVATION UNIQUEMENT //
+namespace App\Http\Controllers\Admin;
 use App\Models\Reservation;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -10,9 +11,22 @@ class ReservationController extends Controller
     //creation d'une fonction
     public function index()
     {
+// Pour avor les créneaux horaires de la table Restaurant
+        $horaire = DB::table('restaurant')
+        // equivaut a :
+        //select * from restaurant where cle='horaire'
+        ->where('cle', '=', 'horaire')
+        // avec first plutot que ->get()
+        ->get()
+        ->first()
+        ;
+
+        $reservations = Reservation::all();
         // on est dans la partie front
         // le client ne verra pas les autres réservations
         return view('reservation', [
+            'reservations' => $reservations,
+            'horaire' => $horaire->valeur,
         ]);
 
     }
@@ -21,6 +35,17 @@ class ReservationController extends Controller
     //public function create()//
     public function create()
     {
+
+                    
+            // Pour avor les créneaux horaires de la table Restaurant
+           $horaire = DB::table('restaurant')
+            // equivaut a :
+            //select * from restaurant where cle='horaire'
+            ->where('cle', '=', 'horaire')
+            // avec first plutot que ->get()
+            ->get()
+           ->first()
+            ;
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
         $reservation = new stdClass;
@@ -39,7 +64,7 @@ class ReservationController extends Controller
         // transmission des valeurs par défaut à la vue
         return view('admin.reservation.create', [
             'reservation' => $reservation,
-            'creneaux_horaires' =>  $creneaux_horaires,
+           'creneaux_horaires' =>  $creneaux_horaires,
          
         ]);
     }
@@ -47,6 +72,8 @@ class ReservationController extends Controller
     //cette methode enregistre les données d'une nouvelle reservation dans la base de données 
     public function store(Request $request)
     {
+        //dd($request->all());
+
         /*verif avant d'enregistrer les info utilisateurs */
     $validated = $request->validate([
         /* nombre mini et max de caracteres, 
@@ -84,7 +111,46 @@ class ReservationController extends Controller
     return redirect()->route('admin.reservation.index');
     }
 
-    
+
+    // affiche un formulaire de modification
+    // $id est le paramètre de la réservation
+    public function edit(int $id)
+    {   
+        // recup de la reservation
+        $reservation = Reservation::find($id);
+    // affichage d'une erreur 404 si la reservation est introuvable
+    // !$reservation veut dire :si pas reservation alors ... 
+    //(voir booleen vrai ou faux)
+    // on peut aussi message un message parlant au lieu de abort(404)
+    if (!$reservation) {
+            abort(404);
+        }
+
+        //suppresssion des secondes
+        // ici on recupère hh:mm::ss, on lit de 0 jusque la fin et on retire les 3 derniers caractères
+        // ":ss"
+        $reservation->heure = substr($reservation->heure, 0, strlen($reservation->heure) -3);
+
+        //Recupertion des créneaux horaires de réservation
+       $creneaux_horaires = $this->getCreneauxHoraires();
+
+        // le bloc de code ci-dessus créé un tableau équivalent à celui-dessous
+         $creneaux_horaires = [
+               // 12:xx
+            "12:00",
+           "12:15",
+            "12:30",
+            "12:45",
+            // 23:xx
+            "23:00",
+         ];
+
+        // transmission de la reservation à la vue
+        return view('admin.reservation.edit', [
+            'reservation'=> $reservation,
+            'creneaux_horaires' => $creneaux_horaires,
+        ]);
+    }
     private function getCreneauxHoraires()
     {
        // @todo récupérer les créneaux horaires de la table restaurant en utilsant une clé
@@ -138,5 +204,6 @@ class ReservationController extends Controller
 
         return $creneaux_horaires;
     } 
+ }
 
-}
+

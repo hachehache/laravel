@@ -71,7 +71,7 @@ qui signalera que les modifs ont bien été enregitrées-->
                  @@enderror -->
             </div>
         <br>
-            <div class="photoplat-modif">     
+            <div class="photoplat-modif" align="center">  
                 <button type="submit">Valider</button>
             </div>
         <br>

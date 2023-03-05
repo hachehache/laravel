@@ -73,7 +73,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     </fieldset>
           
             <br>
-            <div class="actu-creation">
+            <div class="actu-creation" align="center">
             <button type="submit">Valider</button>
         </div>  
         <br>

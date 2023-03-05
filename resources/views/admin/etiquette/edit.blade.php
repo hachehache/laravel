@@ -31,7 +31,8 @@ qui signalera que les modifs ont bien été enregitrées-->
         <!--permet a laravel de reconnaitre si la method n'est pas GET ou POST -->
         <!-- PUT maj complète et PATCH maj partielle -->
         <!-- @@method('PUT') -->
-        <fieldset>
+        <fieldset class="etiquette-modif">
+            <legend class="reservation-modif"><p><strong>Etiquette modification</strong></p></legend> 
         <br>
             <div class="etiquette-modif" align="center">
                 <label for="description">Nom:</label><br />

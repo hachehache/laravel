@@ -846,21 +846,60 @@ fieldset.photoplat-menu-categorie{
 }
 
 /* ===============CREATION et MODIF -PLAT ====================*/
-/*  format du tableau dans modif PLAT*/
-fieldset.plat-modif-nom{
-	width:30%;
-	margin-left: 2%;
-	margin-top: 0px;
-	padding: 10px;
-}
 
+
+
+/********* DEBUT: CREATION PLAT *********/
+/* groupement pavé Nom dplat, liste photo , liste étiquettes, et liste catégories */
 fieldset.plat-creation-nom{
 	width:30%;
-	margin-left: 10%;
+	margin-left: 30%;
 	margin-top: 0px;
 	padding: 10px;
 	border: 2px black solid;
+	height: 1000px;
 }
+
+form.plat-menu-creation{
+	margin-left: 5%;
+	margin-top: 30px;
+	height: 0px;
+}
+
+/* Bouton validation creation plat */
+.button-plat-creation{
+}
+
+/********* FIN: CREATION PLAT *********/
+
+/********* DEBUT: MODIF PLAT *********/
+
+/*  format du tableau dans modif PLAT*/
+fieldset.plat-modif-nom{
+	width:40%;
+	margin-left: 40%;
+	margin-top: 0px;
+	padding: 10px;
+	height:400px;
+}
+
+.plat-modif-nom label{
+	font-weight: bold;
+}
+
+.plat-modif-nom input{
+	width: 250px;
+	/* hauteur d'un champs */
+	height: 40px;
+	margin-left: 0px;
+	margin-bottom: auto;
+	/* sur la m^me colonne */
+	flex-direction: column;
+	}
+
+/********* FIN: MODIF PLAT *********/
+
+
 
 /* CREATION PLAT: format tableau etiquette*/
 fieldset.plat-menu-etiquette{
@@ -879,11 +918,6 @@ fieldset.plat-menu-categorie{
 	padding: 25px;
 }
 
-form.plat-menu-creation{
-	margin-left: 5%;
-	margin-top: 30px;
-	height: 0px;
-}
  /* tableau de photos dans création plat */
 fieldset.plat-menu-photo{
 	width: 20%;
@@ -893,11 +927,6 @@ fieldset.plat-menu-photo{
 	padding: 5px;
 }
 
-/* Bouton validation creation plat */
-.button-plat-creation{
-	margin-left: 40%;
-	margin-top: 500px;
-}
 
 /*menu rideau   */
 .vertical-menu{
@@ -1006,29 +1035,62 @@ form--radio-buttons--scrollable{
 /*************FIN MENU SCROLLABLE ********************/
 /*==================================================*/
 /*   ETIQUETTE CREATION / MODIFICATION - Largeur des input */
+fieldset.etiquette-creation{ 
+	width:5%;
+	height: 250px;
+	color: black;
+	margin-left: 38%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 25px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+
+.etiquette-creation label{
+	font-weight: bold;
+	}
+
 .etiquette-creation input{
 width: 200px;
 /* hauteur d'un champs */
-height:5px;
+height:40px;
 margin-right: 50px;
-}
-
-.etiquette-creation button{
-/* centrage du bouton */
-margin-left: 240px;	
+margin-bottom: auto;
+	/* sur la m^me colonne */
+flex-direction: column;
 }
 
 /*----------------------------------------------------*/
-.etiquette-modif input{
-	width: 220px;
-	/* hauteur d'un champs */
-	height: 20px;
+fieldset.etiquette-modif{ 
+	width:5%;
+	height: 250px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 25px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
 }
 
 .etiquette-modif label{
 	font-weight: bold;
-	height: 20px;
 }
+
+.etiquette-modif input{
+	width: 200px;
+	/* hauteur d'un champs */
+	height: 20px;
+	margin-left: 0px;
+	margin-bottom: auto;
+	/* sur la m^me colonne */
+	flex-direction: column;
+}
+
 /*==================================================*/
 /*--------------PLAT - LISTE --------------------------------------*/
 .plat_liste{
@@ -1036,32 +1098,112 @@ margin-left: 240px;
 	width: 95%;
 }
 /*-------------FIN PLAT - LISTE -------------------------------*/
+
+/*==================================================*/
+/*======  DEBUT: RESERVATION CLIENT - CREATION UNIQUEMENT Largeur des input */
+fieldset.reservation-creation_client{ 
+	width:5%;
+	height: 650px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 25px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+.reservation-creation_client label{
+	font-weight: bold;
+	}
+
+.reservation-creation_client input{
+	width: 200px;
+	/* hauteur d'un champs */
+	height: 40px;
+	margin-left: 0px;
+	margin-bottom: auto;
+	/* sur la m^me colonne */
+	flex-direction: column;
+	}
+
+.reservation-creation_client button{
+	/* centrage du bouton */
+	margin-left: 600px;	
+	}
+	
+	/*----------------------------------------------------*/
+/*  a jeter ****/
+
+.plat-creation {
+	font-weight: bold;
+}
+.plat-creation input{
+width: 200px;
+/* hauteur d'un champs */
+height:10px;
+}
+.plat-creation button{
+/* centrage du bouton */
+margin-left: 220px;	
+}
+
+
+/*===== FIN RESERVATION CLIENT - CREATION UNIQUEMENT =====================*/
+
 /*==================================================*/
 /*   RESERVATION ADMIN - CREATION / MODIFICATION - Largeur des input */
+
+fieldset.reservation-creation{ 
+	width:5%;
+	height: 620px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+.reservation-creation label{
+	font-weight: bold;
+	}
 
 .reservation-creation input{
 width: 200px;
 /* hauteur d'un champs */
-height:20px;
+height:40px;
 margin-left: 0px;
 }
+/*----------------------------------------------------*/
 
-.reservation-creation button{
-/* centrage du bouton */
-margin-left: 220px;	
+fieldset.reservation-modif{ 
+	width:5%;
+	height: 600px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
 }
 
-/*----------------------------------------------------*/
+.reservation-modif label{
+	font-weight: bold;
+	}
+
 .reservation-modif input{
 width: 200px;
 /* hauteur d'un champs */
-height: 20px;
+height: 40px;
 margin-left: 0px;
-}
-
-.reservation-modif button{
-/* centrage du bouton */
-margin-left: 220px;	
+margin-bottom: auto;
+flex-direction: column;
 }
 
 /*--------------RESERVATION - LISTE --------------------------------------*/
@@ -1072,32 +1214,63 @@ margin-left: 220px;
 /*-------------FIN RESERVATION ADMIN - LISTE -------------------------------*/
 /*==================================================*/
 /*==================================================*/
+
+/*------------PHOTOPLAT- CREATION --------------------*/
+fieldset.categorie-creation{ 
+	width:5%;
+	height: 200px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+.categorie-creation label{
+	font-weight: bold;
+	}
+
 /*   CATEGORIE CREATION / MODIFICATION - Largeur des input */
 .categorie-creation input{
-width: 300px;
+width: 200px;
 /* hauteur d'un champs */
-height:20px;
+height: 40px;
 margin-left: 0px;
 }
-
-.categorie-creation button{
-/* centrage du bouton */
-margin-left: 220px;	
-}
-
 /*----------------------------------------------------*/
+
+fieldset.categorie-modif{ 
+	width:5%;
+	height: 200px;
+	color: black;
+	margin-left: 40%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
 
 .categorie-modif label{
 	font-weight: bold;
-	height: 20px;
 }
 .categorie-modif input{
-width: 220px;
+width: 200px;
 /* hauteur d'un champs */
-height: 20px;
+height:40px;
+margin-left: 0px;
+margin-bottom: auto;
+	/* sur la m^me colonne */
+	flex-direction: column;
 }
 
 .categorie-modif button{
+	/* centrage du bouton */
+	
 }
 
 
@@ -1145,23 +1318,61 @@ margin-left: 220px;
 /*==================================================*/
 /*   PHOTOPLAT CREATION / MODIFICATION / LISTE - Largeur des input */
 
+/******** DEBUT: PHOTOPLAT CREATION********/
+
+fieldset.photoplat-creation{ 
+	width: 45%;
+	height: 200px;
+	color: black;
+	margin-left: 25%;
+	margin-top: 0px;
+	/* marge dans la boite*/
+	padding: 30px;
+	margin-bottom: auto;
+
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+.photoplat-creation label{
+	font-weight: bold;
+}
+
 .photoplat-creation input{
-width: 600px;
+width: 400px;
 /* hauteur d'un champs */
 height:20px;
 margin-left: 60px;
-
 }
 
-.photoplat-creation button{
-/* centrage du bouton */
-margin-left: 220px;	
+fieldset.photoplat-creation-menu-categorie{ 
+	width:15%;
+	height: 300px;
+	color: black;
+	margin-left: 41%;
+	margin-top: 0px;
+	/* marge dans la boite*/
+	padding: 15px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+.photoplat-creation-menu-categorie-liste input{
+	margin-left:auto;
+			/* sur la m^me colonne */
+	flex-direction: column;
 }
 
+.photoplat-creation-menu-categorie label{
+	font-weight: bold;
+}
+
+/******** FIN: PHOTOPLAT CREATION ************/
 /*----------------------------------------------------*/
 /*** fieldset -modification photoplat ***/
 .photoplat-modification{
-	margin-left:50px;
+	margin-left: 250px;
 	width:800px;
 	border: 2px black solid;
 }
@@ -1176,11 +1387,6 @@ margin-left: 40px;
 	font-weight: bold;
 	margin-left: 100px;
 	}
-
-.photoplat-modif button{
-/* centrage du bouton */
-margin-left: 520px;	
-}
 
 /*--------------PHOTOPLAT - LISTE --------------------------------------*/
 .photoplat_liste_categorie{

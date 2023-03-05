@@ -35,11 +35,10 @@ qui signalera que les modifs ont bien été enregitrées-->
 <!-- PUT maj complète et PATCH maj partielle -->
 @method('PUT')
 
-<fieldset class="reservation-modif">
-    <legend class="reservation-modif"><p><strong>Reservation modification</strong></p></legend> 
+<fieldset>
 
     <div class="reservation-modif">
-        <label for="nom"  style="padding-right: 70px">Nom: </label>
+        <label for="nom">Nom: </label>
             <!-- readonly permet de rentrer dans le champ nom uniquement en lecture
             On evite toute accident d'effacement du nom lors d'un changement -->
             <!-- si erreur on ajoute cette class --> <!--old permet de recuperer les valeurs presente dans la base -->
@@ -50,10 +49,9 @@ qui signalera que les modifs ont bien été enregitrées-->
         </div>
         @enderror
     </div>
-    <br>
 
     <div class="reservation-modif">
-        <label for="prenom" style="padding-right: 55px">Prenom: </label>
+        <label for="prenom">Prenom: </label>
         <input class="@error('prenom') form--input--error @enderror" type="text" name="prenom" id="" value="{{ old('prenom', $reservation->prenom) }}">
         @error('prenom')
         <div class="form--error-message">
@@ -61,10 +59,8 @@ qui signalera que les modifs ont bien été enregitrées-->
         </div>
         @enderror
     </div>
-    <br>
-    
     <div class="reservation-modif">
-        <label for="jour"  style="padding-right: 77px">Jour: </label>
+        <label for="jour">Jour: </label>
         <input class="@error('jour') form--input--error @enderror" type="date" name="jour" id="" value="{{ old('jour', $reservation->jour) }}">
         @error('jour')
         <div class="form--error-message">
@@ -75,7 +71,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 <br>
 
     <div class="reservation-modif">
-    <label for="heure" style="padding-right: 100px">Heure: </label>
+    <label for="heure">Heure: </label>
     <select name="heure" id="">
         @foreach ($creneaux_horaires as $creneau_horaire)
         <option value="{{ $creneau_horaire }}" @if (old('heure', $reservation->heure) == $creneau_horaire) selected @endif>{{ $creneau_horaire }}</option>
@@ -90,7 +86,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 
 <br>
     <div class="reservation-modif">
-    <label for="nombre_personnes" style="padding-right: 80px">Nbre Pers: </label>
+    <label for="nombre_personnes">Nbre Pers: </label>
         <input class="@error('nombre_personnes') form--input--error @enderror" type="number" name="nombre_personnes" id="" value="{{ old('nombre_personnes', $reservation->nombre_personnes) }}">
         @error('nombre_personnes')
         <div class="form--error-message">
@@ -101,7 +97,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 <br>
     <div class="reservation-modif">
                      <!-- REVOIR FORMAT DU CHAMPS TELEPHONE INVALID A LA MODIFICATION -->
-        <label for="tel" style="padding-right: 70px">Tel: </label>
+        <label for="tel">Tel: </label>
         <!-- placeholder: aide pour indiquer le format n° phone -->
         <input class="@error('tel') form--input--error @enderror" type="tel" name="tel" id="" value="{{ old('tel', $reservation->tel) }}" placeholder="06 12 34 56 78">
         @error('tel')
@@ -113,7 +109,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 <br>
     <div class="reservation-modif">
                     <!-- REVOIR FORMAT DU CHAMPS EMAIL INVALID A LA MODIFICATION -->
-        <label for="mail" style="padding-right: 70px">Mail: </label>
+        <label for="mail">Mail: </label>
         <input class="@error('mail') form--input--error @enderror" type="email" name="email" id="" value="{{ old('email', $reservation->email) }}">
         @error('email')
         <div class="form--error-message">
@@ -124,7 +120,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 
 </fieldset>
 <br>
-    <div class="reservation-modif" align="center">
+    <div class="reservation-modif">
         <!--label for="date">Date de l'enregistrement: </label -->
         <!-- date de creation de la reservation -->
         <!-- METTRE LA DATE DU MOMENT, SINON ERREUR A L'ENREGISTREMENT -->

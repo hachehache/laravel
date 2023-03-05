@@ -29,10 +29,9 @@ qui signalera que les modifs ont bien été enregitrées-->
     @csrf
     {{-------------- CREATION D'UNE ETIQUETTE ----------------}}
 
-    <fieldset>
-    {{------- NOM -----------}}
-            
-          
+    <fieldset class="etiquette-creation">
+        <legend class="reservation-creation"><p><strong>Etiquette création</strong></p></legend> 
+    {{------- NOM -----------}}      
     <div class="etiquette-creation">
              <!--old permet de recuperer les valeurs presente dans la base -->
             <!-- Label pour avoir le libellé Nom, devant le champs etiquette -->
@@ -63,7 +62,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     
           
             <br>
-            <div class="etiquette-creation">
+            <div class="etiquette-creation" align="center">
             <button type="submit">Valider</button>
         </div>  
         <br>

@@ -31,13 +31,14 @@ qui signalera que les modifs ont bien été enregitrées-->
 <!-- @@method('PUT')ne pas mettre dans le create sinon erreur --> 
     {{-------------- CREATION D'UNE CATEGORIE ----------------}}
 
-    <fieldset>
+    <fieldset class="categorie-creation">
+        <legend class="categorie-creation"><p><strong>Catégorie creation</strong></p></legend> 
     {{------- NOM -----------}}
 
         <div class="categorie-creation">
             <!--old permet de recuperer les valeurs presente dans la base -->
             <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
-           <label for="nom">Nom: </label>
+           <label for="nom" style="padding-right: 70px">Nom: </label>
             <input class="@error('nom') form--input--error @enderror" type="text" name="nom" size="30" id="" value="{{ old('nom', $categorie->nom) }}">
             @error('nom')
             <div class="form--error-message">
@@ -50,7 +51,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     {{------- DESCRIPTION -----------}}
     <div class="categorie-creation">
             <!--  pour avoir le libellé Description, devant le champs description -->
-            <label for="description">Description: </label>
+            <label for="description" style="padding-right: 70px">Description: </label>
             <input class="@error('description') form--input--error @enderror" type="text" name="description" size="30" value="{{ old('description', $categorie->description) }}">
             @error('description')
             <div class="form--error-message">
@@ -63,7 +64,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     {{------- VALIDATION -----------}}
     
 <br>
-        <div class="categorie-creation">
+        <div class="categorie-creation" align="center">
             <button type="submit">Valider</button>
         </div>  
 <br> 

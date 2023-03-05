@@ -34,11 +34,11 @@ qui signalera que les modifs ont bien été enregitrées-->
 
 
     {{-------------- CREATION D'UNE RESERVATION ----------------}}
-    <fieldset class="reservation-creation">
-        <legend class="reservation-creation"><p><strong>Reservation en ligne</strong></p></legend> 
+    <fieldset>
     {{------- NOM -----------}}
+
     <div class="reservation-creation">
-           <label for="nom" style="padding-right: 70px">Nom: </label>
+           <label for="nom">Nom: </label>
             <input class="@error('nom') form--input--error @enderror" type="text" name="nom" size="30" id="" value="{{ old('nom', $reservation->nom) }}">
             @error('nom')
             <div class="form--error-message">
@@ -50,7 +50,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 <br>
     {{------- PRENOM -----------}}
     <div class="reservation-creation">
-            <label for="prenom" style="padding-right: 55px">Prénom: </label>
+            <label for="prenom">Prénom: </label>
             <input class="@error('prenom') form--input--error @enderror" type="text" name="prenom" size="30" id="" value="{{ old('prenom', $reservation->prenom) }}">
             @error('prenom')
             <div class="form--error-message">
@@ -63,7 +63,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 
     {{------- JOUR -----------}}
     <div class="reservation-creation">
-            <label for="jour" style="padding-right: 77px">Jour: </label>
+            <label for="jour">Jour: </label>
             <input class="@error('jour') form--input--error @enderror" type="date" name="jour" id="" value="{{ old('jour', $reservation->jour) }}">
             @error('jour')
             <div class="form--error-message">
@@ -74,7 +74,7 @@ qui signalera que les modifs ont bien été enregitrées-->
 <br>
     {{------- HEURE -----------}} 
     <div class="reservation-creation">
-            <label for="heure" style="padding-right: 100px">Heure: </label>
+            <label for="heure">Heure: </label>
             <select name="heure" id="">
                 @foreach ($creneaux_horaires as $creneau_horaire)
                     <option value="{{ $creneau_horaire }}" @if (old('heure', $reservation->heure) == $creneau_horaire) selected @endif>{{ $creneau_horaire }}</option>
@@ -91,7 +91,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     {{------- NOMBRE DE PERSONNES -----------}}
 <br> 
     <div class="reservation-creation">
-            <label for="nombre_personnes" style="padding-right: 80px">Nombre de personnes: </label>
+            <label for="nombre_personnes">Nombre de personnes: </label>
             <input class="@error('nombre_personnes') form--input--error @enderror" type="number" name="nombre_personnes" id="" value="{{ old('nombre_personnes', $reservation->nombre_personnes) }}">
             @error('nombre_personnes')
             <div class="form--error-message">
@@ -103,7 +103,7 @@ qui signalera que les modifs ont bien été enregitrées-->
     {{------- TELEPHONE -----------}}
          
     <div class="reservation-creation">
-            <label for="tel" style="padding-right: 70px">Tel: </label>
+            <label for="tel">Tel: </label>
               <!-- placeholder: aide pour indiquer le format n° phone -->
             <input class="@error('tel') form--input--error @enderror" type="tel" name="tel"  size="20" id="" value="{{ old('tel', $reservation->tel) }}" placeholder="06 12 34 56 78">
             @error('tel')
@@ -117,8 +117,8 @@ qui signalera que les modifs ont bien été enregitrées-->
 
     {{------- MAIL -----------}}
     <div class="reservation-creation">
-            <label for="mail"  style="padding-right: 70px">Mail: </label>
-            <input class="@error('email') form--input--error @enderror" type="email" name="email" size="30" id="" value="{{ old('email', $reservation->email) }}" placeholder="admin@example.com">
+            <label for="mail">Mail: </label>
+            <input class="@error('email') form--input--error @enderror" type="email" name="email" size="30" id="" value="{{ old('email', $reservation->email) }}">
             @error('email')
             <div class="form--error-message">
                 {{ $message }}
@@ -130,9 +130,9 @@ qui signalera que les modifs ont bien été enregitrées-->
     {{------- VALIDATION -----------}}
 </fieldset>
 
-<br>
+    
         	<!-- CENTRAGE DU BOUTON -->
-							<div class="reservation-creation" align="center">
+							<div class="reservation-creation">
                                 <!-- BOUTON D'ENVOI -->
                     <button type="submit">Valider</button>
     </div>  
