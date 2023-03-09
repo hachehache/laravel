@@ -46,7 +46,14 @@ use Illuminate\Support\Facades\Route;
 // =================== DEBUT - PAGE ACCUEIL ============================================/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
+
+//---------------//
+// on garde les 2 routes avec 2 methodes differentes. En post on ecrit dans Store
+// en get on récupére le formulaire
 Route::get('/reservation', [ReservationController::class, 'index'])->name('reservation');
+Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation');
+//--------------//
+
 Route::get('/actu', [ActuController::class, 'index'])->name('actu');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
@@ -54,11 +61,6 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::get('/mentions-legales', function () {
     return view('mentions-legales');
 })->name('mentions-legales');
-
-// Affiche Vue RESERVATION AU CLIENT (formulaire de reservation)
-Route::get('/reservation', function () {
-    return view('reservation');
-})->name('reservation');
 
 // ajout le 25 Fev pour afficher liste des categorie et obtenir liste des plats //
 Route::get('/categorie', function () {

@@ -2,54 +2,46 @@
 
 namespace App\Models;
 
-use App\models\Etiquette;
-use App\models\Categorie;
-use App\models\PhotoPlat;
+use App\Models\Categorie;
+use App\Models\Etiquette;
+use App\Models\PhotoPlat;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Plat extends Model
 {
     use HasFactory;
-   
 
-    protected $table ='plat';
-    protected $primarykey ='id';
+    protected $table = 'plat';
+    protected $primaryKey = 'id';
 
-     //--------------------------------//
-    // Cette methode permet de récuperer la categorie
-    // @return Categorie
+    /**
+     * Cette fonction permet de récupérer la catégorie
+     *
+     * @return Categorie
+     */
     public function categorie()
     {
-    // belongsto plutot que hasOne
-    // Le cote possedant: une categorie possede des plats
-    
-    // le 17 Fev ligne d'origine
-   // return $this->belongsTo(Categorie::class);
-
-     // ajout categorie_id  effectué le 17 fev
-    return $this->belongsTo(Categorie::class, 'categorie_id','id');
+        return $this->belongsTo(Categorie::class);
     }
 
-     //--------------------------------//
-    // Cette methode permet de récuperer la photo du plat
-    // @return PhotoPlat
+    /**
+     * Cette fonction permet de récupérer la photo
+     *
+     * @return PhotoPlat
+     */
     public function photo()
     {
-    return $this->belongsTo(PhotoPlat::class, 'photo_plat_id','id');
+        return $this->belongsTo(PhotoPlat::class, 'photo_plat_id', 'id');
     }
-    // Cette fonction permet recup de la collection d'etiquettes
-    // pour signaler relation entre plat et etiquette
-    //   @return collection 
 
-     //--------------------------------//
+    /**
+     * Cette fonction permet de récupérer la collection d'étiquettes
+     *
+     * @return Collection
+     */
     public function etiquettes()
     {
-    
-    //return $this->belongsToMany(Etiquette::class,'etiquette_plat','plat_id','etiquette_id'); 
-    // meme resultat en suivant convention laravel
-    return $this->belongsToMany(Etiquette::class);
-
+        return $this->belongsToMany(Etiquette::class);
     }
-} 
-
+}

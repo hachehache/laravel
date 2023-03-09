@@ -21,7 +21,7 @@ class PhotoPlatController extends Controller
         // renvoi la liste des etiquettes
         // récuperer la liste des etiquettes
         $photoplats = PhotoPlat::all();
-        $categories = Categorie::all();
+        //$categories = Categorie::all();
 
         //récuperer la liste des photoplats
         //transmission des photoplats à la vue
@@ -29,7 +29,7 @@ class PhotoPlatController extends Controller
         return view('admin.photoplat.index', [
             // OK renvoi tableau des listes Photos
             'photoplats' => $photoplats,
-            'categories' => $categories,
+            //'categories' => $categories,
             
            
         ]);
@@ -47,14 +47,14 @@ class PhotoPlatController extends Controller
     public function create(Request $request)
     
     {
-        $categories = Categorie::all();
-             $etiquettes = Etiquette::all();
+        //$categories = Categorie::all();
+            // $etiquettes = Etiquette::all();
         $photoplats = PhotoPlat::all();
-        $plats = Plat::all();
+        //$plats = Plat::all();
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
         $photoplat = new stdClass;
-        $categorie = new categorie();
+       // $categorie = new categorie();
     
 
       //  $photo_plat->nom =  '';// pas de nom
@@ -62,9 +62,9 @@ class PhotoPlatController extends Controller
         $photoplat->chemin= '';
         $photoplat->description=  '';
         // placer la photo dans une categorie au 4 mars 2023
-       $photoplat->categorie_id = ''; 
+       //$photoplat->categorie_id = ''; 
 
-       $categorie->categorie_id='';
+       //$categorie->categorie_id='';
 
         //$request->get('categorie_id');// <------------
        // lors creation le nom de categori n'est pas defini//
@@ -75,7 +75,7 @@ class PhotoPlatController extends Controller
        // $photoplat->Categorie()->associate($categorie);//
         // ici on est dans PhotoPlatController transmission des valeurs par défaut à la vue
         return view('admin.photoplat.create', [
-           'categories' => $categories,
+           //'categories' => $categories,
             'photoplats' => $photoplats,
             
 
@@ -86,6 +86,7 @@ class PhotoPlatController extends Controller
 //cette methode enregistre les données d'une nouvelle image dans la base de données 
 public function store(Request $request)
 {
+    //dd($request->all());
  /*verif avant d'enregistrer les info utilisateurs */
  $validated = $request->validate([
    // 'nom' => 'required|min:2|max:100',// pas de nom a la photo
@@ -97,11 +98,12 @@ public function store(Request $request)
   /* Création d'une photo */
     /* liaison dans la definition des champs avec edit.blade.php*/
     $photoplat = new PhotoPlat();
-
+    //$categorie = new categorie();
     //$photoplat->nom = $request->get('nom');//<---------
    
     $photoplat->chemin = $request->get('chemin');
     $photoplat->description = $request->get('description');
+    //$photoplat->categorie_id = $request->get('categorie_id');
    
     // MODIF le 13 Fev pour afficher categoriet_id de la table //
     // photoplat dans une modif de photoplat -->
@@ -126,7 +128,7 @@ public function store(Request $request)
     {   
         // recup de l'etiquette
         $photoplat = Photoplat::find($id);
-        $categorie = Categorie::all();
+       // $categorie = Categorie::all();
     // affichage d'une erreur 404 si l'etiquetten est introuvable
     // !$etiquette veut dire :si pas d'etiquetten alors ... 
     //(voir booleen vrai ou faux)
@@ -137,7 +139,7 @@ public function store(Request $request)
 
         // transmission de l'etiquette à la vue
         return view('admin.photoplat.edit', [
-         'categorie' => $categorie,
+         //'categorie' => $categorie,
             'photoplat' => $photoplat, // OK
         ]);
     }

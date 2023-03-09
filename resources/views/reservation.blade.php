@@ -5,6 +5,12 @@
 @section('content')
 <h2>Page des Réservations clients</h2>
 
+ <!----- Retour Accueil ---->
+ <div class="retour_Accueil">
+    <a href="{{ route('home') }}">Retour Accueil</a>
+</div>
+<!----------------------------->
+
         @if (Session::has('confirmation'))
     <div>
         {{Session::get('confirmation')}}
@@ -68,18 +74,18 @@
     <br>
         {{------- HEURE -----------}} 
         <div class="reservation-creation_client">
-                <label for="heure" style="padding-right: 100px">Heure: </label>
-               
-                <input class="@error('heure') form--input--error @enderror" type="time" name="heure" id="" value="">
-                    
-             
-                @error('heure')
-                    <div class="form--error-message">
-                        L'heure'doit être dans la période d'ouverture.
-                        {{ $message }}
-                    </div>
-                @enderror
-        </div>
+            <label for="heure" style="padding-right: 100px">Heure: </label>
+            <select name="heure" id="">
+                @foreach ($creneaux_horaires as $creneau_horaire)
+                    <option value="{{ $creneau_horaire }}" @if (old('heure', $reservation->heure) == $creneau_horaire) selected @endif>{{ $creneau_horaire }}</option>
+                @endforeach
+            </select>
+            @error('heure')
+                <div class="form--error-message">
+                    {{ $message }}
+                </div>
+            @enderror
+    </div>
         
     <br>
         {{------- NOMBRE DE PERSONNES -----------}}
@@ -131,15 +137,73 @@
         </div>  
                                 <br>
             </form>
-            <!-----------formulaire coté Client----------------------------------------------->
-    <br> 
-                <div class="horaire_ouverture">
-                    <h3>Nos horaires d'ouverture :</h3>
+      
+          <!-----------formulaire coté Client----------------------------------------------->
    
-                    <p> Tous les jours de: 7h-14h / 20h-00h</p> 
-                    <p> Petit-déjeuner dès 7h30</p> 
-                </div>
+          <hr>
+          <!----------INFO DU RESTAURANT EN BD------------------------------------------------->
+    <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+        <tr><td>
+            <p class="alignRight">
+                    <h3>Adresse du Restaurant :</h3>
+                        {{-- -- affichage de l'adresse et tel --}}
+                        {{ $adresse }}
+                    
+                    <h3>Téléphone :</h3>
+                        {{$tel }}
+            </p>   
+        </td><tr>
+    </table>  
     <br>
+
+    <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+        <tr><td>
+            <p class="alignLeft">
+                {{-- pour affichage de la carte                     --}}
+                {{-- !!$map : oblige a afficher le code             --}}
+                {{--     et non le nom de la carte,                 --}} 
+                {{-- c'est un system de secu passif                 --}} 
+                {{-- tous les caractères dangereux sont echappés    --}}
+                <h3>Plan de notre Restaurant:</h3>
+            </p>   
+    </td><tr>
+</table>  
+
+<br>
+
+    <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+        <tr><td>
+            <p class="alignLeft">
+                {{!! $map !!}}
+            </p>   
+        </td><tr>
+    </table>  
+
+<br>
+
+
+<table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
+        <tr><td>
+                <p class="alignLeft">
+                    <h3>Nos horaires d'ouverture :</h3>
+                    {{$horaire }}
+                </p>   
+        </td><tr>
+</table>  
+
+<br>
+
+<table  width="60%" border="5" cellspacing="1" cellpadding="1" align="center">
+        <tr><td>
+            <p class="alignLeft">
+                <h2>Vous prévoyez de féter un événement: </h2>
+                    
+                <p> Un anniversaire, une Bar Mitza, une naissance ... </p>
+                <p> Prenez Contact avec nous.</p>
+            </p>   
+        </td><tr>
+</table>  
+    <!---------------------------------------------------------------->
 
             </form>
 @endsection

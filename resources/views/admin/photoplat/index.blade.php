@@ -8,6 +8,12 @@
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
 
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une photoplat, on aura un message au dessus,
 qui signalera que les modifs ont bien été enregitrées-->
@@ -23,22 +29,6 @@ qui signalera que les modifs ont bien été enregitrées-->
     <a href="{{ route('admin.photoplat.create')}}"  style="color: green;">Ajouter</a>
 </div>
  <!--   Tableau des categories -->
-
- <div class="photoplat_liste_categorie">
-                <table>
-                    <table width="30%" CELLSPACING="1" CELLPADDING="1"  border="2">   <tr>
-                        <thead bgcolor="silver">
-                            <tr>
-                    <th colspan='1'>Nom Catégorie</th>
-                            </tr>
-                        </thead>
-                    @foreach ($categories as $categorie) 
-                    <tr>
-                <td>{{ $categorie->nom}}</td>
-
-                @endforeach
-                </table>
-</div> 
  <!-------------------------------------------------->     
 
 <!---------- A FINALISER- Bouton de TRI ----->
@@ -67,7 +57,7 @@ qui signalera que les modifs ont bien été enregitrées-->
             <th colspan='1'>ID de $photo_plat</th>
             <th colspan='1'>Description</th>
             <th colspan='1'>Chemin</th>
-            <th colspan='1'>Categorie ID</th>
+           <!-- <th colspan='1'>Categorie ID</th> -->
             <!-- <th colspan='1'>Nom CatÃ©gorie</th> -->
             
             
@@ -92,7 +82,7 @@ qui signalera que les modifs ont bien été enregitrées-->
         <!-- affiche bien la valeur categorie_id presente dans la table photo-plat -->
       <!--  <td>{{--$photoplat->categorie_id --}}</td> -->
        <!-- <td>{{-- $categorie->nom --}}</td> -->
-  <td> ?voir foreach categorie à partir index.blade de Photoplat index</td> 
+  <!--<td> ?voir foreach categorie à partir index.blade de Photoplat index</td> -->
   
         <!-- {{-- $categorie->nom --}} / id: {{-- $categorie->id--}} -->
         <!--@@endforeach -->  <!----BLOCAGE --->

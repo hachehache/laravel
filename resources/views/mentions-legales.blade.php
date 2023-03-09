@@ -5,7 +5,12 @@
 @section('content')
     <h1>Mentions légales</h1>
 
-    
+      
+ <!----- Retour Accueil ---->
+ <div class="retour_Accueil">
+    <a href="{{ route('home') }}">Retour Accueil</a>
+</div>
+<!----------------------------->
 
     
 <div class="mentionslegales">

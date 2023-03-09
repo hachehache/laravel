@@ -4,9 +4,18 @@
 
 @section('content')
 
+ 
+
 <h1>Admin - Etiquette - Liste</h1>
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
+
+
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
 
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une etiquette, on aura un message au dessus,
@@ -92,4 +101,5 @@ qui signalera que les modifs ont bien été enregitrées-->
     @endforeach
     </table>
 </div>
+          
 @endsection

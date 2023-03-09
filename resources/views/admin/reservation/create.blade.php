@@ -7,6 +7,12 @@
             <h1>Admin - Réservation - Creation</h1>
     <!-- BALISE DE SEPARATION -->
     <div class="separation"></div>
+    
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
    
    <!-- <div class="corps-formulaire"></div> -->
       <!--   <div class="gauche"></div>  -->
@@ -138,5 +144,10 @@ qui signalera que les modifs ont bien été enregitrées-->
     </div>  
                             <br>
         </form>
+        <!----- Retour a page précédente ---->
+        <div class="retour_page_precedente">
+            <a href="{{ route('admin.reservation.index') }}">Page précédente</a>
+        </div>
+        <!----------------------------->
     @endsection
      

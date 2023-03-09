@@ -13,6 +13,7 @@ class ActuController extends Controller
     //creation d'une fonction
     public function index()
     {
+         //dd($request->all());
         // equivaut à select * from actu
         // renvoi la liste des actu
         // récuperer la liste des actu
@@ -28,7 +29,7 @@ class ActuController extends Controller
 
     
     //cette methode affiche un formulaire de création actu
-    public function create(Request $request)
+    public function create()
     {
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
@@ -51,10 +52,11 @@ class ActuController extends Controller
 //cette methode enregistre les données d'une nouvelle actu dans la base de données 
 public function store(Request $request)
 {
+   // dd($request->all());
  /*verif avant d'enregistrer les info utilisateurs */
  $validated = $request->validate([
-    'jour_publication' => '',
-    'heure_publication' => '',
+    'jour_publication' => 'required|date',
+    'heure_publication' => 'required|date_format:H:i',
     'texte' => 'required|min:2|max:2000',
 ]);
   /* Création d'une actu */
@@ -78,6 +80,7 @@ public function store(Request $request)
     // $id est le paramètre de l'actu
     public function edit(int $id)
     {   
+          //dd($request->all());
         // recup de actu
         $actu = Actu::find($id);
     // affichage d'une erreur 404 si actu est introuvable
@@ -104,8 +107,8 @@ public function store(Request $request)
     $validated = $request->validate([
         /* nombre mini et max de caracteres, 
         voir migration creat*actu_table pour le max de caracteres*/
-        'jour_publication' => '',
-        'heure_publication' => '',
+        'jour_publication' => 'required|date',
+        'heure_publication' => 'required|date_format:H:i',
         'texte' => 'required|min:2|max:2000',
     ]);
 

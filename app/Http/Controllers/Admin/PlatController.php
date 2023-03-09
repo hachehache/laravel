@@ -6,6 +6,7 @@ use stdClass;
 use App\Http\Controllers\Controller;
 use App\Models\Categorie;
 use App\Models\Etiquette;
+use App\Models\EtiquettePlat;
 use App\Models\PhotoPlat;
 use App\Models\Plat;
 use Illuminate\Http\Request;
@@ -23,6 +24,7 @@ class PlatController extends Controller
     //public function index() 
     public function index(Request $request)
     {
+         //dump("toto");die;
        //dd($request->all());
         // equivaut à select * from etiquette
         // renvoi la liste des etiquettes
@@ -58,6 +60,7 @@ class PlatController extends Controller
         $categories = Categorie::all();
         $etiquettes = Etiquette::all();
         $photoplats = PhotoPlat::all();
+//$etiquetteplats = Etiquette_Plat::all();
 //--------------------------------
 
         $plats = Plat::all();
@@ -82,11 +85,14 @@ class PlatController extends Controller
         'categories' => $categories,
         'etiquettes' => $etiquettes,
         'photoplats' => $photoplats,
+//'etiquette_plat' => $etiquette_plats,
         ]);
     }
 
     public function store(Request $request)
     {
+
+         //dump("toto");die;
         //dd($request->all());
 
         /*verif avant d'enregistrer les info utilisateurs */
@@ -94,11 +100,10 @@ class PlatController extends Controller
            'nom' => 'required|min:2|max:100',
            'prix'=>'',
            'description' => 'required|min:2|max:100',
-           'epingle' => 'required|boolean', // 0=pas épingle, 1=épingle
+           'epingle' => 'boolean', // 0=pas épingle, 1=épingle
            'photo_plat_id'=>'',
-           'categorie_id'=>'',
             'etiquette_id'=>'',
-        
+            'categorie_id'=>'',
 
        ]);
          /* Création d'un plat */
@@ -106,27 +111,32 @@ class PlatController extends Controller
            /*$plat = new Plat(); */
             $plat = new Plat();           // a garder
             $etiquette = new Etiquette();// a garder
-       
+            $etiquette_plat = new EtiquettePlat();
+
            $plat->nom = $request->get('nom');
            $plat->prix = $request->get('prix');
            $plat->description = $request->get('description');
-           //$plat->epingle = $request->toBoolean($this->epingle);//0 ou 1
-          $plat->epingle = $request->get('booleen'); //0 ou 1  //
-           $plat->photo_plat_id = $request-get('photo_plat_id');
+          $plat->epingle = ($request->get('epingle') == 'ON' ? true : false); //0 ou 1  //
+           $plat->photo_plat_id = $request->get('photo_plat_id');
            $plat->categorie_id = $request->get('categorie_id');
-          $plat->etiquette = $request->get('etiquette_id');//
-          //$etiquette->etiquette_id= $request->get('etiquette_id');//
-            //$plat = Plat::find($plat_id);
-            //$plat = Plat::findOrFail($request->plat_id);
-            $photoplat = PhotoPlat::findOrFail($request->photo_plat_id);
-
-        $etiquette = Etiquette::findOrFail($request->etiquette_id);
-    //$photoplat->plats()->attach($plat);
+          
+          
+//$etiquette_plat->etiquette_id= $request->get('etiquette_id');//
+//$etiquette_plat->plat_id= $request->get('plat_id');//
+            
            $plat->save();
           
+           $etiquette_plat->etiquette_id=$request->get('etiquette_id');
+           $etiquette_plat->plat_id=$plat->id;
+          
+           $etiquette_plat->save();
+
+
            /* pour ajouter message flash de confirmation à garder dans la function request*/
            $request->session()->flash('confirmation', 'La création a bien été enregistré');
            
+          
+          
            /* on redirige l'utilisateur vers  la page liste */
            return redirect()->route('admin.plat.index');
        }
@@ -134,6 +144,7 @@ class PlatController extends Controller
     // $id est le paramètre de plat 
     public function edit(int $id)
     {   
+         //dump("toto");die;
         //dd($request->all());
         // recup de l'etiquette
        // recup de l'etiquette
@@ -221,13 +232,20 @@ class PlatController extends Controller
 
     public function delete(Request $request, int $id)
     {
+      //  dd($request->all());
+
     $plat = Plat::find($id);
+    $etiquette_plat =EtiquettePlat::find($id);
 
     if (!$plat) {
     abort (404);
 }
-    $plat->delete();
+
+        //$etiquette_plat->$id->delete(); // a tester suppression de plat_id
+    
+        //$plat->delete();  // a garder
     $request->session()->flash('confirmation' , 'La suppression a bien été enregistrée.');
+ 
 
     return redirect()->route('admin.plat.index');
     }

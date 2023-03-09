@@ -6,9 +6,22 @@
 
     
             <!--========================================================================= --> 
-<body>
-                                <h1>Page de Contact</h1>
+<body>                    
+    
+                            <h1>Page de Contact</h1>     
 
+ <!----- Retour Accueil ---->
+ <div class="retour_Accueil">
+    <a href="{{ route('home') }}">Retour Accueil</a>
+</div>
+<!----------------------------->
+
+<!--------Bouton reservation qui redirige vers page reservation-------------------->
+<div class="contact_reservation">
+<a href="{{ route('reservation') }}" class="btn3"> Réservation </a>
+</div>
+<br>
+<!----------------------------->
             <table  width="20%" border="5" cellspacing="1" cellpadding="1" align="center">
                 <tr><td>
                     <p class="alignRight">

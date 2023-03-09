@@ -9,6 +9,13 @@
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
 
+
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une etiquette, on aura un message au dessus,
 qui signalera que les modifs ont bien été enregitrées-->
@@ -57,11 +64,16 @@ qui signalera que les modifs ont bien été enregitrées-->
             </div>
 
         </fieldset>
-            <div class="etiquette-modif" align="center">
+            
         <br>
+            <div class="etiquette-modif" align="center">
                 <button type="submit">Valider</button>
             </div>
         <br>
         </form>
-
+<!----- Retour a page précédente ---->
+<div class="retour_page_precedente">
+    <a href="{{ route('admin.etiquette.index') }}">Page précédente</a>
+</div>
+<!----------------------------->
 @endsection

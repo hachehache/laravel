@@ -9,6 +9,12 @@
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
 
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
 qui signalera que les modifs ont bien été enregitrées-->
@@ -46,7 +52,6 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
                 </div>
                 @enderror
         </div>
-<br>
         <div class="categorie-modif" align="center">
                 <!--  pour avoir le libellé Description, devant le champs description -->
                 <label for="description" style="padding-right: 70px">Description</label><br />
@@ -65,5 +70,10 @@ Attention, les donnéees n'ont pas été enregistrées, il y a des erreurs dans 
         </div>
 <br>
     </form>
+    <!----- Retour a page précédente ---->
+    <div class="retour_page_precedente">
+        <a href="{{ route('admin.categorie.index') }}">Page précédente</a>
+    </div>
+    <!----------------------------->
 
 @endsection

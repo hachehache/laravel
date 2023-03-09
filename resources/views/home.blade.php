@@ -15,8 +15,8 @@
                           <!--p class="text-over1"> Les plats cuisiners de Mama </p>-->
                           <p class="text-over2"> La tendance culinaire de l'Afrique </p>
                           <p class="text-over3"> Nos spécialités Camerounaises</p>   
-                          <a href="" class="btn1"> Nos Menus </a>
-                          <a href="" class="btn2"> Réservation </a>
+                          <a href="{{ route('menu') }}" class="btn1"> Nos Menus </a>
+                          <a href="{{ route('reservation') }}" class="btn2"> Réservation </a>
                       </div>
                   </section>
 <!----------------   FIN BANNIERE ACCROCHE ---------------------->    
@@ -196,5 +196,44 @@
                           </td><tr>
                         </table>
       </div>
+
+<!------------------------------------>
+            
+                  <div class="contenu_actu_accueil">
+                    <p class="text-over4">Nos dernières actualités</p> 
+                  </div>
+
+<div class="actu_liste_accueil">
+      <table>
+                    <table CELLSPACING="1" CELLPADDING="5"  border="2">   <tr>
+                        <thead bgcolor="silver">
+                        <tr>      
+                        <th colspan='1'> Jour de publication</th>
+                        <th colspan='1'>Heure de publication</th>
+                        <th colspan='1'>Texte</th>
+                        <!-- pour modifier une plat -->
+                        {{-- <th colspan='1'>Actions</th> --}}
+                        </tr>
+                    </thead>
+                    
+                <!--  on est dans le back coté Admin -->
+                {{--dump ($actu)--}}
+                
+                @foreach ($actus as $actu)
+                {{-- dump ($actus) --}}
+                        <tr>                      
+{{--             
+                          //on crée la requête SQL- etre dans une section php
+$sql = 'SELECT * FROM actu ORDER BY id DESC LIMIT 3;   date FROM actu'; --}}
+
+                            <td>{{ $actu->jour_publication }}</td>
+                            <td>{{ $actu->heure_publication }}</td>
+                            <td>{{ $actu->texte }}</td>
+                        </tr> 
+                @endforeach
+  
+      </table>
+</div>
+<!------------------------------------>
 </body>
 @endsection

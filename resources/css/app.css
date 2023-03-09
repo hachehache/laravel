@@ -312,8 +312,48 @@ p.center{
 .paragraphe_accueil_central{
 	margin-top: 60px;
 }
+
+/********* PARTIE ACTUALITE DANS PAGE ACCUEIL *******/
+/* titre des actualités dans page Accueil */
+.actu_liste_accueil{
+margin-top: 150px;
+margin-left: 160px;
+}
+
+.text-over4{
+	position: absolute;
+	left: 50%;
+	top:520%;
+	font-size:30px;
+	font-style: italic;
+	transform: translate(-50%,50%);
+	text-align: center;
+	color: red;
+	/*texte sur une seule ligne*/
+	white-space:nowrap;
+	font-weight: bolder;
+	background-color: #eee;
+	padding: 5px;
+}
+/* Tableau des actualités */
+.actu_liste_accueil{}
+
+
+/****************************************************/
 /*********** FIN: PAGE ACCUEIL- PHOTOS*******************/
 
+
+
+
+/*********** PARTIE COMMUNE POUR LES PAGES USER ************************************/
+/* bouton retour ACCUEIL pour les pages USER */
+.retour_Accueil{
+	font-weight: bold;  
+	margin-left: 30px; 
+	font-size: 20px;
+}
+
+/***********************************************/
 /*********** DEBUT: PAGE MENU - USER avec PHOTOS*******************/
 .titre{
 	display: flex;
@@ -398,9 +438,6 @@ font-weight: 50px;
 
 
 /***********/
-h1.categorie_nom{
-	margin-left: -70px;
-}
 img.alignplat{
 	position:relative;
 	
@@ -437,6 +474,12 @@ p.description_categorie{
 
 /***************DEBUT: PAGE DES ACTUS- PHOTOS ******************/
 /* LES TITRES PARAGRAPHES PHOTOS - ACTUS */
+
+.categorie_nom_user{
+text-align: center;
+margin-left: -94px;
+}
+
 h1{text-align: center;
     line-height: 50px;
 	text-decoration: underline;
@@ -485,6 +528,28 @@ p.alignRight_actus{
 
 /***************DEBUT: PAGE DE CONTACT  ******************/
 /* PAGE CONTACT ( ADRESSE RESTAU/MAP/FORMULAIRE */
+/**** Bouton reservation qui redirige vers page reservation **/
+.contact_reservation{
+	max-width: 100%;
+	text-align: center;
+}
+/* bouton accroche banniere pour "Reservation" en page CONTACT*/
+.btn3{
+	font-size: 1em;
+	color: white;
+	background: blue;
+	padding: 20px;
+	display: inline-block;
+	
+	margin-left: 10px;
+	/* en majuscule*/
+	text-transform: uppercase;
+	/* espacement entre lettre*/
+	letter-spacing: 0.5px;
+	font-size:200%;
+	
+}
+
 h1{text-align: center;
     line-height: 50px;
 	text-decoration: underline;
@@ -791,7 +856,46 @@ entete {
  }
  
  /* ================= LES FORMULAIRES ADMIN ========================================== */
-.bouton_ajouter{
+/* Dashboard avec les liens vers Réservation, Etiquette, ...*/
+/*-- #nom fieldset{ width:...px; height:..px;} --*/
+fieldset.dashboard{ 
+	width:20%;
+	height: 200px;
+	color: black;
+	margin-left: 40%;
+	margin-top: -10;
+	/* marge dans la boite*/
+	padding: 60px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+	/* retrait des points sur les liens ACCUEIL, .., Connexion  */
+	list-style-type: none;
+}
+
+.link_dashboard{
+	color:black;
+
+}
+ /* Dasboard - Bouton déconnexion */
+.link_dashboard_logout{
+	color:red;
+	margin-left: 50px;
+}
+
+/* bouton retour au dashboard pour les pages admin */
+ .retour_dashboard{
+	font-weight: bold;  
+	margin-left: 30px; 
+	font-size: 20px;
+}
+
+/* bouton "page précédente" pour les pages formulaire admin */
+.retour_page_precedente{
+	margin-left: 30px; 
+}
+
+ .bouton_ajouter{
 	color: green; 
 	font-weight: bold;  
 	margin-left: 30px; 
@@ -1389,12 +1493,13 @@ margin-left: 40px;
 	}
 
 /*--------------PHOTOPLAT - LISTE --------------------------------------*/
-.photoplat_liste_categorie{
-	margin-left: 400px;
-}
+				/* a retirer on affiche plaus les categories avec la liste photplat */
+				photoplat_liste_categorie{
+					margin-left: 400px;
+				}
 
 .photoplat_liste{
-	margin-left: 30px;
+	margin-left: 200px;
 	width: 95%;
 }
 /*-------------FIN PHOTOPLAT - LISTE -------------------------------*/
@@ -1408,11 +1513,68 @@ margin-left: 40px;
 }
 /*==================================================*/
 
+/*=========== DEBUT: PAGE ACTU ===================================*/
+/*--------------PLAT - LISTE --------------------------------------*/
+.actu_liste{
+margin-left: 40px;
+	width: 95%;
+	padding: 20px;
+}
+
+
+/*------------ACTU - CREATION --------------------*/
+fieldset.actu-creation{ 
+	width:60%;
+	height: 500px;
+	color: black;
+	margin-left: 12%;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+	/* couleur pour fond de tableau menu */
+	/*background-color: rgb(22, 210, 22);*/
+	border: 2px black solid;
+}
+
+.actu-creation label{
+	font-weight: bold;
+	}
+/*------------ACTU - MODIFICATION --------------------*/
+/*** fieldset -modification actu ***/
+.actu-modification{
+	color: black;
+	margin-left: 12%;
+	height: 500px;
+	width: 60%;
+	border: 2px black solid;
+	margin-top: 10px;
+	/* marge dans la boite*/
+	padding: 35px;
+}
+
+.actu-modif input{
+width: 500px;
+/* hauteur d'un champs */
+height: 20px;
+margin-left: 40px;
+}
+
+.actu-modif{
+font-weight: bold;
+margin-left: 100px;
+}
+	
+.actu-modif label{
+font-weight: bold;
+}
+
+/*-----------------------------------------------------*/
+/*============ FIN: PAGE ACTU =========================*/
 
 
 /*============DEBUT: FOOTER ======================================*/
  
- .contenu_foot{
+ .contenu_footer{
 	/* retrait des points sur les liens ACCUEIL, .., Connexion  */
 	list-style-type: none;
  }
@@ -1426,7 +1588,7 @@ margin-left: 40px;
 	 height: 160px;  
 	 font-size: 20px;
 	 /* distance entre fin de page et début du footer */
-	 margin-top: 50px;
+	 margin-top: 50px; 
   }
 
   div.logo_footer

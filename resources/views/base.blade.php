@@ -37,22 +37,22 @@
             <ul class="navbar">
                 <!----------- TABLEAU DE BORD ADMIN - GESTION ADMIN    -------->
            
-                    <li><a href="{{ route('dashboard') }}">Tableau de bord</a></li>    
-                    <li><a href="{{ route('admin.reservation.index') }}">Réservation</a></li>
+                    {{-- <li><a href="{{ route('dashboard') }}">Tableau de bord</a></li>     --}}
+                    {{-- <li><a href="{{ route('admin.reservation.index') }}">Réservation</a></li>
                     <li><a href="{{ route('admin.etiquette.index') }}">Etiquette</a></li>
                     <li><a href="{{ route('admin.categorie.index') }}">Catégorie</a></li>
                     <li><a href="{{ route('admin.plat.index') }}">Plat</a></li>
                     <li><a href="{{ route('admin.photoplat.index') }}">PhotoPlat</a></li>
-                    <li><a href="{{ route('admin.actu.index') }}">Actu</a></li>
+                    <li><a href="{{ route('admin.actu.index') }}">Actu</a></li> --}}
             </ul>  
         </nav>
-        
+{{--         
         <li class="deconnexion">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">déconnexion</a>
                 </form>
-        </li>
+        </li> --}}
   
        @else    
 
@@ -62,9 +62,9 @@
                     <li><a href="{{ route('home') }}">Accueil</a></li>
                     <li><a href="{{ route('menu') }}">Menu</a></li>
                     <li><a href="{{ route('reservation') }}">Réservation</a></li>
-                    <li><a href="{{ route('actu') }}"> Actu </a></li>
+                    {{-- <li><a href="{{ route('actu') }}"> Actu </a></li> --}}
                     <li><a href="{{ route('contact') }}"> Contact </a></li>
-                    <li><a href="{{ route('mentions-legales') }}">MentionsLegales</a></li>
+                    {{-- <li><a href="{{ route('mentions-legales') }}">MentionsLegales</a></li> --}}
                 </ul>
             </nav>
             <!-- ==============================FIN  NAV UTILISATEUR =========================== -->
@@ -78,9 +78,9 @@
         @show
     
         <footer class="site_footer">
-            <div class="contenu_footer">
-                        <ul>
-                            <li><a href="{{ route('home') }}">Accueil</a></li>
+            <div>
+                        <ul class="contenu_footer">
+                            <li ><a href="{{ route('home') }}">Accueil</a></li>
                             <li><a href="{{ route('contact') }}"> Contact </a></li>
                             <!-- Lien vers les mentions Légales dans le footer -->
                             <li><a href="{{ route('mentions-legales') }}">Mentionslegales</a></li>

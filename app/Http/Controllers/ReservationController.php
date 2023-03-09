@@ -1,54 +1,70 @@
 <?php 
      // CONTROLLER CLIENT //
      // RESERVATION UNIQUEMENT //
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 use App\Models\Reservation;
 use App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ReservationController extends Controller
 {
-    //creation d'une fonction
-    public function index()
-    {
-// Pour avor les créneaux horaires de la table Restaurant
-        $horaire = DB::table('restaurant')
-        // equivaut a :
-        //select * from restaurant where cle='horaire'
-        ->where('cle', '=', 'horaire')
-        // avec first plutot que ->get()
-        ->get()
-        ->first()
-        ;
-
-        $reservations = Reservation::all();
-        // on est dans la partie front
-        // le client ne verra pas les autres réservations
-        return view('reservation', [
-            'reservations' => $reservations,
-            'horaire' => $horaire->valeur,
-        ]);
-
-    }
+   
 
     //cette methode affiche un formulaire de création de réservation
     //public function create()//
-    public function create()
+    public function index()
     {
+         //dd($request->all());
+        //dump("toto");die;
 
-                    
-            // Pour avor les créneaux horaires de la table Restaurant
-           $horaire = DB::table('restaurant')
-            // equivaut a :
-            //select * from restaurant where cle='horaire'
-            ->where('cle', '=', 'horaire')
-            // avec first plutot que ->get()
-            ->get()
-           ->first()
-            ;
+//-------- INFO DU RESTAURANT----------------------------------------------//
+
+// equivaut à :
+      // select * from categorie order by asc
+      $adresse = DB::table('restaurant')
+      // equivaut a 
+      //select * from restaurant where cle='adresse'  
+      // mettre '=' car si on ne met pas cela veut dire que l'on affecte une valeur
+      // à la clé, alors que l'on veut lire la valeur
+      ->where('cle', '=', 'adresse')
+      // avec first plutot que ->get() car on ne recupère que le 1er 
+      //element plutot qu'une liste
+      //->get()
+      ->first()
+      ;
+      // equivaut a :
+      //select * from restaurant where cle='tel'
+      $tel = DB::table('restaurant')
+      ->where('cle', '=', 'tel')
+      // avec first plutot que ->get()
+      //->get()
+      ->first()
+      ;
+
+      $map = DB::table('restaurant')
+      // equivaut a :
+      //select * from restaurant where cle='map'
+      ->where('cle', '=', 'map')
+      // avec first plutot que ->get()
+      //->get()
+      ->first()
+      ;
+
+      $horaire = DB::table('restaurant')
+      // equivaut a :
+      //select * from restaurant where cle='horaire'
+      ->where('cle', '=', 'horaire')
+      // avec first plutot que ->get()
+      //->get()
+      ->first()
+      ;
+
+//------------------------------------------------------//
+
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
-        $reservation = new stdClass;
+        $reservation = new Reservation();
         
         $reservation->nom =  '';
         $reservation->prenom =  '';
@@ -57,15 +73,18 @@ class ReservationController extends Controller
         $reservation->nombre_personnes = 2;
         $reservation->tel = '';
         $reservation->email = '';
-
+    
         //Recuperation des créneaux horaires de réservation
         $creneaux_horaires = $this->getCreneauxHoraires();
-       
+       //dump($creneaux_horaires);
         // transmission des valeurs par défaut à la vue
-        return view('admin.reservation.create', [
+        return view('reservation', [
             'reservation' => $reservation,
            'creneaux_horaires' =>  $creneaux_horaires,
-         
+           'adresse' => $adresse->valeur,
+           'tel' => $tel->valeur,
+           'map' => $map->valeur,
+           'horaire' => $horaire->valeur,
         ]);
     }
     
@@ -108,7 +127,7 @@ class ReservationController extends Controller
     $request->session()->flash('confirmation', 'La création a bien été enregistré.');
 
     /* on redirige l'utilisateur vers  la page liste */
-    return redirect()->route('admin.reservation.index');
+    return redirect()->route('reservation');
     }
 
 

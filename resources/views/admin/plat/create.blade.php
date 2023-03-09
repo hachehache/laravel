@@ -6,6 +6,13 @@
     <h1>Admin - Plat - Création</h1>
     <!-- BALISE DE SEPARATION -->
 <!--<div class="separation"></div> -->
+
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <br>
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
@@ -32,12 +39,10 @@ qui signalera que les modifs ont bien été enregitrées-->
         <fieldset class="plat-creation-nom">
             <legend class="plat-creation"><p><strong>Création d'un plat</strong></p></legend> 
         <div class="plat-creation">
-           <!-- <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="" > -->
-           <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="0" onclick="if (this.checked) this.value=1; else this.value=0;" name="epingle" />
-
-
-
-            <label for="epingle">épinglé</label>
+         {{-- <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="" > --}}
+           <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value="" onclick="if (this.checked) this.value=1; else this.value=0;" name="epingle" />
+           {{-- <input class="@error('epingle') form--input--error @enderror" type="checkbox" name="epingle" id="" value=""  /> --}}
+           <label for="epingle">épinglé</label>
             @error('epingle')
             <div class="form--error-message">
                 {{ $message }}
@@ -146,5 +151,9 @@ qui signalera que les modifs ont bien été enregitrées-->
         <br>
    
 </form>
-
+<!----- Retour a page précédente ---->
+<div class="retour_page_precedente">
+    <a href="{{ route('admin.plat.index') }}">Page précédente</a>
+</div>
+<!----------------------------->
 @endsection

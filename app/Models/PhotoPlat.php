@@ -20,18 +20,18 @@ class PhotoPlat extends Model
     // POUR ASSOCIER LA PHOTO A LA CATEGORIE//
     // Cette methode permet de récuperer la categorie
     // @return Categorie
-    public function categorie()
-    {
+    // public function categorie()
+//     {
 
-        // ajout
-     //$categories = Categorie::all();//
+//         // ajout
+//      //$categories = Categorie::all();//
 
-    // belongsto plutot que hasOne
-    // Le cote possedant: une categorie possede des plats
-   // return $this->belongsTo(Categorie::class);//
-   // Modif
-        return $this->belongsTo(Categorie::class, 'categorie_id','id');
-    }
+//     // belongsto plutot que hasOne
+//     // Le cote possedant: une categorie possede des plats
+//    // return $this->belongsTo(Categorie::class);//
+//    // Modif
+//         return $this->belongsTo(Categorie::class, 'categorie_id','id');
+//     }
 
         // Cette methode permet de récuperer le plat
         // @return Plat

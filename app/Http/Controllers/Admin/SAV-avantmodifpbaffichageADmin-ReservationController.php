@@ -9,25 +9,9 @@ use Illuminate\Http\Request;
 
 class ReservationController extends Controller
 {
-    public function index()
-    {
-        // récupération de la liste des réservations
-        $reservations = Reservation::all();
-
-        // transmission des réservations à la vue
-        return view('admin.reservation.index', [
-            'reservations' => $reservations,
-        ]);
-    }
-
-    /**
-     * Affiche un formulaire de création de réservation
-     *
-     * @return Response
-     */
     //cette methode affiche un formulaire de création de réservation
     //public function create()//
-     public function create()
+     public function index()
     {
         //valeur par default afficher avant modif par le restaurateur
         // ne pas appeler de save
@@ -177,51 +161,19 @@ class ReservationController extends Controller
     $request->session()->flash('confirmation' , 'La suppression a bien été enregistrée.');
 
     return redirect()->route('admin.reservation.index');
+    
+    /* pour ajouter message flash*/
+
+
+    /* recuperer une valeur
+    /*si le champ baz n'existe pas, montre-moi le champ foo*/
+    /*dd($request->has('baz','foo')); */
+    /*montre-moi le champ nom*/
+   /*dd($request->has('nom'));
+    dd($request->has());
+    dd($request->get());*/
+    /* dd($request->all());*/
     }
 
-private function getCreneauxHoraires()
-    {
-        // @todo récupérer les créneaux horaires de la table restaurant en utilsant une clé
+ }
 
-        // au lieu d'écrire les horaires en dur dans un contrôleur, il faut stocker ces données dans la table 'restaurant' en utilisant une clé ('creneaux_horaires' par exemple)
-        // alors vous pourrez récupérer les créneaux horaires en utilisant la clé, comme dans la page contact
-        $creneaux_horaires_str = "
-            12:00
-            12:15
-            12:30
-            12:45
-            13:00
-            13:15
-            13:30
-            13:45
-            19:00
-            19:15
-            19:30
-            19:45
-            20:00
-            20:15
-            20:30
-            20:45
-            21:00
-            21:15
-            21:30
-            21:45
-            22:00
-            22:15
-            22:30
-            22:45
-            23:00
-        ";
-
-        // créé un tableau à partir de la chaîne de caractères
-        $creneaux_horaires = preg_split("/[\s]+/", $creneaux_horaires_str);
-        // supprime les lignes vides
-        $creneaux_horaires = array_filter($creneaux_horaires, function($value) {
-            return empty($value) ? false : true;
-        });
-        // réindexe le tableau (nécessaire car nous avons supprimer les lignes vides)
-        $creneaux_horaires = array_values($creneaux_horaires);
-
-        return $creneaux_horaires;
-    }
-}

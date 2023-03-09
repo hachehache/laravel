@@ -9,6 +9,12 @@
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
 
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
 qui signalera que les modifs ont bien été enregitrées-->
@@ -43,7 +49,6 @@ qui signalera que les modifs ont bien été enregitrées-->
     <tr>
         <td>{{ $categorie->nom }}</td>
         <td>{{ $categorie->description }}</td>
-        
         <td>
             <div class="bouton_modifier">
             <a href="{{route('admin.categorie.edit' , ['id' => $categorie->id]) }}" style="color: green;">modifier</a>

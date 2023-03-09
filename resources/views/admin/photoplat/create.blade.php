@@ -7,6 +7,13 @@
 		<h1>Admin -Photoplat - Creation</h1>
 <!-- BALISE DE SEPARATION -->
 <div class="separation"></div>
+
+ <!----- Retour a Dashboard ---->
+ <div class="retour_dashboard">
+    <a href="{{ route('dashboard') }}">Retour au Tableau de bord</a>
+</div>
+<!----------------------------->
+
 <br>
 <!-- si on trouve confirmation, on passe dans cette partie
 lors d'une modification d'une reservation, on aura un message au dessus,
@@ -64,28 +71,7 @@ qui signalera que les modifs ont bien été enregitrées-->
             @enderror 
             </div>
 </fieldset>
-            {{----------Inserer la photo dans une categorie-------------}}
-            <div>
-                <!--old permet de recuperer les valeurs presente dans la base -->
-                <!-- Label pour avoir le libellé Nom, devant le champs catégorie -->
-                <br>
-       
-<fieldset class="photoplat-creation-menu-categorie"> 
-                                 <!-- AFFICHAGE DE LA LISTE DES CATEGORIES -->
-              <legend class="menu-categorie"><p><strong>Liste des Catégories</strong></p></legend> 
                
-              <div class="photoplat-creation-menu-categorie-liste">
-                         @foreach ($categories as $categorie)
-                         <br>
-                            <label for="photoplat-creation-menu-categorie-liste" style="padding-right: 0px">{{ $categorie->nom }}</label>
-                        <!--  name=unique car une photo ne peut-être que dans une seule catégorie -->
-                                <input type="radio" name="unique" value="" id=""> 
-                        <br>
-                        @endforeach
-              </div>
-                 
-</fieldset>
-                
     {{------- VALIDATION -----------}}
             <br>
             <div class="photoplat-creation" align="center">
@@ -93,4 +79,9 @@ qui signalera que les modifs ont bien été enregitrées-->
         </div>  
         <br>
         </form>
+        <!----- Retour a page précédente ---->
+        <div class="retour_page_precedente">
+            <a href="{{ route('admin.photoplat.index') }}">Page précédente</a>
+        </div>
+        <!----------------------------->
     @endsection
